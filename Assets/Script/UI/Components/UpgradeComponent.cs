@@ -27,8 +27,6 @@ public class UpgradeComponent : MonoBehaviour
 
     private System.Numerics.BigInteger UpgradeCost;
 
-    private UpgradeData UpgradeData;
-
     private CompositeDisposable disposables = new CompositeDisposable();
 
     private void Awake()
@@ -46,24 +44,10 @@ public class UpgradeComponent : MonoBehaviour
 
         if (upgradetd != null)
         {
-            UpgradeData = GameRoot.Instance.UserData.CurMode.UpgradeGroupData.FindUpgradeData(UpgradeIdx);
-
             UpgradeCost = upgradetd.cost;
 
 
             DescText.text = Tables.Instance.GetTable<Localize>().GetFormat(upgradetd.desc, upgradetd.value);
-
-            if (upgradetd.upgrade_type == (int)UpgradeSystem.UpgradeType.FishCasherSpeedUp)
-            {
-                var facilitytd = Tables.Instance.GetTable<FacilityInfo>().GetData(upgradetd.value2);
-
-                if (facilitytd != null)
-                {
-                    UpgradeNameText.text = Tables.Instance.GetTable<Localize>().GetFormat(upgradetd.name, Tables.Instance.GetTable<Localize>().GetString($"food_name_{facilitytd.fish_idx}"));
-                }
-            }
-            else
-                UpgradeNameText.text = Tables.Instance.GetTable<Localize>().GetString(upgradetd.name);
 
             CostText.text = Utility.CalculateMoneyToString(UpgradeCost);
 
@@ -91,16 +75,9 @@ public class UpgradeComponent : MonoBehaviour
     {
         if (GameRoot.Instance.UserData.CurMode.Money.Value >= UpgradeCost)
         {
-            UpgradeData.UpgradeGet();
-
             ProjectUtility.SetActiveCheck(this.gameObject, false);
 
-            GameRoot.Instance.UpgradeSystem.AddUpgradeData(UpgradeIdx, UpgradeData.UpgradeType);
-
             GameRoot.Instance.UserData.SetReward((int)Config.RewardType.Currency, (int)Config.CurrencyID.Money, -UpgradeCost);
-
-            GameRoot.Instance.NaviSystem.CurNaviOnType = NaviSystem.NaviType.CloseUpgradeBtn;
-            GameRoot.Instance.NaviSystem.NaviOff(NaviSystem.NaviType.UpgradeStart);
         }
 
     }

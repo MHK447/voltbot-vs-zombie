@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ottersfishshop_0: -3392438233513368301
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

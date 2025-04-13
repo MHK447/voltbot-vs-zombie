@@ -6,8 +6,6 @@ table UserData {
   money:string;
   cash:int = 0;
   lastlogintime:long = 0;
-  curplaydatetime:long = 0;
-  stagedata: StageData;
   recordcount:[RecordCount];
   upgradedatas:[UpgradeData];
   facilityupgradedatas:[FacilityUpgradeData];

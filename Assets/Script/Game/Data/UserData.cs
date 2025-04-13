@@ -118,7 +118,7 @@ public partial class UserDataSystem
 		var builder = new FlatBufferBuilder(1);
 		int dataIdx = 0;
 		var money = builder.CreateString(mainData.Money.Value.ToString());
-		var tutorial = builder.CreateString(string.Join(";", Tutorial));
+	var tutorial = builder.CreateString(string.Join(";", Tutorial));
 
 
 		var option = BanpoFri.Data.OptionData.CreateOptionData(builder, builder.CreateString(Language.ToString()), Bgm, Effect, SlowGraphic, Vib, SubscribeOrder, AutoFelling);
@@ -140,70 +140,14 @@ public partial class UserDataSystem
 
 
 
-		//facilitydata
-		Offset<BanpoFri.Data.facilityidata>[] facilitydatas = null;
-
-		facilitydatas = new Offset<BanpoFri.Data.facilityidata>[mainData.StageData.StageFacilityDataList.Count];
-
-		dataIdx = 0;
-
-		foreach (var facility in mainData.StageData.StageFacilityDataList)
-		{
-			var facilitymoney = builder.CreateString(facility.MoneyCount.ToString());
-
-			facilitydatas[dataIdx++] = BanpoFri.Data.facilityidata.Createfacilityidata(builder, facility.FacilityIdx, facilitymoney, facility.IsOpen, facility.CapacityCountProperty.Value);
-		}
-
-		var facilitydatavec = BanpoFri.Data.StageData.CreateFacilitydatasVector(builder, facilitydatas);
-
-		var stagedata = BanpoFri.Data.StageData.CreateStageData(builder,
-			mainData.StageData.NextFacilityOpenOrderProperty.Value, mainData.StageData.StageIdx
-			, facilitydatavec);
-
-
-		//facilyupgrade
-		Offset<BanpoFri.Data.FacilityUpgradeData>[] facilyupgradedatas = null;
-
-		facilyupgradedatas = new Offset<BanpoFri.Data.FacilityUpgradeData>
-		[mainData.FishUpgradeDatas.Count];
-
-		dataIdx = 0;
-
-		foreach (var upgrade in mainData.FishUpgradeDatas)
-		{
-			facilyupgradedatas[dataIdx++] = BanpoFri.Data.FacilityUpgradeData.
-			CreateFacilityUpgradeData(builder, upgrade.Level, upgrade.FishIdx);
-		}
-
-		var faciltyupgradedata = BanpoFri.Data.UserData.CreateFacilityupgradedatasVector(builder, facilyupgradedatas);
-
-
-		//upgradedata
-		Offset<BanpoFri.Data.UpgradeData>[] upgradedatas = null;
-
-		upgradedatas = new Offset<BanpoFri.Data.UpgradeData>[mainData.UpgradeGroupData.StageUpgradeCollectionList.Count];
-
-		dataIdx = 0;
-
-		foreach (var upgrade in mainData.UpgradeGroupData.StageUpgradeCollectionList)
-		{
-			upgradedatas[dataIdx++] = BanpoFri.Data.UpgradeData.CreateUpgradeData(builder, upgrade.UpgradeIdx, upgrade.UpgradeType, upgrade.StageIdx, upgrade.IsBuyCheckProperty.Value);
-		}
-
-		var upgradedata = BanpoFri.Data.UserData.CreateUpgradedatasVector(builder, upgradedatas);
 
 
 		//insert start
 		BanpoFri.Data.UserData.StartUserData(builder);
-		BanpoFri.Data.UserData.AddStagedata(builder, stagedata);
 		BanpoFri.Data.UserData.AddLastlogintime(builder, mainData.LastLoginTime.Ticks);
 		BanpoFri.Data.UserData.AddMoney(builder, money);
-		BanpoFri.Data.UserData.AddCurplaydatetime(builder, mainData.CurPlayDateTime.Ticks);
 		BanpoFri.Data.UserData.AddCash(builder, Cash.Value);
-		BanpoFri.Data.UserData.AddUpgradedatas(builder, upgradedata);
 		BanpoFri.Data.UserData.AddRecordcount(builder, recordCountVec);
-		BanpoFri.Data.UserData.AddBoosttime(builder, mainData.BoostTime.Value);
-		BanpoFri.Data.UserData.AddFacilityupgradedatas(builder, faciltyupgradedata);
 		BanpoFri.Data.UserData.AddTutorial(builder, tutorial);
 		BanpoFri.Data.UserData.AddOptiondata(builder , option);
 

@@ -321,52 +321,6 @@ public class ProjectUtility
     }
 
 
-
-    public static System.Numerics.BigInteger CalcOfflineReward(int _difftime)
-    {
-    var curstageidx = GameRoot.Instance.UserData.CurMode.StageData.StageIdx;
-
-        System.Numerics.BigInteger stagevalue = 0;
-
-        var tdlist = Tables.Instance.GetTable<StageInfo>().DataList.FindAll(x => x.stageidx == curstageidx).ToList();
-        var stagewavetd = Tables.Instance.GetTable<StageWaveInfo>().GetData(curstageidx);
-
-
-        var facilitydatas = GameRoot.Instance.UserData.CurMode.StageData.StageFacilityDataList.ToList();
-
-        int highfishidx = 0;
-
-        foreach(var faciliy in facilitydatas)
-        {
-            if(!faciliy.IsOpen) continue;
-
-            var td = Tables.Instance.GetTable<FacilityInfo>().GetData(faciliy.FacilityIdx);
-
-            if(td != null)
-            {
-                if(td.fish_idx > highfishidx)
-                {
-                    highfishidx = td.fish_idx;
-                }
-            }
-        }
-
-        if(highfishidx > 0)
-        {
-            var td = Tables.Instance.GetTable<FishInfo>().GetData(highfishidx);
-
-            if(td != null)
-            {
-                stagevalue = (td.base_revenue * _difftime)  / GameRoot.Instance.InGameSystem.offline_value_time;
-            }
-        }
-
-
-        return stagevalue;   
-    }
-
-
-
     public static void PlayGoodsEffect(UnityEngine.Vector3 startPos, int rewardType, int rewardIdx, int rewardGrade, System.Numerics.BigInteger value, bool isCenterStart = true, System.Action OnEnd = null, float delay = 0f, string viewText = "",  UIBase curui = null, bool reward = true, bool underOrder = false, UnityEngine.Vector3 endPos = default(UnityEngine.Vector3)
         , bool iscurrencytext = true)
     {
