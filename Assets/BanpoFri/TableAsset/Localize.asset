@@ -1,0 +1,598 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef1efbd8d0fe74dcdb2bf5806ca18b55, type: 3}
+  m_Name: Localize
+  m_EditorClassIdentifier: 
+  mFirstKey:
+  - casher_add_02_desc
+  - casher_speedup_01_desc
+  - consumer_add_01_desc
+  - player_speedup_01_desc
+  - player_stack_01_desc
+  - food_load_01_desc
+  - cooktool_speedup_01_desc
+  - casher_stack_01_desc
+  - fishcasher_speedup_desc
+  - casher_add_08_name
+  - casher_add_09_name
+  - casher_add_11_name
+  - casher_add_12_name
+  - casher_add_13_name
+  - casher_add_14_name
+  - casher_add_15_name
+  - casher_add_16_name
+  - casher_add_17_name
+  - casher_add_18_name
+  - casher_add_19_name
+  - casher_speedup_01_name
+  - consumer_add_01_name
+  - player_speedup_01_name
+  - fishcasher_speedup_name
+  - player_stack_01_name
+  - food_load_01_name
+  - food_load_02_name
+  - food_load_03_name
+  - food_load_04_name
+  - food_load_10_name
+  - food_load_11_name
+  - food_load_14_name
+  - food_load_15_name
+  - food_load_16_name
+  - food_load_17_name
+  - food_load_18_name
+  - food_load_19_name
+  - cooktool_speedup_01_name
+  - cooktool_speedup_02_name
+  - casher_stack_01_name
+  - casher_add_10_name
+  - casher_add_01_name
+  - next_stage_name_1
+  - next_stage_name_2
+  - next_stage_name_3
+  - next_stage_name_4
+  - next_stage_name_5
+  - offline_time_value
+  - offline_time_middle_value
+  - str_level
+  - str_lv_max
+  - str_max
+  - ad_vehicle_value
+  - minute_time
+  - food_name_1
+  - food_name_2
+  - food_name_3
+  - food_name_4
+  - food_name_5
+  - food_name_6
+  - food_name_7
+  - food_name_8
+  - food_name_9
+  - food_name_10
+  - food_name_11
+  - food_name_12
+  - food_name_13
+  - food_name_14
+  - food_name_15
+  - food_name_16
+  - food_name_17
+  - food_name_18
+  - food_name_19
+  - food_name_20
+  - food_name_21
+  - food_name_22
+  - food_name_23
+  - food_name_24
+  - food_name_25
+  - food_name_26
+  - food_name_27
+  - food_name_28
+  - str_time_hour
+  - str_time_minute
+  - str_time_second
+  - str_time_day
+  - food_01
+  - food_02
+  - food_03
+  - food_04
+  - food_05
+  - food_06
+  - food_07
+  - food_08
+  - food_09
+  - popup_upgrade_name
+  - popup_upgrade_product
+  - popup_upgrade_facility
+  - popup_next_stage
+  - popup_next_level_max
+  - popup_next_stage
+  - popup_ad_vehicle
+  - popup_ad_speed
+  - str_free
+  - next_move
+  - str_popup_option_language_en
+  - str_popup_option_language_ko
+  - str_popup_option_language_ja
+  - str_no_ads
+  - str_facility
+  - str_facility_clear
+  mSecondKey: []
+  mDataList:
+  - _idx: casher_add_02_desc
+    _ko: "<color=#3a8e62>+{0}\uBA85</color> \uACE0\uC6A9"
+    _en: <color=#3a8e62>+{0}</color> Hired
+    _ja: "<color=#3a8e62>+{0}</color> \u63A1\u7528"
+  - _idx: casher_speedup_01_desc
+    _ko: "<color=#3a8e62>+{0}</color> \uC99D\uAC00"
+    _en: <color=#3a8e62>+{0}</color> Increased
+    _ja: "<color=#3a8e62>+{0}</color> \u5897\u52A0"
+  - _idx: consumer_add_01_desc
+    _ko: "<color=#3a8e62>+{0}\uBA85</color> \uCD94\uAC00"
+    _en: <color=#3a8e62>+{0}</color> Added
+    _ja: "<color=#3a8e62>+{0}</color> \u8FFD\u52A0"
+  - _idx: player_speedup_01_desc
+    _ko: "<color=#3a8e62>+{0}</color> \uC99D\uAC00 "
+    _en: <color=#3a8e62>+{0}</color> Increased
+    _ja: "<color=#3a8e62>+{0}</color> \u5897\u52A0"
+  - _idx: player_stack_01_desc
+    _ko: "<color=#3a8e62>+{0}\uAC1C</color> \uC99D\uAC00"
+    _en: <color=#3a8e62>+{0} items</color> Increased
+    _ja: "<color=#3a8e62>+{0}\u500B</color> \u5897\u52A0"
+  - _idx: food_load_01_desc
+    _ko: "<color=#3a8e62>+{0}\uAC1C</color> \uC99D\uAC00"
+    _en: <color=#3a8e62>+{0} items</color> Increased
+    _ja: "<color=#3a8e62>+{0}\u500B</color> \u5897\u52A0"
+  - _idx: cooktool_speedup_01_desc
+    _ko: "<color=#3a8e62>+{0}</color> \uC99D\uAC00"
+    _en: <color=#3a8e62>+{0}</color> Increased
+    _ja: "<color=#3a8e62>+{0}</color> \u5897\u52A0"
+  - _idx: casher_stack_01_desc
+    _ko: "<color=#3a8e62>+{0}\uAC1C</color> \uC99D\uAC00"
+    _en: <color=#3a8e62>+{0} items</color> Increased
+    _ja: "<color=#3a8e62>+{0}\u500B</color> \u5897\u52A0"
+  - _idx: fishcasher_speedup_desc
+    _ko: "\uB09A\uC2DC \uC18D\uB3C4 <color=#3a8e62>+{0}</color>\uD37C\uC13C\uD2B8
+      \uC99D\uAC00"
+    _en: Fishing Speed <color=#3a8e62>+{0}</color>% Increased
+    _ja: "\u91E3\u308A\u901F\u5EA6 <color=#3a8e62>+{0}</color>% \u30A2\u30C3\u30D7"
+  - _idx: casher_add_08_name
+    _ko: "\uC5F4\uAC31\uC774 \uB09A\uC2DC \uC9C1\uC6D0"
+    _en: Red Seabream Fisher
+    _ja: "\u30BF\u30A4\u91E3\u308A\u30B9\u30BF\u30C3\u30D5"
+  - _idx: casher_add_09_name
+    _ko: "\uACE0\uB4F1\uC5B4 \uB09A\uC2DC \uC9C1\uC6D0"
+    _en: Mackerel Fisher
+    _ja: "\u30B5\u30D0\u91E3\u308A\u30B9\u30BF\u30C3\u30D5"
+  - _idx: casher_add_11_name
+    _ko: "\uC5F4\uB300\uC5B4 \uB09A\uC2DC \uC9C1\uC6D0"
+    _en: Tropical Fish Fisher
+    _ja: "\u71B1\u5E2F\u9B5A\u91E3\u308A\u30B9\u30BF\u30C3\u30D5"
+  - _idx: casher_add_12_name
+    _ko: "\uAF43\uAC8C \uB09A\uC2DC \uC9C1\uC6D0"
+    _en: Crab Fisher
+    _ja: "\u30AB\u30CB\u91E3\u308A\u30B9\u30BF\u30C3\u30D5"
+  - _idx: casher_add_13_name
+    _ko: "\uC0AC\uACFC \uB09A\uC2DC \uC9C1\uC6D0"
+    _en: Apple Fisher
+    _ja: "\u30EA\u30F3\u30B4\u91E3\u308A\u30B9\u30BF\u30C3\u30D5"
+  - _idx: casher_add_14_name
+    _ko: "\uADE4 \uB09A\uC2DC \uC9C1\uC6D0"
+    _en: Tangerine Fisher
+    _ja: "\u307F\u304B\u3093\u91E3\u308A\u30B9\u30BF\u30C3\u30D5"
+  - _idx: casher_add_15_name
+    _ko: "\uC624\uC9D5\uC5B4 \uB09A\uC2DC \uC9C1\uC6D0"
+    _en: Squid Fisher
+    _ja: "\u30A4\u30AB\u91E3\u308A\u30B9\u30BF\u30C3\u30D5"
+  - _idx: casher_add_16_name
+    _ko: "\uB300\uAD6C \uB09A\uC2DC \uC9C1\uC6D0"
+    _en: Cod Fisher
+    _ja: "\u30BF\u30E9\u91E3\u308A\u30B9\u30BF\u30C3\u30D5"
+  - _idx: casher_add_17_name
+    _ko: "\uBE68\uAC04 \uBD88\uAC00\uC0AC\uB9AC \uB09A\uC2DC \uC9C1\uC6D0"
+    _en: Red Starfish Fisher
+    _ja: "\u8D64\u30D2\u30C8\u30C7\u91E3\u308A\u30B9\u30BF\u30C3\u30D5"
+  - _idx: casher_add_18_name
+    _ko: "\uC0C8\uC6B0 \uB09A\uC2DC \uC9C1\uC6D0"
+    _en: Shrimp Fisher
+    _ja: "\u30A8\u30D3\u91E3\u308A\u30B9\u30BF\u30C3\u30D5"
+  - _idx: casher_add_19_name
+    _ko: "\uBB38\uC5B4 \uB09A\uC2DC \uC9C1\uC6D0"
+    _en: Octopus Fisher
+    _ja: "\u30BF\u30B3\u91E3\u308A\u30B9\u30BF\u30C3\u30D5"
+  - _idx: casher_speedup_01_name
+    _ko: "\uC9C1\uC6D0 \uC774\uB3D9\uC18D\uB3C4"
+    _en: Staff Movement Speed
+    _ja: "\u30B9\u30BF\u30C3\u30D5\u79FB\u52D5\u901F\u5EA6"
+  - _idx: consumer_add_01_name
+    _ko: "\uC190\uB2D8 \uBC29\uBB38\uB7C9"
+    _en: Customer Traffic
+    _ja: "\u6765\u5BA2\u6570"
+  - _idx: player_speedup_01_name
+    _ko: "\uC0AC\uC7A5 \uC774\uB3D9\uC18D\uB3C4"
+    _en: Boss Movement Speed
+    _ja: "\u5E97\u9577\u79FB\u52D5\u901F\u5EA6"
+  - _idx: fishcasher_speedup_name
+    _ko: "{0} \uB09A\uC2DC \uC9C1\uC6D0 \uC18D\uB3C4 \uC99D\uAC00 "
+    _en: '{0} Fisher Speed Increase'
+    _ja: "{0} \u91E3\u308A\u30B9\u30BF\u30C3\u30D5\u901F\u5EA6\u30A2\u30C3\u30D7"
+  - _idx: player_stack_01_name
+    _ko: "\uC0AC\uC7A5 \uBB3C\uAC74 \uC6A9\uB7C9"
+    _en: Boss Carry Capacity
+    _ja: "\u5E97\u9577\u306E\u904B\u642C\u5BB9\u91CF"
+  - _idx: food_load_01_name
+    _ko: "\uC5F4\uAC31\uC774 \uC9C4\uC5F4\uC218\uB7C9"
+    _en: Red Seabream Display Capacity
+    _ja: "\u30BF\u30A4\u9673\u5217\u6570"
+  - _idx: food_load_02_name
+    _ko: "\uACE0\uB4F1\uC5B4 \uC9C4\uC5F4\uC218\uB7C9"
+    _en: Mackerel Display Capacity
+    _ja: "\u30B5\u30D0\u9673\u5217\u6570"
+  - _idx: food_load_03_name
+    _ko: "\uC5F4\uB300\uC5B4 \uC9C4\uC5F4\uC218\uB7C9"
+    _en: Tropical Fish Display Capacity
+    _ja: "\u71B1\u5E2F\u9B5A\u9673\u5217\u6570"
+  - _idx: food_load_04_name
+    _ko: "\uD06C\uB7A9 \uC9C4\uC5F4\uC218\uB7C9 "
+    _en: Crab Display Capacity
+    _ja: "\u30AB\u30CB\u9673\u5217\u6570"
+  - _idx: food_load_10_name
+    _ko: "\uC0AC\uACFC \uC9C4\uC5F4\uC218\uB7C9"
+    _en: Apple Display Capacity
+    _ja: "\u30EA\u30F3\u30B4\u9673\u5217\u6570"
+  - _idx: food_load_11_name
+    _ko: "\uADE4 \uC9C4\uC5F4\uC218\uB7C9"
+    _en: Tangerine Display Capacity
+    _ja: "\u307F\u304B\u3093\u9673\u5217\u6570"
+  - _idx: food_load_14_name
+    _ko: "\uC624\uC9D5\uC5B4 \uC9C4\uC5F4\uC218\uB7C9"
+    _en: Squid Display Capacity
+    _ja: "\u30A4\u30AB\u9673\u5217\u6570"
+  - _idx: food_load_15_name
+    _ko: "\uB300\uAD6C \uC9C4\uC5F4\uC218\uB7C9"
+    _en: Cod Display Capacity
+    _ja: "\u30BF\u30E9\u9673\u5217\u6570"
+  - _idx: food_load_16_name
+    _ko: "\uBD88\uAC00\uC0AC\uB9AC \uC9C4\uC5F4\uC218\uB7C9"
+    _en: Starfish Display Capacity
+    _ja: "\u30D2\u30C8\u30C7\u9673\u5217\u6570"
+  - _idx: food_load_17_name
+    _ko: "\uC0C8\uC6B0 \uC9C4\uC5F4\uC218\uB7C9"
+    _en: Shrimp Display Capacity
+    _ja: "\u30A8\u30D3\u9673\u5217\u6570"
+  - _idx: food_load_18_name
+    _ko: "\uBB38\uC5B4 \uC9C4\uC5F4\uC218\uB7C9"
+    _en: Octopus Display Capacity
+    _ja: "\u30BF\u30B3\u9673\u5217\u6570"
+  - _idx: food_load_19_name
+    _ko: "\uD45C\uACE0\uBC84\uC12F \uC9C4\uC5F4\uC218\uB7C9"
+    _en: Mushroom Display Capacity
+    _ja: "\u30B7\u30A4\u30BF\u30B1\u9673\u5217\u6570"
+  - _idx: cooktool_speedup_01_name
+    _ko: "\uD504\uB77C\uC774\uD32C \uC870\uB9AC\uC18D\uB3C4"
+    _en: Frying Pan Cooking Speed
+    _ja: "\u30D5\u30E9\u30A4\u30D1\u30F3\u8ABF\u7406\u901F\u5EA6"
+  - _idx: cooktool_speedup_02_name
+    _ko: "\uB0C4\uBE44 \uC870\uB9AC\uC18D\uB3C4"
+    _en: Pot Cooking Speed
+    _ja: "\u934B\u8ABF\u7406\u901F\u5EA6"
+  - _idx: casher_stack_01_name
+    _ko: "\uC9C1\uC6D0 \uBB3C\uAC74 \uC6A9\uB7C9"
+    _en: Staff Carry Capacity
+    _ja: "\u30B9\u30BF\u30C3\u30D5\u904B\u642C\u5BB9\u91CF"
+  - _idx: casher_add_10_name
+    _ko: "\uACC4\uC0B0\uB300 \uC9C1\uC6D0"
+    _en: Cashier
+    _ja: "\u30EC\u30B8\u30B9\u30BF\u30C3\u30D5"
+  - _idx: casher_add_01_name
+    _ko: "\uC6B4\uBC18 \uC9C1\uC6D0"
+    _en: Carrier
+    _ja: "\u904B\u642C\u30B9\u30BF\u30C3\u30D5"
+  - _idx: next_stage_name_1
+    _ko: "\uC0DD\uC120\uAD6C\uC774 \uAC00\uAC8C"
+    _en: Grilled Fish Shop
+    _ja: "\u713C\u304D\u9B5A\u5E97"
+  - _idx: next_stage_name_2
+    _ko: "\uCE74\uB808 \uC804\uBB38\uC810"
+    _en: Curry Shop
+    _ja: "\u30AB\u30EC\u30FC\u5C02\u9580\u5E97"
+  - _idx: next_stage_name_3
+    _ko: "\uB514\uC800\uD2B8\uC0F5"
+    _en: Dessert Shop
+    _ja: "\u30C7\u30B6\u30FC\u30C8\u30B7\u30E7\u30C3\u30D7"
+  - _idx: next_stage_name_4
+    _ko: "\uB530\uB048 \uC74C\uC2DD\uC810"
+    _en: Hot Meal Shop
+    _ja: "\u3042\u3063\u305F\u304B\u3054\u98EF\u5E97"
+  - _idx: next_stage_name_5
+    _ko: "\uD280\uAE40 \uAC00\uAC8C"
+    _en: Fried Food Shop
+    _ja: "\u63DA\u3052\u7269\u5E97"
+  - _idx: offline_time_value
+    _ko: "{0}\uBC30"
+    _en: x{0}
+    _ja: "{0}\u500D"
+  - _idx: offline_time_middle_value
+    _ko: "{0}\uBC30 \uBCF4\uC0C1\uBC1B\uAE30"
+    _en: Claim x{0} Reward
+    _ja: "{0}\u500D\u306E\u5831\u916C\u3092\u53D7\u3051\u53D6\u308B"
+  - _idx: str_level
+    _ko: Lv.{0}
+    _en: Lv.{0}
+    _ja: Lv.{0}
+  - _idx: str_lv_max
+    _ko: Lv.MAX
+    _en: Lv.MAX
+    _ja: Lv.MAX
+  - _idx: str_max
+    _ko: MAX
+    _en: MAX
+    _ja: MAX
+  - _idx: ad_vehicle_value
+    _ko: "<color=#00735B>{0}%</color=#00735B> \uC99D\uAC00"
+    _en: <color=#00735B>{0}%</color=#00735B> Increase
+    _ja: "<color=#00735B>{0}%</color=#00735B> \u30A2\u30C3\u30D7"
+  - _idx: minute_time
+    _ko: "{0}\uBD84"
+    _en: '{0} m'
+    _ja: "{0}\u5206"
+  - _idx: food_name_1
+    _ko: "\uBD89\uC740\uC5F4\uAE30"
+    _en: Red Seabream
+    _ja: "\u30BF\u30A4"
+  - _idx: food_name_2
+    _ko: "\uACE0\uB4F1\uC5B4"
+    _en: Mackerel
+    _ja: "\u30B5\u30D0"
+  - _idx: food_name_3
+    _ko: "\uBD89\uC740\uC5F4\uAE30 \uAD6C\uC774"
+    _en: Grilled Red Seabream
+    _ja: "\u713C\u304D\u30BF\u30A4"
+  - _idx: food_name_4
+    _ko: "\uACE0\uB4F1\uC5B4 \uC5F4\uAE30 \uB77C\uBA74"
+    _en: Mackerel & Red Seabream Ramen
+    _ja: "\u30B5\u30D0\uFF06\u30BF\u30A4\u30E9\u30FC\u30E1\u30F3"
+  - _idx: food_name_5
+    _ko: "\b\uC5F4\uB300\uC5B4"
+    _en: Tropical Fish
+    _ja: "\u71B1\u5E2F\u9B5A"
+  - _idx: food_name_6
+    _ko: "\uD06C\uB7A9"
+    _en: Crab
+    _ja: "\u30AB\u30CB"
+  - _idx: food_name_7
+    _ko: "\uC5F4\uB300\uC5B4 \uCE74\uB808"
+    _en: Tropical Fish Curry
+    _ja: "\u71B1\u5E2F\u9B5A\u30AB\u30EC\u30FC"
+  - _idx: food_name_8
+    _ko: "\b\uD06C\uB7A9\uAD6C\uC774"
+    _en: Grilled Crab
+    _ja: "\u713C\u304D\u30AB\u30CB"
+  - _idx: food_name_9
+    _ko: "\uD06C\uB7A9 \uCE74\uB808 \uAD6C\uC774"
+    _en: Crab Curry Grill
+    _ja: "\u30AB\u30CB\u30AB\u30EC\u30FC\u713C\u304D"
+  - _idx: food_name_10
+    _ko: "\uC0AC\uACFC"
+    _en: Apple
+    _ja: "\u30EA\u30F3\u30B4"
+  - _idx: food_name_11
+    _ko: "\uADE4"
+    _en: Tangerine
+    _ja: "\u307F\u304B\u3093"
+  - _idx: food_name_12
+    _ko: "\uC370\uC740\uC0AC\uACFC"
+    _en: Sliced Apple
+    _ja: "\u30B9\u30E9\u30A4\u30B9\u30EA\u30F3\u30B4"
+  - _idx: food_name_13
+    _ko: "\uCF00\uC774\uD06C"
+    _en: Cake
+    _ja: "\u30B1\u30FC\u30AD"
+  - _idx: food_name_14
+    _ko: "\uC624\uC9D5\uC5B4"
+    _en: Squid
+    _ja: "\u30A4\u30AB"
+  - _idx: food_name_15
+    _ko: "\uB300\uAD6C"
+    _en: Cod
+    _ja: "\u30BF\u30E9"
+  - _idx: food_name_16
+    _ko: "\uAD6C\uC6B4 \uC624\uC9D5\uC5B4"
+    _en: Grilled Squid
+    _ja: "\u713C\u304D\u30A4\u30AB"
+  - _idx: food_name_17
+    _ko: "\uB300\uAD6C\uCC1C"
+    _en: Steamed Cod
+    _ja: "\u30BF\u30E9\u84B8\u3057"
+  - _idx: food_name_18
+    _ko: "\uC624\uC9D5\uC5B4 \uB36E\uBC25"
+    _en: Squid Rice Bowl
+    _ja: "\u30A4\u30AB\u4E3C"
+  - _idx: food_name_19
+    _ko: "\uD574\uBB3C \uC2A4\uD29C"
+    _en: Seafood Stew
+    _ja: "\u6D77\u9BAE\u30B7\u30C1\u30E5\u30FC"
+  - _idx: food_name_20
+    _ko: "\uD574\uBB3C \uB9AC\uC870\uB610"
+    _en: Seafood Risotto
+    _ja: "\u6D77\u9BAE\u30EA\u30BE\u30C3\u30C8"
+  - _idx: food_name_21
+    _ko: "\uBD88\uAC00\uC0AC\uB9AC"
+    _en: Starfish
+    _ja: "\u30D2\u30C8\u30C7"
+  - _idx: food_name_22
+    _ko: "\uBC84\uC12F"
+    _en: Mushroom
+    _ja: "\u30AD\u30CE\u30B3"
+  - _idx: food_name_23
+    _ko: "\uC0C8\uC6B0"
+    _en: Shrimp
+    _ja: "\u30A8\u30D3"
+  - _idx: food_name_24
+    _ko: "\uBD88\uAC00\uC0AC\uB9AC \uD280\uAE40"
+    _en: Fried Starfish
+    _ja: "\u30D2\u30C8\u30C7\u306E\u5929\u3077\u3089"
+  - _idx: food_name_25
+    _ko: "\uBAA8\uB4EC \uD280\uAE40"
+    _en: Mixed Tempura
+    _ja: "\u30DF\u30C3\u30AF\u30B9\u5929\u3077\u3089"
+  - _idx: food_name_26
+    _ko: "\uBB38\uC5B4"
+    _en: Octopus
+    _ja: "\u30BF\u30B3"
+  - _idx: food_name_27
+    _ko: "\uD574\uBB3C \uAE4C\uC2A4"
+    _en: Seafood Cutlet
+    _ja: "\u6D77\u9BAE\u30AB\u30C4"
+  - _idx: food_name_28
+    _ko: "\uD280\uAE40\uB36E\uBC25"
+    _en: Tempura Bowl
+    _ja: "\u5929\u4E3C"
+  - _idx: str_time_hour
+    _ko: "\uC2DC\uAC04"
+    _en: H
+    _ja: "\u6642\u9593"
+  - _idx: str_time_minute
+    _ko: "\uBD84"
+    _en: M
+    _ja: "\u5206"
+  - _idx: str_time_second
+    _ko: "\uCD08"
+    _en: S
+    _ja: "\u79D2"
+  - _idx: str_time_day
+    _ko: "\uC77C"
+    _en: Day
+    _ja: "\u65E5"
+  - _idx: food_01
+    _ko: "\uB098\uC758 \uCCAB \uAC00\uAC8C\uB97C \uC5F4\uC5C8\uC5B4! \uC190\uB2D8\uB4E4\uC5D0\uAC8C
+      \uB9DB\uC788\uB294 \uBB3C\uACE0\uAE30\uB97C \uD314\uC544\uBCFC\uAE4C\uB098?
+      \uC9C4\uC5F4\uB300\uB97C \uC124\uCE58\uD574\uBCF4\uC790."
+    _en: "I opened my first shop! Let\u2019s sell some tasty fish to customers! Try
+      placing a display stand."
+    _ja: "\u521D\u3081\u3066\u306E\u304A\u5E97\u3092\u958B\u3044\u305F\u3088\uFF01\u304A\u5BA2\u3055\u3093\u306B\u7F8E\u5473\u3057\u3044\u9B5A\u3092\u58F2\u3063\u3066\u307F\u3088\u3046\uFF01\u307E\u305A\u306F\u9673\u5217\u53F0\u3092\u8A2D\u7F6E\u3057\u3066\u307F\u3088\u3046\u3002"
+  - _idx: food_02
+    _ko: "\uC190\uB2D8\uC774 \uC624\uC168\uB2E4! \uC5BC\uB978 \uB09A\uC2DC\uD130\uB97C
+      \uC138\uC6B0\uACE0 \uB09A\uC2DC\uB97C \uD574\uC640\uC57C\uACA0\uB294\uAC78"
+    _en: A customer has arrived! We need to set up a fishing spot and catch some
+      fish.
+    _ja: "\u304A\u5BA2\u3055\u3093\u304C\u6765\u305F\u3088\uFF01\u65E9\u304F\u91E3\u308A\u5834\u3092\u4F5C\u3063\u3066\u9B5A\u3092\u91E3\u3063\u3066\u3053\u3088\u3046\uFF01"
+  - _idx: food_03
+    _ko: "\uB09A\uC2DC\uB97C \uD558\uBA74 \uC591\uB3D9\uC774\uC5D0 \uBB3C\uACE0\uAE30\uAC00
+      \uC313\uC77C\uAC70\uC57C. \uC7A1\uC740 \uBB3C\uACE0\uAE30\uB4E4\uC744 \uC9C4\uC5F4\uB300\uB85C
+      \uC62E\uACA8 \uD310\uB9E4\uD574\uBCF4\uC790."
+    _en: When you go fishing, the bucket will fill with fish. Move them to the display
+      stand to sell.
+    _ja: "\u91E3\u308A\u3092\u3059\u308B\u3068\u30D0\u30B1\u30C4\u306B\u9B5A\u304C\u305F\u307E\u308B\u3088\u3002\u91E3\u3063\u305F\u9B5A\u3092\u9673\u5217\u53F0\u306B\u904B\u3093\u3067\u8CA9\u58F2\u3057\u3066\u307F\u3088\u3046\u3002"
+  - _idx: food_04
+    _ko: "\uC190\uB2D8\uC774 \uC9C4\uC5F4\uB300\uC5D0\uC11C \uAE30\uB2E4\uB9AC\uACE0
+      \uC788\uC5B4. \uC5BC\uB978 \uCE74\uC6B4\uD130\uC5D0\uC11C \uACC4\uC0B0\uC744
+      \uD574\uC57C\uACA0\uC9C0?"
+    _en: A customer is waiting at the display stand. Better head to the counter to
+      check them out!
+    _ja: "\u304A\u5BA2\u3055\u3093\u304C\u9673\u5217\u53F0\u3067\u5F85\u3063\u3066\u308B\u3088\u3002\u6025\u3044\u3067\u30EC\u30B8\u306B\u884C\u3063\u3066\u4F1A\u8A08\u3057\u3088\u3046\uFF01"
+  - _idx: food_05
+    _ko: "\uC88B\uC544! \uCCAB\uBC88\uC9F8 \uD310\uB9E4\uC5D0 \uC131\uACF5\uD588\uC5B4!
+      \uC774\uC81C \uAC00\uAC8C\uB97C \uC5C5\uADF8\uB808\uC774\uB4DC\uD574\uBCFC\uAE4C?"
+    _en: Nice! Your first sale is complete! How about upgrading the shop now?
+    _ja: "\u3084\u3063\u305F\uFF01\u521D\u3081\u3066\u306E\u8CA9\u58F2\u306B\u6210\u529F\u3057\u305F\u306D\uFF01\u6B21\u306F\u304A\u5E97\u3092\u30A2\u30C3\u30D7\u30B0\u30EC\u30FC\u30C9\u3057\u3066\u307F\u3088\u3046\u304B\uFF1F"
+  - _idx: food_06
+    _ko: "\uB3C8\uC744 \uBC8C\uBA74 \uC9C1\uC6D0\uC744 \uACE0\uC6A9\uD558\uAC70\uB098
+      \uC0C1\uD488\uC744 \uAD00\uB9AC\uD558\uBA70 \uB354 \uC88B\uC740 \uAC00\uAC8C\uB85C
+      \uB9CC\uB4E4\uC5B4\uB098\uAC08 \uC218 \uC788\uC5B4. \uCD5C\uACE0\uC758 \uAC00\uAC8C\uB85C
+      \uB9CC\uB4E4\uC5B4\uBCF4\uC790\uAD6C!!"
+    _en: "Earn money to hire staff and manage products to grow your shop. Let\u2019s
+      make it the best!"
+    _ja: "\u304A\u91D1\u3092\u7A3C\u3052\u3070\u30B9\u30BF\u30C3\u30D5\u3092\u96C7\u3063\u305F\u308A\u5546\u54C1\u3092\u7BA1\u7406\u3057\u305F\u308A\u3057\u3066\u3001\u3082\u3063\u3068\u3044\u3044\u304A\u5E97\u306B\u3067\u304D\u308B\u3088\uFF01\u6700\u9AD8\u306E\u304A\u5E97\u3092\u76EE\u6307\u305D\u3046\uFF01"
+  - _idx: food_07
+    _ko: "\uC88B\uC544, \uC810\uC810 \uAC00\uAC8C\uAC00 \uC644\uC131\uB418\uC5B4\uAC00\uACE0
+      \uC788\uB294\uAC78? \uC5BC\uB9C8\uB098 \uC9C4\uD589\uB410\uB294\uC9C0 \uD655\uC778\uD574\uBCF4\uC790!"
+    _en: "Nice, the shop is coming together! Let\u2019s check how far we\u2019ve
+      progressed."
+    _ja: "\u3044\u3044\u611F\u3058\u306B\u304A\u5E97\u304C\u5B8C\u6210\u3057\u3066\u304D\u305F\u306D\uFF01\u3069\u308C\u304F\u3089\u3044\u9032\u3093\u3060\u304B\u78BA\u8A8D\u3057\u3066\u307F\u3088\u3046\uFF01"
+  - _idx: food_08
+    _ko: "\uC5EC\uAE30\uC5D0\uC120 \uC6B0\uB9AC \uAC00\uAC8C\uC758 \uC644\uC131\uB3C4\uB97C
+      \uD655\uC778\uD560 \uC218 \uC788\uC5B4. \uBAA8\uB4E0 \uC870\uAC74\uC744 \uC644\uB8CC\uD558\uBA74
+      \uB450\uBC88\uC9F8 \uAC00\uAC8C\uC5D0 \uB3C4\uC804\uD560 \uC218 \uC788\uC73C\uB2C8
+      \uC5F4\uC2EC\uD788 \uD574\uBCF4\uC790!"
+    _en: "Here you can see your shop\u2019s completion status. Finish all tasks to
+      unlock the second shop!"
+    _ja: "\u3053\u3053\u3067\u306F\u304A\u5E97\u306E\u5B8C\u6210\u5EA6\u3092\u78BA\u8A8D\u3067\u304D\u308B\u3088\u3002\u3059\u3079\u3066\u306E\u6761\u4EF6\u3092\u6E80\u305F\u305B\u30702\u3064\u76EE\u306E\u304A\u5E97\u306B\u6311\u6226\u3067\u304D\u308B\u304B\u3089\u3001\u304C\u3093\u3070\u3063\u3066\u306D\uFF01"
+  - _idx: food_09
+    _ko: "\uAC00\uAE4C\uC774 \uAC00\uC11C \uD310\uB9E4\uD560\uB824\uBA74 \uBB3C\uACE0\uAE30
+      \uC9C4\uC5F4\uB300\uB3C4 \uD544\uC694\uD574!! \uBB3C\uACE0\uAE30 \uC9C4\uC5F4\uB300\uB3C4
+      \uC5F4\uC5B4\uBCF4\uC790!"
+    _en: "To sell up close, you\u2019ll need a fish display stand! Let\u2019s open
+      one now!"
+    _ja: "\u8FD1\u304F\u3067\u8CA9\u58F2\u3059\u308B\u306B\u306F\u9B5A\u306E\u9673\u5217\u53F0\u3082\u5FC5\u8981\u3060\u3088\uFF01\u9B5A\u306E\u9673\u5217\u53F0\u3082\u958B\u653E\u3057\u3066\u307F\u3088\u3046\uFF01"
+  - _idx: popup_upgrade_name
+    _ko: "\uC0C1\uD488\uAD00\uB9AC"
+    _en: Product Management
+    _ja: "\u5546\u54C1\u7BA1\u7406"
+  - _idx: popup_upgrade_product
+    _ko: "\uC0C1\uD488"
+    _en: Product
+    _ja: "\u5546\u54C1"
+  - _idx: popup_upgrade_facility
+    _ko: "\uC2DC\uC124"
+    _en: Facility
+    _ja: "\u65BD\u8A2D"
+  - _idx: popup_next_stage
+    _ko: "\uC2DC\uC124\uAD00\uB9AC \uC804\uBD80 \uC644\uB8CC"
+    _en: All Facility Management Complete
+    _ja: "\u3059\u3079\u3066\u306E\u65BD\u8A2D\u7BA1\u7406\u5B8C\u4E86"
+  - _idx: popup_next_level_max
+    _ko: "\uBAA8\uB4E0 \uC0C1\uD488 \uCD5C\uACE0 \uB808\uBCA8 \uB2EC\uC131"
+    _en: All Products Max Level
+    _ja: "\u5168\u5546\u54C1\u30EC\u30D9\u30EBMAX"
+  - _idx: popup_next_stage
+    _ko: "\uB2E4\uC74C \uC2A4\uD14C\uC774\uC9C0"
+    _en: Next Stage
+    _ja: "\u6B21\u306E\u30B9\u30C6\u30FC\u30B8"
+  - _idx: popup_ad_vehicle
+    _ko: "\uBBF8\uC5ED \uC591\uD0C4\uC790 \uB300\uC5EC!"
+    _en: Seaweed Carpet Rental!
+    _ja: "\u30EF\u30AB\u30E1\u30AB\u30FC\u30DA\u30C3\u30C8\u30EC\u30F3\u30BF\u30EB\uFF01"
+  - _idx: popup_ad_speed
+    _ko: "\uD50C\uB808\uC774\uC5B4 \uC774\uB3D9\uC18D\uB3C4!"
+    _en: Player Movement Speed!
+    _ja: "\u30D7\u30EC\u30A4\u30E4\u30FC\u79FB\u52D5\u901F\u5EA6\uFF01"
+  - _idx: str_free
+    _ko: "\uBB34\uB8CC"
+    _en: Free
+    _ja: "\u7121\u6599"
+  - _idx: next_move
+    _ko: "\uC774\uB3D9"
+    _en: Move
+    _ja: "\u79FB\u52D5"
+  - _idx: str_popup_option_language_en
+    _ko: English
+    _en: English
+    _ja: English
+  - _idx: str_popup_option_language_ko
+    _ko: Korea
+    _en: Korea
+    _ja: Korea
+  - _idx: str_popup_option_language_ja
+    _ko: Japen
+    _en: Japen
+    _ja: Japen
+  - _idx: str_no_ads
+    _ko: "\uAC15\uC81C\uAD11\uACE0"
+    _en: NoAds
+    _ja: "\u5E83\u544A\u306A\u3057"
+  - _idx: str_facility
+    _ko: "\uC2DC\uC124 \uAD00\uB9AC"
+    _en: Facility Mgmt
+    _ja: "\u65BD\u8A2D\u7BA1\u7406\u30B7\u30B9\u30C6\u30E0"
+  - _idx: str_facility_clear
+    _ko: "\uC2DC\uC124 \uAD00\uB9AC\uB97C \uC804\uBD80 \uC644\uB8CC \uD588\uC5B4\uC694!"
+    _en: Facility management is complete!
+    _ja: "\u65BD\u8A2D\u7BA1\u7406\u304C\u3059\u3079\u3066\u5B8C\u4E86\u3057\u307E\u3057\u305F\uFF01"

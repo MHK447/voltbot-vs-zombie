@@ -1,0 +1,890 @@
+fileFormatVersion: 2
+guid: 2634f7e2ee2ac2e4d8eb1df4490905a3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4725831369849851085
+    second: Manager_0
+  - first:
+      213: -9072289296139460833
+    second: Manager_1
+  - first:
+      213: -4776543348737569917
+    second: Manager_2
+  - first:
+      213: -1690788415460509455
+    second: Manager_3
+  - first:
+      213: 8878804931570044248
+    second: Manager_4
+  - first:
+      213: 4558931313843447340
+    second: Manager_5
+  - first:
+      213: -5489064569745631460
+    second: Manager_6
+  - first:
+      213: -2785577794981990396
+    second: Manager_7
+  - first:
+      213: -5816766671069748539
+    second: Manager_8
+  - first:
+      213: -8033551590430715232
+    second: Manager_9
+  - first:
+      213: -4738027740986574237
+    second: Manager_10
+  - first:
+      213: -7480374429000825724
+    second: Manager_11
+  - first:
+      213: -113475102942294575
+    second: Manager_12
+  - first:
+      213: -3166863334220830162
+    second: Manager_13
+  - first:
+      213: -7260205234430821961
+    second: Manager_14
+  - first:
+      213: -6673905687466355731
+    second: Manager_15
+  - first:
+      213: 6629020951596043616
+    second: Manager_16
+  - first:
+      213: 621990456651681089
+    second: Manager_17
+  - first:
+      213: 2249063925384504119
+    second: Manager_18
+  - first:
+      213: -3818894746389213117
+    second: Manager_19
+  - first:
+      213: -3884291109365592116
+    second: Manager_20
+  - first:
+      213: -7812460715114870524
+    second: Manager_21
+  - first:
+      213: 2935281215501605182
+    second: Manager_22
+  - first:
+      213: -3517204234708581174
+    second: Manager_23
+  - first:
+      213: -8108581076272850746
+    second: Manager_24
+  - first:
+      213: -8197359415447864754
+    second: Manager_25
+  - first:
+      213: 2668606689422626421
+    second: Manager_26
+  - first:
+      213: 8946785821175880994
+    second: Manager_27
+  - first:
+      213: 1728992912022853336
+    second: Manager_28
+  - first:
+      213: -4104311649671533985
+    second: Manager_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: 10
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 51
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 51
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Manager_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 315
+        width: 160
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcc4c44a796859140800000000000000
+      internalID: 4725831369849851085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_1
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 315
+        width: 70
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1f5704c3f0c81280800000000000000
+      internalID: -9072289296139460833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_2
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 372
+        width: 11
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38b0e3ca12f46bdb0800000000000000
+      internalID: -4776543348737569917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_3
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 316
+        width: 57
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f87122f4ec1988e0800000000000000
+      internalID: -1690788415460509455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_4
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 378
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85d08381b0ad73b70800000000000000
+      internalID: 8878804931570044248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_5
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 382
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c262b0d20e3944f30800000000000000
+      internalID: 4558931313843447340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_6
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 340
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c17112b2bdce2d3b0800000000000000
+      internalID: -5489064569745631460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_7
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 315
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 400f1eb01c3a759d0800000000000000
+      internalID: -2785577794981990396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_8
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 189
+        width: 26
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c26e8df781b64fa0800000000000000
+      internalID: -5816766671069748539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_9
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 298
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a25a9f5467138090800000000000000
+      internalID: -8033551590430715232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_10
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 313
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36a7c8a6fd42f3eb0800000000000000
+      internalID: -4738027740986574237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_11
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 234
+        width: 239
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4848d7ce61f503890800000000000000
+      internalID: -7480374429000825724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_12
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 268
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dd064ebefadc6ef0800000000000000
+      internalID: -113475102942294575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_13
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 229
+        width: 82
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2aee87839a0d04d0800000000000000
+      internalID: -3166863334220830162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_14
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 282
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b9b1553ec19e3b90800000000000000
+      internalID: -7260205234430821961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_15
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 270
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de3db1a13268163a0800000000000000
+      internalID: -6673905687466355731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_16
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 272
+        width: 39
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06d0184fe630ffb50800000000000000
+      internalID: 6629020951596043616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_17
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 238
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14d086e5601c1a800800000000000000
+      internalID: 621990456651681089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_18
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 213
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73360bd59b7463f10800000000000000
+      internalID: 2249063925384504119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_19
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 229
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3409dd6267f800bc0800000000000000
+      internalID: -3818894746389213117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_20
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 160
+        width: 82
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccf4e0ed0d9381ac0800000000000000
+      internalID: -3884291109365592116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_21
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 198
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40942ed2f50949390800000000000000
+      internalID: -7812460715114870524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_22
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 201
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3999d5b6b63cb820800000000000000
+      internalID: 2935281215501605182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_23
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 1
+        width: 48
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac402bb2261603fc0800000000000000
+      internalID: -3517204234708581174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_24
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 174
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c85d44e878887f80800000000000000
+      internalID: -8108581076272850746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_25
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 176
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4ab60a0b012d3e80800000000000000
+      internalID: -8197359415447864754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_26
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 80
+        width: 82
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57e444825abc80520800000000000000
+      internalID: 2668606689422626421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_27
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 142
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22d90b06d4e592c70800000000000000
+      internalID: 8946785821175880994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_28
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 80
+        width: 36
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d65a4494ed9ef710800000000000000
+      internalID: 1728992912022853336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Manager_29
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 1
+        width: 117
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5aa4d9dc4e8a07c0800000000000000
+      internalID: -4104311649671533985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Manager_0: 4725831369849851085
+      Manager_1: -9072289296139460833
+      Manager_10: -4738027740986574237
+      Manager_11: -7480374429000825724
+      Manager_12: -113475102942294575
+      Manager_13: -3166863334220830162
+      Manager_14: -7260205234430821961
+      Manager_15: -6673905687466355731
+      Manager_16: 6629020951596043616
+      Manager_17: 621990456651681089
+      Manager_18: 2249063925384504119
+      Manager_19: -3818894746389213117
+      Manager_2: -4776543348737569917
+      Manager_20: -3884291109365592116
+      Manager_21: -7812460715114870524
+      Manager_22: 2935281215501605182
+      Manager_23: -3517204234708581174
+      Manager_24: -8108581076272850746
+      Manager_25: -8197359415447864754
+      Manager_26: 2668606689422626421
+      Manager_27: 8946785821175880994
+      Manager_28: 1728992912022853336
+      Manager_29: -4104311649671533985
+      Manager_3: -1690788415460509455
+      Manager_4: 8878804931570044248
+      Manager_5: 4558931313843447340
+      Manager_6: -5489064569745631460
+      Manager_7: -2785577794981990396
+      Manager_8: -5816766671069748539
+      Manager_9: -8033551590430715232
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

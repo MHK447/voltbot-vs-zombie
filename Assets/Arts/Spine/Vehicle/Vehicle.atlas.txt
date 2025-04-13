@@ -1,0 +1,8 @@
+Vehicle.png
+size:512,512
+filter:Linear,Linear
+pma:true
+Vehicle_Body
+bounds:2,215,329,219
+Vehicle_Shadow01
+bounds:2,2,323,211

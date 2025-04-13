@@ -1,0 +1,1340 @@
+fileFormatVersion: 2
+guid: 1e730cbed3bff4f45a69e715d093614b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1370306187600817185
+    second: Consumer_0
+  - first:
+      213: 6756799548838349405
+    second: Consumer_1
+  - first:
+      213: -7287914283711321521
+    second: Consumer_2
+  - first:
+      213: 710767799855502287
+    second: Consumer_3
+  - first:
+      213: 3017322993206846389
+    second: Consumer_4
+  - first:
+      213: -7726248165576427649
+    second: Consumer_5
+  - first:
+      213: -1024592078361334820
+    second: Consumer_6
+  - first:
+      213: 530024592092439075
+    second: Consumer_7
+  - first:
+      213: -1623192517433357240
+    second: Consumer_8
+  - first:
+      213: -8441678959817056082
+    second: Consumer_9
+  - first:
+      213: -7172792560220105391
+    second: Consumer_10
+  - first:
+      213: 4061918233279837194
+    second: Consumer_11
+  - first:
+      213: 5518989552478639046
+    second: Consumer_12
+  - first:
+      213: -9038481854180508831
+    second: Consumer_13
+  - first:
+      213: 1786177576342268224
+    second: Consumer_14
+  - first:
+      213: 6923632332436676809
+    second: Consumer_15
+  - first:
+      213: -6517923619161213363
+    second: Consumer_16
+  - first:
+      213: -712174655265841579
+    second: Consumer_17
+  - first:
+      213: -4223825471169212990
+    second: Consumer_18
+  - first:
+      213: 5725809323724159358
+    second: Consumer_19
+  - first:
+      213: 973581324642677516
+    second: Consumer_20
+  - first:
+      213: -398076819560990718
+    second: Consumer_21
+  - first:
+      213: -3539535831919648930
+    second: Consumer_22
+  - first:
+      213: 5230944775680946151
+    second: Consumer_23
+  - first:
+      213: -6803621266876676997
+    second: Consumer_24
+  - first:
+      213: 3451342663030455331
+    second: Consumer_25
+  - first:
+      213: -8950395622170616088
+    second: Consumer_26
+  - first:
+      213: -17812483364205945
+    second: Consumer_27
+  - first:
+      213: -2790504718038344641
+    second: Consumer_28
+  - first:
+      213: 8067679600615574260
+    second: Consumer_29
+  - first:
+      213: 8873958354634961391
+    second: Consumer_30
+  - first:
+      213: 7897533355290632120
+    second: Consumer_31
+  - first:
+      213: 8442891834805710491
+    second: Consumer_32
+  - first:
+      213: -3690191249942154978
+    second: Consumer_33
+  - first:
+      213: 1242447332179259123
+    second: Consumer_34
+  - first:
+      213: -2211785654706215755
+    second: Consumer_35
+  - first:
+      213: 7903147586427552448
+    second: Consumer_36
+  - first:
+      213: 6163759374612032010
+    second: Consumer_37
+  - first:
+      213: -1517947856217829120
+    second: Consumer_38
+  - first:
+      213: -3911664630365019131
+    second: Consumer_39
+  - first:
+      213: 1272763651701725713
+    second: Consumer_40
+  - first:
+      213: 945585672300019687
+    second: Consumer_41
+  - first:
+      213: 2964284670114440254
+    second: Consumer_42
+  - first:
+      213: -7923284869915452881
+    second: Consumer_43
+  - first:
+      213: -3217913099153251843
+    second: Consumer_44
+  - first:
+      213: 4231278183268138768
+    second: Consumer_45
+  - first:
+      213: 4693030041396532717
+    second: Consumer_46
+  - first:
+      213: -6053888615136588291
+    second: Consumer_47
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: 10
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 51
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 51
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Consumer_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 915
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12c6779a73e440310800000000000000
+      internalID: 1370306187600817185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 871
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5a870ff369f4cd50800000000000000
+      internalID: 6756799548838349405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 827
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4a24ed62902cda90800000000000000
+      internalID: -7287914283711321521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 778
+        width: 72
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc35c245c872dd900800000000000000
+      internalID: 710767799855502287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 756
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b366be964fafd920800000000000000
+      internalID: 3017322993206846389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_5
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 724
+        width: 70
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f77bd449a3ad6c490800000000000000
+      internalID: -7726248165576427649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_6
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 756
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdbe799eeeae7c1f0800000000000000
+      internalID: -1024592078361334820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_7
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 724
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32224edee860b5700800000000000000
+      internalID: 530024592092439075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 492
+        width: 238
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84c005461034979e0800000000000000
+      internalID: -1623192517433357240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_9
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 480
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea0273446b129da80800000000000000
+      internalID: -8441678959817056082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_10
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 260
+        width: 238
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15514886b2f157c90800000000000000
+      internalID: -7172792560220105391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_11
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 435
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a04b359bc15de5830800000000000000
+      internalID: 4061918233279837194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_12
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 432
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c3d492d1c3679c40800000000000000
+      internalID: 5518989552478639046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_13
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 390
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16bb1cc34acd09280800000000000000
+      internalID: -9038481854180508831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_14
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 390
+        width: 42
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04926a7ca07c9c810800000000000000
+      internalID: 1786177576342268224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_15
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 352
+        width: 72
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c02c426ceea51060800000000000000
+      internalID: 6923632332436676809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_16
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 335
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4674c6700fab85a0800000000000000
+      internalID: -6517923619161213363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_17
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 311
+        width: 68
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55ed7de9ce8dd16f0800000000000000
+      internalID: -712174655265841579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_18
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 335
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cd46bddc15f165c0800000000000000
+      internalID: -4223825471169212990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_19
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 311
+        width: 43
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e79b2384e39267f40800000000000000
+      internalID: 5725809323724159358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_20
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 311
+        width: 43
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c03f7477e0bd28d00800000000000000
+      internalID: 973581324642677516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_21
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 260
+        width: 189
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 208ffb0ed3fb97af0800000000000000
+      internalID: -398076819560990718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_22
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 260
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5f99a40aea01eec0800000000000000
+      internalID: -3539535831919648930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_23
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 28
+        width: 238
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7efe52a0f8c089840800000000000000
+      internalID: 5230944775680946151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_24
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 28
+        width: 238
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b74c581418ea491a0800000000000000
+      internalID: -6803621266876676997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_25
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 216
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32cb414bdd1a5ef20800000000000000
+      internalID: 3451342663030455331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_26
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 174
+        width: 42
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ee1f455a9ec9c380800000000000000
+      internalID: -8950395622170616088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_27
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 129
+        width: 71
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78a428804a7b0cff0800000000000000
+      internalID: -17812483364205945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_28
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 82
+        width: 80
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3cd5416eb22649d0800000000000000
+      internalID: -2790504718038344641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_29
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 82
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fa4b543ad726ff60800000000000000
+      internalID: 8067679600615574260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_30
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 70
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe170a77b12a62b70800000000000000
+      internalID: 8873958354634961391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_31
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 70
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bf95e36ebca99d60800000000000000
+      internalID: 7897533355290632120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_32
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 46
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9ee3a2346d2b2570800000000000000
+      internalID: 8442891834805710491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_33
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 60
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1171f11c9ec9ccc0800000000000000
+      internalID: -3690191249942154978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_34
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 28
+        width: 70
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fe2dae044f0e3110800000000000000
+      internalID: 1242447332179259123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_35
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 60
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b46ee36aa82e41e0800000000000000
+      internalID: -2211785654706215755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_36
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 47
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c200807bde9dad60800000000000000
+      internalID: 7903147586427552448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_37
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 49
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0aebb48e721a8550800000000000000
+      internalID: 6163759374612032010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_38
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 28
+        width: 68
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 001129a977a2feae0800000000000000
+      internalID: -1517947856217829120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_39
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 49
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50422aa5eb9f6b9c0800000000000000
+      internalID: -3911664630365019131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_40
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 28
+        width: 43
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11ad5be3cc3c9a110800000000000000
+      internalID: 1272763651701725713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_41
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 28
+        width: 43
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ef3426b8256f1d00800000000000000
+      internalID: 945585672300019687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_42
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 28
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e34ae47b331432920800000000000000
+      internalID: 2964284670114440254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_43
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 28
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2a5672e366da0290800000000000000
+      internalID: -7923284869915452881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_44
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 28
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df1e4e6e51da753d0800000000000000
+      internalID: -3217913099153251843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_45
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 28
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01fbe83e61588ba30800000000000000
+      internalID: 4231278183268138768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_46
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 28
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de55da935fdf02140800000000000000
+      internalID: 4693030041396532717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Consumer_47
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 45
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfd800121644cfba0800000000000000
+      internalID: -6053888615136588291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Consumer_0: 1370306187600817185
+      Consumer_1: 6756799548838349405
+      Consumer_10: -7172792560220105391
+      Consumer_11: 4061918233279837194
+      Consumer_12: 5518989552478639046
+      Consumer_13: -9038481854180508831
+      Consumer_14: 1786177576342268224
+      Consumer_15: 6923632332436676809
+      Consumer_16: -6517923619161213363
+      Consumer_17: -712174655265841579
+      Consumer_18: -4223825471169212990
+      Consumer_19: 5725809323724159358
+      Consumer_2: -7287914283711321521
+      Consumer_20: 973581324642677516
+      Consumer_21: -398076819560990718
+      Consumer_22: -3539535831919648930
+      Consumer_23: 5230944775680946151
+      Consumer_24: -6803621266876676997
+      Consumer_25: 3451342663030455331
+      Consumer_26: -8950395622170616088
+      Consumer_27: -17812483364205945
+      Consumer_28: -2790504718038344641
+      Consumer_29: 8067679600615574260
+      Consumer_3: 710767799855502287
+      Consumer_30: 8873958354634961391
+      Consumer_31: 7897533355290632120
+      Consumer_32: 8442891834805710491
+      Consumer_33: -3690191249942154978
+      Consumer_34: 1242447332179259123
+      Consumer_35: -2211785654706215755
+      Consumer_36: 7903147586427552448
+      Consumer_37: 6163759374612032010
+      Consumer_38: -1517947856217829120
+      Consumer_39: -3911664630365019131
+      Consumer_4: 3017322993206846389
+      Consumer_40: 1272763651701725713
+      Consumer_41: 945585672300019687
+      Consumer_42: 2964284670114440254
+      Consumer_43: -7923284869915452881
+      Consumer_44: -3217913099153251843
+      Consumer_45: 4231278183268138768
+      Consumer_46: 4693030041396532717
+      Consumer_47: -6053888615136588291
+      Consumer_5: -7726248165576427649
+      Consumer_6: -1024592078361334820
+      Consumer_7: 530024592092439075
+      Consumer_8: -1623192517433357240
+      Consumer_9: -8441678959817056082
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

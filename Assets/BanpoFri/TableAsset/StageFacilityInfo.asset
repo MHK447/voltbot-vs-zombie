@@ -1,0 +1,383 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cacfef892848547baadc2672b41d1eb1, type: 3}
+  m_Name: StageFacilityInfo
+  m_EditorClassIdentifier: 
+  mFirstKey:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  mSecondKey:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  mDataList:
+  - _stageidx: 1
+    _openorder: 0
+    _facilityidx: 1000
+    _open_cost: 30
+  - _stageidx: 1
+    _openorder: 1
+    _facilityidx: 1
+    _open_cost: 20
+  - _stageidx: 1
+    _openorder: 2
+    _facilityidx: 101
+    _open_cost: 15
+  - _stageidx: 1
+    _openorder: 3
+    _facilityidx: 2
+    _open_cost: 200
+  - _stageidx: 1
+    _openorder: 4
+    _facilityidx: 102
+    _open_cost: 100
+  - _stageidx: 1
+    _openorder: 5
+    _facilityidx: 5
+    _open_cost: 500
+  - _stageidx: 1
+    _openorder: 6
+    _facilityidx: 1001
+    _open_cost: 900
+  - _stageidx: 1
+    _openorder: 7
+    _facilityidx: 6
+    _open_cost: 1000
+  - _stageidx: 1
+    _openorder: 8
+    _facilityidx: 1002
+    _open_cost: 1500
+  - _stageidx: 2
+    _openorder: 0
+    _facilityidx: 1000
+    _open_cost: 30
+  - _stageidx: 2
+    _openorder: 1
+    _facilityidx: 103
+    _open_cost: 15
+  - _stageidx: 2
+    _openorder: 2
+    _facilityidx: 3
+    _open_cost: 20
+  - _stageidx: 2
+    _openorder: 3
+    _facilityidx: 7
+    _open_cost: 2500
+  - _stageidx: 2
+    _openorder: 4
+    _facilityidx: 1003
+    _open_cost: 5000
+  - _stageidx: 2
+    _openorder: 5
+    _facilityidx: 104
+    _open_cost: 10000
+  - _stageidx: 2
+    _openorder: 6
+    _facilityidx: 4
+    _open_cost: 15000
+  - _stageidx: 2
+    _openorder: 7
+    _facilityidx: 8
+    _open_cost: 50000
+  - _stageidx: 2
+    _openorder: 8
+    _facilityidx: 1004
+    _open_cost: 50000
+  - _stageidx: 2
+    _openorder: 9
+    _facilityidx: 9
+    _open_cost: 100000
+  - _stageidx: 2
+    _openorder: 10
+    _facilityidx: 1005
+    _open_cost: 110000
+  - _stageidx: 3
+    _openorder: 0
+    _facilityidx: 1000
+    _open_cost: 30
+  - _stageidx: 3
+    _openorder: 1
+    _facilityidx: 105
+    _open_cost: 15
+  - _stageidx: 3
+    _openorder: 2
+    _facilityidx: 10
+    _open_cost: 20
+  - _stageidx: 3
+    _openorder: 3
+    _facilityidx: 106
+    _open_cost: 2500
+  - _stageidx: 3
+    _openorder: 4
+    _facilityidx: 11
+    _open_cost: 3000
+  - _stageidx: 3
+    _openorder: 5
+    _facilityidx: 12
+    _open_cost: 25000
+  - _stageidx: 3
+    _openorder: 6
+    _facilityidx: 1006
+    _open_cost: 25000
+  - _stageidx: 3
+    _openorder: 7
+    _facilityidx: 13
+    _open_cost: 100000
+  - _stageidx: 3
+    _openorder: 8
+    _facilityidx: 1007
+    _open_cost: 100000
+  - _stageidx: 4
+    _openorder: 0
+    _facilityidx: 1000
+    _open_cost: 30
+  - _stageidx: 4
+    _openorder: 1
+    _facilityidx: 107
+    _open_cost: 15
+  - _stageidx: 4
+    _openorder: 2
+    _facilityidx: 14
+    _open_cost: 50
+  - _stageidx: 4
+    _openorder: 3
+    _facilityidx: 16
+    _open_cost: 25000
+  - _stageidx: 4
+    _openorder: 4
+    _facilityidx: 1008
+    _open_cost: 25000
+  - _stageidx: 4
+    _openorder: 5
+    _facilityidx: 108
+    _open_cost: 500000
+  - _stageidx: 4
+    _openorder: 6
+    _facilityidx: 15
+    _open_cost: 500000
+  - _stageidx: 4
+    _openorder: 7
+    _facilityidx: 17
+    _open_cost: 3000000
+  - _stageidx: 4
+    _openorder: 8
+    _facilityidx: 1009
+    _open_cost: 6000000
+  - _stageidx: 4
+    _openorder: 9
+    _facilityidx: 18
+    _open_cost: 10000000
+  - _stageidx: 4
+    _openorder: 10
+    _facilityidx: 1010
+    _open_cost: 6000000
+  - _stageidx: 4
+    _openorder: 11
+    _facilityidx: 19
+    _open_cost: 30000000
+  - _stageidx: 4
+    _openorder: 12
+    _facilityidx: 1011
+    _open_cost: 35000000
+  - _stageidx: 4
+    _openorder: 13
+    _facilityidx: 20
+    _open_cost: 15000000
+  - _stageidx: 4
+    _openorder: 14
+    _facilityidx: 1012
+    _open_cost: 10000000
+  - _stageidx: 5
+    _openorder: 0
+    _facilityidx: 1000
+    _open_cost: 30
+  - _stageidx: 5
+    _openorder: 1
+    _facilityidx: 109
+    _open_cost: 15
+  - _stageidx: 5
+    _openorder: 2
+    _facilityidx: 21
+    _open_cost: 20
+  - _stageidx: 5
+    _openorder: 3
+    _facilityidx: 1013
+    _open_cost: 25000
+  - _stageidx: 5
+    _openorder: 4
+    _facilityidx: 24
+    _open_cost: 25000
+  - _stageidx: 5
+    _openorder: 5
+    _facilityidx: 110
+    _open_cost: 500000
+  - _stageidx: 5
+    _openorder: 6
+    _facilityidx: 22
+    _open_cost: 500000
+  - _stageidx: 5
+    _openorder: 7
+    _facilityidx: 1014
+    _open_cost: 3000000
+  - _stageidx: 5
+    _openorder: 8
+    _facilityidx: 25
+    _open_cost: 6000000
+  - _stageidx: 5
+    _openorder: 9
+    _facilityidx: 1015
+    _open_cost: 10000000
+  - _stageidx: 5
+    _openorder: 10
+    _facilityidx: 26
+    _open_cost: 6000000
+  - _stageidx: 5
+    _openorder: 11
+    _facilityidx: 111
+    _open_cost: 30000000
+  - _stageidx: 5
+    _openorder: 12
+    _facilityidx: 23
+    _open_cost: 35000000
+  - _stageidx: 5
+    _openorder: 13
+    _facilityidx: 27
+    _open_cost: 15000000
+  - _stageidx: 5
+    _openorder: 14
+    _facilityidx: 1016
+    _open_cost: 10000000
+  - _stageidx: 5
+    _openorder: 15
+    _facilityidx: 28
+    _open_cost: 50000000
+  - _stageidx: 5
+    _openorder: 16
+    _facilityidx: 1017
+    _open_cost: 100000000

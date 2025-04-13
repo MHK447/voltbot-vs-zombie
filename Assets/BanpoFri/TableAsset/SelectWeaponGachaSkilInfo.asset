@@ -1,0 +1,226 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2291dc59c72340679610945cdd825c0, type: 3}
+  m_Name: SelectWeaponGachaSkilInfo
+  m_EditorClassIdentifier: 
+  mFirstKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  mSecondKey: []
+  mDataList:
+  - _skill_idx: 1
+    _select_type: 1
+    _value_1: 10
+    _value_2: 5
+    _level_buff_value: 10
+    _icon: Icon_Skill_52
+    _desc_1: weapon_skill_name_1
+    _desc_2: weapon_skill_desc_1
+    _instantuse: -1
+    _desc_type: 1
+  - _skill_idx: 2
+    _select_type: 1
+    _value_1: 10
+    _value_2: 5
+    _level_buff_value: 10
+    _icon: Icon_Skill_67
+    _desc_1: weapon_skill_name_2
+    _desc_2: weapon_skill_desc_2
+    _instantuse: -1
+    _desc_type: 1
+  - _skill_idx: 3
+    _select_type: 1
+    _value_1: 10
+    _value_2: 5
+    _level_buff_value: 10
+    _icon: Icon_Skill_66
+    _desc_1: weapon_skill_name_3
+    _desc_2: weapon_skill_desc_3
+    _instantuse: -1
+    _desc_type: 1
+  - _skill_idx: 4
+    _select_type: 1
+    _value_1: 10
+    _value_2: 5
+    _level_buff_value: 10
+    _icon: Icon_Skill_43
+    _desc_1: weapon_skill_name_4
+    _desc_2: weapon_skill_desc_4
+    _instantuse: -1
+    _desc_type: 1
+  - _skill_idx: 6
+    _select_type: 2
+    _value_1: 10
+    _value_2: 5
+    _level_buff_value: 10
+    _icon: Icon_Skill_003
+    _desc_1: weapon_skill_name_6
+    _desc_2: weapon_skill_desc_6
+    _instantuse: -1
+    _desc_type: 1
+  - _skill_idx: 7
+    _select_type: 2
+    _value_1: 10
+    _value_2: 5
+    _level_buff_value: 5
+    _icon: Icon_Skill_001
+    _desc_1: weapon_skill_name_7
+    _desc_2: weapon_skill_desc_7
+    _instantuse: -1
+    _desc_type: 1
+  - _skill_idx: 8
+    _select_type: 2
+    _value_1: 10
+    _value_2: 5
+    _level_buff_value: 10
+    _icon: Icon_Skill_14
+    _desc_1: weapon_skill_name_8
+    _desc_2: weapon_skill_desc_8
+    _instantuse: -1
+    _desc_type: 1
+  - _skill_idx: 9
+    _select_type: 2
+    _value_1: 10
+    _value_2: 5
+    _level_buff_value: 10
+    _icon: Icon_Skill_23
+    _desc_1: weapon_skill_name_9
+    _desc_2: weapon_skill_desc_9
+    _instantuse: -1
+    _desc_type: 1
+  - _skill_idx: 10
+    _select_type: 1
+    _value_1: 10
+    _value_2: 5
+    _level_buff_value: 10
+    _icon: Icon_Skill_009
+    _desc_1: weapon_skill_name_10
+    _desc_2: weapon_skill_desc_10
+    _instantuse: 1
+    _desc_type: -1
+  - _skill_idx: 11
+    _select_type: 2
+    _value_1: 10
+    _value_2: 5
+    _level_buff_value: 10
+    _icon: Icon_Skill_005
+    _desc_1: weapon_skill_name_11
+    _desc_2: weapon_skill_desc_11
+    _instantuse: 1
+    _desc_type: -1
+  - _skill_idx: 12
+    _select_type: 2
+    _value_1: 70
+    _value_2: 5
+    _level_buff_value: 50
+    _icon: Icon_Skill_26
+    _desc_1: weapon_skill_name_12
+    _desc_2: weapon_skill_desc_12
+    _instantuse: 1
+    _desc_type: 1
+  - _skill_idx: 13
+    _select_type: 2
+    _value_1: 10
+    _value_2: 5
+    _level_buff_value: 10
+    _icon: Icon_Skill_40
+    _desc_1: weapon_skill_name_13
+    _desc_2: weapon_skill_desc_13
+    _instantuse: -1
+    _desc_type: 1
+  - _skill_idx: 14
+    _select_type: 1
+    _value_1: 10
+    _value_2: 5
+    _level_buff_value: 10
+    _icon: Icon_Skill_66
+    _desc_1: weapon_skill_name_14
+    _desc_2: weapon_skill_desc_14
+    _instantuse: -1
+    _desc_type: 1
+  - _skill_idx: 15
+    _select_type: 1
+    _value_1: 10
+    _value_2: 5
+    _level_buff_value: 10
+    _icon: Icon_Skill_30
+    _desc_1: weapon_skill_name_15
+    _desc_2: weapon_skill_desc_15
+    _instantuse: -1
+    _desc_type: 1
+  - _skill_idx: 16
+    _select_type: 1
+    _value_1: 10
+    _value_2: 5
+    _level_buff_value: 10
+    _icon: Icon_Skill_53
+    _desc_1: weapon_skill_name_16
+    _desc_2: weapon_skill_desc_16
+    _instantuse: -1
+    _desc_type: 1
+  - _skill_idx: 17
+    _select_type: 1
+    _value_1: 10
+    _value_2: 5
+    _level_buff_value: 10
+    _icon: Icon_Skill_48
+    _desc_1: weapon_skill_name_17
+    _desc_2: weapon_skill_desc_17
+    _instantuse: -1
+    _desc_type: 1
+  - _skill_idx: 18
+    _select_type: 1
+    _value_1: 10
+    _value_2: 5
+    _level_buff_value: 10
+    _icon: Icon_Skill_50
+    _desc_1: weapon_skill_name_18
+    _desc_2: weapon_skill_desc_18
+    _instantuse: -1
+    _desc_type: 1
+  - _skill_idx: 19
+    _select_type: 1
+    _value_1: 10
+    _value_2: 5
+    _level_buff_value: 10
+    _icon: Icon_Skill_28
+    _desc_1: weapon_skill_name_19
+    _desc_2: weapon_skill_desc_19
+    _instantuse: -1
+    _desc_type: 1
+  - _skill_idx: 20
+    _select_type: 1
+    _value_1: 10
+    _value_2: 5
+    _level_buff_value: 10
+    _icon: Icon_Skill_27
+    _desc_1: weapon_skill_name_20
+    _desc_2: weapon_skill_desc_20
+    _instantuse: -1
+    _desc_type: 1

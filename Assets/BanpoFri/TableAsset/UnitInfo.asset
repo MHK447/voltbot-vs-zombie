@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f355247ab8c459c8ab6d941d73d128, type: 3}
+  m_Name: UnitInfo
+  m_EditorClassIdentifier: 
+  mFirstKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  mSecondKey: []
+  mDataList:
+  - _unit_idx: 1
+    _unit_type: 1
+    _hp: 1
+    _movespeed: 1
+    _attack: 1
+    _attack_speed: 1
+    _critical_percent: 
+    _prefab: Enemy_01
+    _image: InGame_Star
+    _star_image: Star_1
+  - _unit_idx: 2
+    _unit_type: 1
+    _hp: 2
+    _movespeed: 3
+    _attack: 2
+    _attack_speed: 1
+    _critical_percent: 
+    _prefab: Enemy_01
+    _image: InGame_Star
+    _star_image: Star_2
+  - _unit_idx: 3
+    _unit_type: 1
+    _hp: 12
+    _movespeed: 3
+    _attack: 3
+    _attack_speed: 1
+    _critical_percent: 
+    _prefab: Enemy_01
+    _image: InGame_Star
+    _star_image: Star_3
+  - _unit_idx: 4
+    _unit_type: 1
+    _hp: 28
+    _movespeed: 3
+    _attack: 4
+    _attack_speed: 1
+    _critical_percent: 
+    _prefab: Enemy_01
+    _image: InGame_Star
+    _star_image: Star_4
+  - _unit_idx: 5
+    _unit_type: 1
+    _hp: 32
+    _movespeed: 4
+    _attack: 3
+    _attack_speed: 1
+    _critical_percent: 
+    _prefab: Enemy_01
+    _image: InGame_Star
+    _star_image: Star_5
+  - _unit_idx: 6
+    _unit_type: 1
+    _hp: 40
+    _movespeed: 2
+    _attack: 3
+    _attack_speed: 1
+    _critical_percent: 
+    _prefab: Enemy_01
+    _image: InGame_Star
+    _star_image: Star_6
+  - _unit_idx: 7
+    _unit_type: 1
+    _hp: 155
+    _movespeed: 6
+    _attack: 3
+    _attack_speed: 1
+    _critical_percent: 
+    _prefab: Enemy_01
+    _image: InGame_Star
+    _star_image: Star_7

@@ -1,0 +1,211 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Atlas_InGame
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 16
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: iPhone
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 51
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 4
+      m_TextureCompression: 2
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 0.5
+    packables:
+    - {fileID: 102900000, guid: d4e2f699efb98d241af981ccf50352cc, type: 3}
+    - {fileID: 102900000, guid: 8fd6d67a7bf7b404a84754e199f8077f, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 315a0d10c2cd91046a1a2f290e0a9436: 21300000
+    - e66092306b41f02499d2db5c2be2d6eb: 21300000
+    - 53ff9550bc6500045b7ff8e9f2e2780c: 21300000
+    - acc16750a84048c4691848d071dd75ad: 21300000
+    - 4efdf1709ec60e84ab13971c82c42dc9: 21300000
+    - 467dbe70010708340af3974a67654261: 21300000
+    - b52bed21f8b510f42a4350d063413b49: 21300000
+    - 481a52315695c474696cdd95b1dd05d3: 21300000
+    - 9c072d51a27946b46aca1956695003ee: 21300000
+    - 368645222e108c54bae716f4cfccd9ac: 21300000
+    - d12806320380e494a83b8479e72ca01d: 21300000
+    - 35ccea6246215974b8d759bdd8490867: 21300000
+    - b3a812d2346614149894c07ad8d86bf8: 21300000
+    - 4fe0ba132073ec84f8398053471f9d81: 21300000
+    - ce31f823e7a5eb749bb92f7739cc353a: 21300000
+    - 84c5f55356054a946aa8563fec78009a: 21300000
+    - 660d42b33c4bbf14dbf23e4f955e90a3: 21300000
+    - bce54cc3e5477964ab4c432c90877fdb: 21300000
+    - e15447e3ba35a53499eeb464dfc11b6d: 21300000
+    - 732a6124cc850ab4e9bb59f322476a41: 21300000
+    - 34b597e41c74ba7439f42939bc220bb8: 21300000
+    - bdf0da751646e3144bba7e69b0cdcb1c: 21300000
+    - a77aaaa584c56c14eb8a2556bb2d1d32: 21300000
+    - 5dd990360fc9b2540906ea03809337bc: 21300000
+    - 5dc159a61510d334b8b7daa94b087072: 21300000
+    - e239e76710278a74db0de20135b38005: 21300000
+    - b05fbfa72414cd54280e5fa25e79981e: 21300000
+    - d192b798f8936fa4ea96115363b8345a: 21300000
+    - e6195f6a8b325ed4ba6e12075730001c: 21300000
+    - c6608e0b06a3dd346980bce283993990: 21300000
+    - 3578cf8bbb852f7409e991f63d6d760a: 21300000
+    - d3488fbbf55520b48afc9c2f01d55af3: 21300000
+    - 5bc47edb65e365f49bb00ddbaec5313a: 21300000
+    - 6e52d23cec6adf94b946ec7cf846bbdf: 21300000
+    - 03ed6e8c21d1e184385e29299728f107: 21300000
+    - ad9a519c1affded4490abe2a09321fdd: 21300000
+    - 93df819cbbaf5ed41adf97c40b3315c9: 21300000
+    - f019cedc801b3e14f8d42fadcc3d9ba5: 21300000
+    - d4cd04fc569e6174dac83d886756ae49: 21300000
+    - 540d031df0a14454da1c529fe12f794c: 21300000
+    - 296f7a4d98a09e244b2fbb77b56af44e: 21300000
+    - e650941f55415e14f9de9378252f6b55: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 315a0d10c2cd91046a1a2f290e0a9436, type: 3}
+  - {fileID: 21300000, guid: e66092306b41f02499d2db5c2be2d6eb, type: 3}
+  - {fileID: 21300000, guid: 53ff9550bc6500045b7ff8e9f2e2780c, type: 3}
+  - {fileID: 21300000, guid: acc16750a84048c4691848d071dd75ad, type: 3}
+  - {fileID: 21300000, guid: 4efdf1709ec60e84ab13971c82c42dc9, type: 3}
+  - {fileID: 21300000, guid: 467dbe70010708340af3974a67654261, type: 3}
+  - {fileID: 21300000, guid: b52bed21f8b510f42a4350d063413b49, type: 3}
+  - {fileID: 21300000, guid: 481a52315695c474696cdd95b1dd05d3, type: 3}
+  - {fileID: 21300000, guid: 9c072d51a27946b46aca1956695003ee, type: 3}
+  - {fileID: 21300000, guid: 368645222e108c54bae716f4cfccd9ac, type: 3}
+  - {fileID: 21300000, guid: d12806320380e494a83b8479e72ca01d, type: 3}
+  - {fileID: 21300000, guid: 35ccea6246215974b8d759bdd8490867, type: 3}
+  - {fileID: 21300000, guid: b3a812d2346614149894c07ad8d86bf8, type: 3}
+  - {fileID: 21300000, guid: 4fe0ba132073ec84f8398053471f9d81, type: 3}
+  - {fileID: 21300000, guid: ce31f823e7a5eb749bb92f7739cc353a, type: 3}
+  - {fileID: 21300000, guid: 84c5f55356054a946aa8563fec78009a, type: 3}
+  - {fileID: 21300000, guid: 660d42b33c4bbf14dbf23e4f955e90a3, type: 3}
+  - {fileID: 21300000, guid: bce54cc3e5477964ab4c432c90877fdb, type: 3}
+  - {fileID: 21300000, guid: e15447e3ba35a53499eeb464dfc11b6d, type: 3}
+  - {fileID: 21300000, guid: 732a6124cc850ab4e9bb59f322476a41, type: 3}
+  - {fileID: 21300000, guid: 34b597e41c74ba7439f42939bc220bb8, type: 3}
+  - {fileID: 21300000, guid: bdf0da751646e3144bba7e69b0cdcb1c, type: 3}
+  - {fileID: 21300000, guid: a77aaaa584c56c14eb8a2556bb2d1d32, type: 3}
+  - {fileID: 21300000, guid: 5dd990360fc9b2540906ea03809337bc, type: 3}
+  - {fileID: 21300000, guid: 5dc159a61510d334b8b7daa94b087072, type: 3}
+  - {fileID: 21300000, guid: e239e76710278a74db0de20135b38005, type: 3}
+  - {fileID: 21300000, guid: b05fbfa72414cd54280e5fa25e79981e, type: 3}
+  - {fileID: 21300000, guid: d192b798f8936fa4ea96115363b8345a, type: 3}
+  - {fileID: 21300000, guid: e6195f6a8b325ed4ba6e12075730001c, type: 3}
+  - {fileID: 21300000, guid: c6608e0b06a3dd346980bce283993990, type: 3}
+  - {fileID: 21300000, guid: 3578cf8bbb852f7409e991f63d6d760a, type: 3}
+  - {fileID: 21300000, guid: d3488fbbf55520b48afc9c2f01d55af3, type: 3}
+  - {fileID: 21300000, guid: 5bc47edb65e365f49bb00ddbaec5313a, type: 3}
+  - {fileID: 21300000, guid: 6e52d23cec6adf94b946ec7cf846bbdf, type: 3}
+  - {fileID: 21300000, guid: 03ed6e8c21d1e184385e29299728f107, type: 3}
+  - {fileID: 21300000, guid: ad9a519c1affded4490abe2a09321fdd, type: 3}
+  - {fileID: 21300000, guid: 93df819cbbaf5ed41adf97c40b3315c9, type: 3}
+  - {fileID: 21300000, guid: f019cedc801b3e14f8d42fadcc3d9ba5, type: 3}
+  - {fileID: 21300000, guid: d4cd04fc569e6174dac83d886756ae49, type: 3}
+  - {fileID: 21300000, guid: 540d031df0a14454da1c529fe12f794c, type: 3}
+  - {fileID: 21300000, guid: 296f7a4d98a09e244b2fbb77b56af44e, type: 3}
+  - {fileID: 21300000, guid: e650941f55415e14f9de9378252f6b55, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Ingame_Food_022
+  - Ingame_Food_001
+  - Icon_PayHeart
+  - Icon_Noti_Nap
+  - Ingame_Food_027
+  - Ingame_Food_023
+  - Ingame_Food_024
+  - Ingame_Food_011
+  - Icon_Counter
+  - Coin
+  - Ingame_Food_016
+  - Ingame_Food_025
+  - Icon_Repair_Color
+  - Ingame_Food_004
+  - Ingame_Food_019
+  - Ingame_Food_021
+  - Ingame_Food_006
+  - Ingame_Food_012
+  - Gem
+  - Ingame_Food_020
+  - Icon_AdRemove
+  - Ingame_Food_003
+  - Ingame_Food_017
+  - Icon_Trouble
+  - Ingame_Food_015
+  - Ingame_Food_013
+  - Ingame_Food_018
+  - Ingame_Food_008
+  - Icon_Noti_Seaweed
+  - Ingame_Food_026
+  - Ingame_Food_028
+  - Ingame_Food_005
+  - Icon_Noti_Break
+  - Ingame_Food_002
+  - Icon_Vehicle
+  - Icon_Table
+  - Icon_Repair_Gray
+  - Ingame_Food_009
+  - Ingame_Food_014
+  - Ingame_Food_010
+  - Ingame_Food_007
+  - Gem_Mini
+  m_RenderDataMap: {}
+  m_Tag: Atlas_InGame
+  m_IsVariant: 0

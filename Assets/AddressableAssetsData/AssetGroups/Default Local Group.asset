@@ -1,0 +1,535 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 08a828bfbd41f48f29c62c948b8cf964
+  m_SerializeEntries:
+  - m_GUID: 88a92fea094b94404b3b225cf9556fa0
+    m_Address: Tables
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4cb4c80f5ac67417c9bca2a81b0facf9
+    m_Address: Config
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a2932d68868ec44bd848b8e6e0cf492a
+    m_Address: GameRoot
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3b203ee5a2abcf4b9e41c69a6aa92fb
+    m_Address: UI/Page/PageLobbyBattle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 77c8c9f5a12b8fd4faa5011e088d626a
+    m_Address: UI/Page/HUDTotal
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 44e3be70f18e74797ad1eb75a9d116cb
+    m_Address: UI/Page/PageFade
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8bb6d55927a9b1e4e9751a5ec422815b
+    m_Address: UI/Popup/PopupIngameUpgrade
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e4b2c1ca2572b4762967f68bdb5e455c
+    m_Address: SoundPlayer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b4e22d488a032c6418ee0a5b653520b1
+    m_Address: UI/Page/LoadingBasic
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8004488da7e234e35a8251a48d26a4de
+    m_Address: Effect/TextEffectMoney
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 04b12f8662a7a4cc5a13ea0f4419783d
+    m_Address: Unit001
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ec7c58ddba2d94d6281bb889e5f4cd77
+    m_Address: Unit002
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a6603c9825b844e23af52ef57e0e038b
+    m_Address: Unit003
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8a40bdab3b72d4304a660f1f9c69b112
+    m_Address: Unit004
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 75f0e196e426544d0a91faa501fbdf20
+    m_Address: Unit005
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0bab411ceb4024631b0b3cedef6c7518
+    m_Address: Unit006
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a77f41c46ff78484e988c24f7318f676
+    m_Address: Unit007
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dce3bf03cd04642768614d97d5d1631a
+    m_Address: Unit008
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2a050a5931cb241cf96670f21cb0bfe4
+    m_Address: Unit009
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0f6bd1a7afafb4749866655de98d243d
+    m_Address: Unit010
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6cb87c5d3e39a41628a35f01e47f44f2
+    m_Address: Unit011
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 087516b5163be4e05b00c230e3e20bcd
+    m_Address: Unit012
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c12daf5f17dd744f89a4a89b2e780afe
+    m_Address: Unit013
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0196bd960b2884ed597222a7a201c123
+    m_Address: Unit014
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1a765a6f0733549a08fc3e8aa4a02c46
+    m_Address: Unit015
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2d44c2467dc294571b89907de5d76b06
+    m_Address: Unit016
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aab414c4247c8a942b2837a45b69a82b
+    m_Address: UI/InGame/InGameHpUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b5c3e2130054d4409abbc55f73079dc
+    m_Address: UI/InGame/InGameDamageUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ba07bc340ac9d429483602fe0e51dd2e
+    m_Address: UI/InGame/InGameUnitSelect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 216ebab34f6574194a769a847c7efb47
+    m_Address: Unit017
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 15a44e5699c38ea44a881a2802fbbb95
+    m_Address: UI/Popup/PopupLegendCombine
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1ceb8d2d30760ce48ab24b393b96c2cd
+    m_Address: UI/Popup/PopupStageResult
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 503595630f1190749962bad6aa5f1ca9
+    m_Address: UI/Popup/PopupStageGiveup
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b6db01813cf64425392822046b76a5f9
+    m_Address: UI/Popup/PopupInGameUnitInfo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a47d7f214ac1740c8a23d6d1c511846a
+    m_Address: UI/InGame/InGameTimeUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d5bd4475185cb467591266cfc6224945
+    m_Address: UI/Popup/PopupUnitUpgrade
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5f779285b0c79184994bb5b7cf08f747
+    m_Address: UI/Popup/PopupPassiveCardUpgrade
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 84e8af4e85b1f724bb7079c8db0f3d96
+    m_Address: Effect/UnitEpicEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0c31a97e4ce9b954dbfe5cd4f1d87143
+    m_Address: Effect/UnitLegendEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3c19ee5390618cb428c9050d581fde65
+    m_Address: Effect/UnitNormalEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e07c2390af84d5a449a3cf962bbb1ddc
+    m_Address: Effect/UnitRareEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2f8fe2d929433b44aa9f6a4d7eec25b2
+    m_Address: UI/Popup/PopupOutGameUnitUpgrade
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 968688e3c3133734f9387d38bb5e5fb6
+    m_Address: UI/Page/PopupOutGameUnitUpgradeInfo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fbf0dd42490952749afefe3bc3688b84
+    m_Address: UI/Popup/PopupOutGameGachaUnit
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 175ff59a652c14a7383b0c2bf09dc462
+    m_Address: Unit1001
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0de545789863440cb9702e6e563fbad9
+    m_Address: Unit1002
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 92c6fe7c7e32f4777a5128c3636597c4
+    m_Address: Unit1003
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e11fbc03d5dcc1f4cbca4f7a1350df16
+    m_Address: Effect/SwordCastEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 325148dc6faa59d4e8454d5ffcbea97f
+    m_Address: Effect/BraveEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5a30f513748239f469ee0395ee3b0dd3
+    m_Address: Effect/ShieldAttackEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 483ff28c875354145b28f5d9e93271d6
+    m_Address: Effect/GurdianEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bd2477d741a482540a491990f45d3705
+    m_Address: Effect/DeathEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5bfac7ff753f742629ffd13c543fc514
+    m_Address: UI/Popup/PopupSelectGacha
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7563697d7242fb54f838969faa2610d3
+    m_Address: Effect/BombEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 377b4c86af427fb45aa4a4d8aba9ac4e
+    m_Address: Effect/MeteorEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2ba07f6cdc0e2994eb3eda4ebba1dbee
+    m_Address: Effect/WaterRiseEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5e6f0f502e8c9334abfb82236c2a869a
+    m_Address: Effect/TornadoEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 78efe2dacabb3a04980af3dfa50b195d
+    m_Address: Effect/ThunderEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f1fa19575ff54904c9022483b4fd94aa
+    m_Address: Effect/SwordFallEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 63ab2fa4acad2074b87822fdb2951298
+    m_Address: Effect/BlueFireEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a09bff5c9657bd44f88f091b5b1ab580
+    m_Address: Effect/FlamePillarEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d0e7b14832db07f47b8fa8dabde3b99a
+    m_Address: Effect/DarkExplosionEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 93df0e6f3cb8cb74b94b46e6fff5fe56
+    m_Address: Effect/DarknedEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4904c5aa809acdd409261a1f98a80837
+    m_Address: Effect/EarthQuakeEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 78584b2e27e020b479a8850035c609ec
+    m_Address: Effect/ThunderEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 28b5da3abcd534e4390a5d6a0aedfe65
+    m_Address: Assets/Arts/Prefabs/Effect/Ingame/DarkeyeEffect.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a164c0ef2d297364a99f3409430813b7
+    m_Address: InGame1_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3c482538c86d14a85aed5f2b34dfe693
+    m_Address: Consumer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a06e86c0d720b41cdb78b3a764e86ee6
+    m_Address: Assets/Arts/Prefabs/Item/Fish.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8d4d8e03c43a24095a3d4fc509fa626c
+    m_Address: UI/InGame/CooltimeProgress
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8027d5cd283904765b46209171fb2230
+    m_Address: UI/InGame/ConsumerOrderUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3bf4e088aa41e93428024e9035fdf15f
+    m_Address: UI/InGame/NewFacilityUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a87c437e839aa412a8dc95b02a0d4f41
+    m_Address: Effect/MoneyEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 45c450a84c2495741ad6a87c137f1d77
+    m_Address: UI/InGame/UI_AmountBubble
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 40594430403b340a19c0c413aa1ed297
+    m_Address: Effect/TextEffectMax
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 93de423b34a5249c39bb58fc0d5fb526
+    m_Address: UI/InGame/TextCount_UI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9db1301b7813d5448ad335a051f71d28
+    m_Address: UI/Popup/PopupUpgrade
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 913d90455f0f346fabbcae0ec0de2911
+    m_Address: CarryCasher
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 487ea5a25ce60474994ae3a1eb0b7562
+    m_Address: FishCasher
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6778ff5ac73c14bb88963b3d40ae119f
+    m_Address: CounterCasher
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 380754637756fe14cb497e14b89c0418
+    m_Address: UI/InGame/UI_TroubleBubble
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cd5f1ec47fdc4fe498b792ce39206c14
+    m_Address: UI/Popup/PopupNextStage
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df05ce54b4d0f644cb90ef7a785398a3
+    m_Address: InGame1_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 35ef84efbf07dbb4c80a50d518088877
+    m_Address: UI/Popup/PopupOfflineReward
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 13c699775dd24d8469b6d3226c7b6a72
+    m_Address: UI/Component/GoodsEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 875f242fb4415614c86308bdcbb3e643
+    m_Address: InGame1_3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2fcf4e46c7ffaed41a9ef3ec979dcd8d
+    m_Address: InGame1_4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 73def2d6a00fbd34aac9cc45151ee5b8
+    m_Address: InGame1_5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb0f88008c168f848b63ee03f899d55d
+    m_Address: UI/Popup/PopupVehicle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64f4da1fdd5bb644dbcab51331aef244
+    m_Address: Ad_Vehicle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8c880997932b7434c987bc8dd473a977
+    m_Address: UI/InGame/VehicleUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 071e0323c9a5d394ca58f1086e18e59c
+    m_Address: UI/InGame/VehicleBubbleUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4577aef9b5adbfb4a863145c3c114607
+    m_Address: UI/InGame/ArrowNaviUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 144e74928810ac54da56989fc596fef6
+    m_Address: UI/Popup/PopupConversation
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ff67be5265df164e835bfe6702e6934
+    m_Address: Tutorial_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a817b318c75b51142b357680256fb9d0
+    m_Address: UI/Popup/PopupDragTuto
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 03ba8bb0d5d68f1449fd162a5c0f9764
+    m_Address: UI/InGame/UI_TrashCanBubble
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2b8a3220cd30df8449c85b9adb118382
+    m_Address: UI/Popup/PopupAdRemove
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 98eaec48e463b4221a85a185a0a7acab
+    m_Address: UI/Popup/PopupOption
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f8a5186fa31d795438f26290874804b6
+    m_Address: UI/Page/PageGacha
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ebf9634c850b844eebbe51a1cfe6923a
+    m_Address: UI/Page/PageVehicle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6b8ed4df5620f6a47b1c226e9135c524
+    m_Address: UI/Page/PageShop
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 33d34b1065dcd4c0db03f94efd6e0ee1, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: fff32d1af8a384d85ad81f460eaa9237, type: 2}
+    - {fileID: 11400000, guid: b3bd0c1025de94653bf6169efe3687eb, type: 2}

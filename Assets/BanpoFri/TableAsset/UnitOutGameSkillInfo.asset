@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 798a93dbe161a460da4b71dc9b3aa061, type: 3}
+  m_Name: UnitOutGameSkillInfo
+  m_EditorClassIdentifier: 
+  mFirstKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  mSecondKey: []
+  mDataList:
+  - _skill_idx: 1
+    _name: str_outgame_skill_attack_1
+    _ingame_select_name: str_ingame_skill_name_1
+    _ingame_select_desc: str_ingame_skill_desc_name_1
+  - _skill_idx: 2
+    _name: str_outgame_skill_attack_2
+    _ingame_select_name: str_ingame_skill_name_2
+    _ingame_select_desc: str_ingame_skill_desc_name_2
+  - _skill_idx: 3
+    _name: str_outgame_skill_attack_3
+    _ingame_select_name: str_ingame_skill_name_3
+    _ingame_select_desc: str_ingame_skill_desc_name_3
+  - _skill_idx: 4
+    _name: str_outgame_skill_attack_4
+    _ingame_select_name: str_ingame_skill_name_4
+    _ingame_select_desc: str_ingame_skill_desc_name_4
+  - _skill_idx: 5
+    _name: str_outgame_skill_attack_5
+    _ingame_select_name: str_ingame_skill_name_5
+    _ingame_select_desc: str_ingame_skill_desc_name_5
+  - _skill_idx: 6
+    _name: str_outgame_skill_attack_6
+    _ingame_select_name: str_ingame_skill_name_6
+    _ingame_select_desc: str_ingame_skill_desc_name_6
+  - _skill_idx: 7
+    _name: str_outgame_skill_attack_7
+    _ingame_select_name: str_ingame_skill_name_7
+    _ingame_select_desc: str_ingame_skill_desc_name_7
+  - _skill_idx: 8
+    _name: str_outgame_skill_attack_8
+    _ingame_select_name: str_ingame_skill_name_8
+    _ingame_select_desc: str_ingame_skill_desc_name_8
+  - _skill_idx: 9
+    _name: str_outgame_skill_attack_9
+    _ingame_select_name: str_ingame_skill_name_9
+    _ingame_select_desc: str_ingame_skill_desc_name_9

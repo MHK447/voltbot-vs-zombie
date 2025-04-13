@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e84a1e6d85b34d15a57832fe85dfd7f, type: 3}
+  m_Name: PlayerSkillInfo
+  m_EditorClassIdentifier: 
+  mFirstKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  mSecondKey: []
+  mDataList:
+  - _skill_idx: 1
+    _image: skill_image_1
+    _desc: skill_1_desc
+    _desc_name: skill_1_name
+  - _skill_idx: 2
+    _image: skill_image_2
+    _desc: skill_2_desc
+    _desc_name: skill_2_name
+  - _skill_idx: 3
+    _image: skill_image_3
+    _desc: skill_3_desc
+    _desc_name: skill_3_name
+  - _skill_idx: 4
+    _image: skill_image_4
+    _desc: skill_4_desc
+    _desc_name: skill_4_name
+  - _skill_idx: 5
+    _image: skill_image_5
+    _desc: skill_5_desc
+    _desc_name: skill_5_name
+  - _skill_idx: 6
+    _image: skill_image_6
+    _desc: skill_6_desc
+    _desc_name: skill_6_name
+  - _skill_idx: 7
+    _image: skill_image_7
+    _desc: skill_7_desc
+    _desc_name: skill_7_name
+  - _skill_idx: 8
+    _image: skill_image_8
+    _desc: skill_8_desc
+    _desc_name: skill_8_name

@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FX_MAT_Glow_01 5
+  m_Shader: {fileID: 4800000, guid: ce729004bd5ad164282691f4b6248cb2, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _USECUSTOM_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DissolveTex:
+        m_Texture: {fileID: 2800000, guid: a1f946785146ba947a1eac247eeae431, type: 3}
+        m_Scale: {x: 2, y: 2}
+        m_Offset: {x: -0.5, y: -0.5}
+    - _DistortTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Step1:
+        m_Texture: {fileID: 2800000, guid: 37cb7e3d985ba2945922442445489737, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Step2:
+        m_Texture: {fileID: 2800000, guid: e8a712f101e4daa469da9bb3c503476e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SubTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Alpha: 1
+    - _AlphaCutoff: 0.5
+    - _BackfaceType: 0
+    - _Blend_Mode: 10
+    - _BrightnessOffset: 0
+    - _Brightnessamount: 0.31
+    - _Cull_Mode: 2
+    - _Cullmode2: 2
+    - _Custom1_XY: 0
+    - _Custom1_ZW: 1
+    - _Custom2_XY: 2
+    - _DissolveOffset: 0
+    - _DissolveRotationAmount: 0
+    - _DissolveType: 0
+    - _DissolveUV: 0
+    - _DissolveUseDistort: 0
+    - _Dissolve_Mode: 0
+    - _Dissolveamount: 0
+    - _DistortRotationAmount: 0
+    - _MainRotationAmount: 0
+    - _MaskRotationAmount: 0
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _Step2UV: 0
+    - _StepLerpamount: 0
+    - _StepUseDistort: 0
+    - _SubMode: 0
+    - _SubRotationAmount: 0
+    - _SubType: 0
+    - _UseBackfaceColor: 0
+    - _UseCustom: 1
+    - _UseCustomData: 0
+    - _Zwritemode: 0
+    m_Colors:
+    - _BackfaceColor: {r: 1, g: 1, b: 1, a: 0}
+    - _BrightnessColor: {r: 0.4634641, g: 2.7134156, b: 0.37117487, a: 1}
+    - _DissolvePannerXY: {r: 0, g: 0, b: 0, a: 0}
+    - _DissolveScaleAmount: {r: 0, g: 0, b: 0, a: 0}
+    - _DistortPannerXY: {r: 0, g: 0, b: 0, a: 0}
+    - _DistortPannerXYPowerXY: {r: 0, g: 0, b: 0, a: 0}
+    - _DistortPowerXY: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MainPannerXY: {r: 0, g: 0, b: 0, a: 0}
+    - _MainTexPannerXY: {r: 0, g: 0, b: 0, a: 0}
+    - _MaskPannerXY: {r: 0, g: 0, b: 0, a: 0}
+    - _Step1PannerXYStep2PannerXY: {r: 0, g: 0, b: 0, a: 0}
+    - _SubColor: {r: 1, g: 1, b: 1, a: 0}
+    - _SubPannerXY: {r: 0, g: 0, b: 0, a: 0}
+    - _SubScaleAmount: {r: 1, g: 1, b: 0, a: 0}
+    - _Tint: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []

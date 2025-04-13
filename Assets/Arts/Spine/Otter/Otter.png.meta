@@ -1,0 +1,765 @@
+fileFormatVersion: 2
+guid: d2aa23aa8c4c75e4fa170dc077787fe0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1729106956429219913
+    second: Otter_0
+  - first:
+      213: 2418973842497945037
+    second: Otter_1
+  - first:
+      213: -8772776845486072068
+    second: Otter_2
+  - first:
+      213: -4676508189357718171
+    second: Otter_3
+  - first:
+      213: -7669249903271063909
+    second: Otter_4
+  - first:
+      213: 5153307418950234729
+    second: Otter_5
+  - first:
+      213: 6345305587797374477
+    second: Otter_6
+  - first:
+      213: 7440200421259519513
+    second: Otter_7
+  - first:
+      213: 4067123723906947180
+    second: Otter_8
+  - first:
+      213: -3079425939559867538
+    second: Otter_9
+  - first:
+      213: -1064129560560969509
+    second: Otter_10
+  - first:
+      213: -1224952544901516795
+    second: Otter_11
+  - first:
+      213: -9120226091304538662
+    second: Otter_12
+  - first:
+      213: 1272689212664867321
+    second: Otter_13
+  - first:
+      213: -3562599405274908327
+    second: Otter_14
+  - first:
+      213: 720948777751432741
+    second: Otter_15
+  - first:
+      213: -5343446799655708569
+    second: Otter_16
+  - first:
+      213: 2952671050958013933
+    second: Otter_17
+  - first:
+      213: -325846053708932802
+    second: Otter_18
+  - first:
+      213: 8522470800493869497
+    second: Otter_19
+  - first:
+      213: -2868914522093542599
+    second: Otter_20
+  - first:
+      213: -830125792927367071
+    second: Otter_21
+  - first:
+      213: 5757712987261496065
+    second: Otter_22
+  - first:
+      213: -5821407542177953690
+    second: Otter_23
+  - first:
+      213: -2570701196466884894
+    second: Otter_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: 10
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 51
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 51
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Otter_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 486
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b72163626af008e0800000000000000
+      internalID: -1729106956429219913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_1
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 442
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcd3d0bb4ebe19120800000000000000
+      internalID: 2418973842497945037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_2
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 486
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfed70f60f5d04680800000000000000
+      internalID: -8772776845486072068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 459
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 565c0283494b91fb0800000000000000
+      internalID: -4676508189357718171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 462
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9e44dda8d9519590800000000000000
+      internalID: -7669249903271063909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_5
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 465
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 962f9ec4bc9348740800000000000000
+      internalID: 5153307418950234729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_6
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 463
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d06b6ff20dd0f0850800000000000000
+      internalID: 6345305587797374477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_7
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 187
+        width: 166
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 916a2eefcd6e04760800000000000000
+      internalID: 7440200421259519513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_8
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 393
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6899057a73517830800000000000000
+      internalID: 4067123723906947180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_9
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 328
+        width: 51
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6b19686c6ea345d0800000000000000
+      internalID: -3079425939559867538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_10
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 306
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd855cb7dc37b31f0800000000000000
+      internalID: -1064129560560969509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_11
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 212
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5023f668628100fe0800000000000000
+      internalID: -1224952544901516795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_12
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 276
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: add2b84e0b27e6180800000000000000
+      internalID: -9120226091304538662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_13
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 187
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f96c5e881089a110800000000000000
+      internalID: 1272689212664867321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_14
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 3
+        width: 243
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 959329367ba1f8ec0800000000000000
+      internalID: -3562599405274908327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_15
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 110
+        width: 45
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52e4027f713510a00800000000000000
+      internalID: 720948777751432741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_16
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 110
+        width: 42
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 768d25e427348d5b0800000000000000
+      internalID: -5343446799655708569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_17
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 88
+        width: 27
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de58eea4daef9f820800000000000000
+      internalID: 2952671050958013933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_18
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 56
+        width: 68
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3957359dbc5a7bf0800000000000000
+      internalID: -325846053708932802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_19
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 88
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b973100a06e54670800000000000000
+      internalID: 8522470800493869497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_20
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 56
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 933a7ab31719f28d0800000000000000
+      internalID: -2868914522093542599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_21
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 56
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 160cca15dfcca74f0800000000000000
+      internalID: -830125792927367071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_22
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 3
+        width: 202
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10bef5cc47187ef40800000000000000
+      internalID: 5757712987261496065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_23
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 48
+        width: 43
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66804bbfea4363fa0800000000000000
+      internalID: -5821407542177953690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otter_24
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 3
+        width: 47
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ee6be8c1e8035cd0800000000000000
+      internalID: -2570701196466884894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Otter_0: -1729106956429219913
+      Otter_1: 2418973842497945037
+      Otter_10: -1064129560560969509
+      Otter_11: -1224952544901516795
+      Otter_12: -9120226091304538662
+      Otter_13: 1272689212664867321
+      Otter_14: -3562599405274908327
+      Otter_15: 720948777751432741
+      Otter_16: -5343446799655708569
+      Otter_17: 2952671050958013933
+      Otter_18: -325846053708932802
+      Otter_19: 8522470800493869497
+      Otter_2: -8772776845486072068
+      Otter_20: -2868914522093542599
+      Otter_21: -830125792927367071
+      Otter_22: 5757712987261496065
+      Otter_23: -5821407542177953690
+      Otter_24: -2570701196466884894
+      Otter_3: -4676508189357718171
+      Otter_4: -7669249903271063909
+      Otter_5: 5153307418950234729
+      Otter_6: 6345305587797374477
+      Otter_7: 7440200421259519513
+      Otter_8: 4067123723906947180
+      Otter_9: -3079425939559867538
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

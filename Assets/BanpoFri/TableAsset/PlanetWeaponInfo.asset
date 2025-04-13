@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b255bdd86133446ba83e29161e4915b, type: 3}
+  m_Name: PlanetWeaponInfo
+  m_EditorClassIdentifier: 
+  mFirstKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  mSecondKey: []
+  mDataList:
+  - _weapon_idx: 1
+    _weapon_type: 2
+    _ability_base: 1
+    _ability_duration: -1
+    _ability_value: -1
+    _base_attack: 100
+    _base_attack_regen: 150
+    _base_attack_speed: 350
+    _baase_critical_percent: 150
+    _base_critical_damage: 150
+    _image: InGameBullet_01
+    _name: weapon_name_1
+    _name_desc: weapon_desc_1
+    _ColSizeX: 30
+    _ColSizeY: 20
+    _attack_speed: 350
+  - _weapon_idx: 2
+    _weapon_type: 2
+    _ability_base: 2
+    _ability_duration: -1
+    _ability_value: -1
+    _base_attack: 200
+    _base_attack_regen: 200
+    _base_attack_speed: 300
+    _baase_critical_percent: 200
+    _base_critical_damage: 200
+    _image: InGameBullet_08
+    _name: weapon_name_2
+    _name_desc: weapon_desc_2
+    _ColSizeX: 30
+    _ColSizeY: 20
+    _attack_speed: 300
+  - _weapon_idx: 3
+    _weapon_type: 2
+    _ability_base: 3
+    _ability_duration: 200
+    _ability_value: 200
+    _base_attack: 200
+    _base_attack_regen: 150
+    _base_attack_speed: 400
+    _baase_critical_percent: 200
+    _base_critical_damage: 200
+    _image: InGameBullet_03
+    _name: weapon_name_3
+    _name_desc: weapon_desc_3
+    _ColSizeX: 30
+    _ColSizeY: 20
+    _attack_speed: 400
+  - _weapon_idx: 4
+    _weapon_type: 2
+    _ability_base: 4
+    _ability_duration: 100
+    _ability_value: 100
+    _base_attack: 200
+    _base_attack_regen: 150
+    _base_attack_speed: 400
+    _baase_critical_percent: 200
+    _base_critical_damage: 200
+    _image: InGameBullet_04
+    _name: weapon_name_4
+    _name_desc: weapon_desc_4
+    _ColSizeX: 30
+    _ColSizeY: 20
+    _attack_speed: 400
+  - _weapon_idx: 5
+    _weapon_type: 2
+    _ability_base: 5
+    _ability_duration: -1
+    _ability_value: -1
+    _base_attack: 200
+    _base_attack_regen: 150
+    _base_attack_speed: 400
+    _baase_critical_percent: 200
+    _base_critical_damage: 200
+    _image: InGameBullet_21
+    _name: weapon_name_5
+    _name_desc: weapon_desc_5
+    _ColSizeX: 30
+    _ColSizeY: 20
+    _attack_speed: 400
+  - _weapon_idx: 6
+    _weapon_type: 2
+    _ability_base: 5
+    _ability_duration: -1
+    _ability_value: -1
+    _base_attack: 200
+    _base_attack_regen: 150
+    _base_attack_speed: 400
+    _baase_critical_percent: 200
+    _base_critical_damage: 200
+    _image: InGameBullet_30
+    _name: weapon_name_5
+    _name_desc: weapon_desc_5
+    _ColSizeX: 30
+    _ColSizeY: 20
+    _attack_speed: 400

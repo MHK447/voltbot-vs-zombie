@@ -1,0 +1,73 @@
+namespace BanpoFri.Data;
+
+
+
+table UserData {
+  money:string;
+  cash:int = 0;
+  lastlogintime:long = 0;
+  curplaydatetime:long = 0;
+  stagedata: StageData;
+  recordcount:[RecordCount];
+  upgradedatas:[UpgradeData];
+  facilityupgradedatas:[FacilityUpgradeData];
+  boosttime:int = 0; 
+  tutorial:string;
+  optiondata:OptionData;
+}
+
+
+table StageData
+{
+
+  facilityopenorder:int = 0;
+  stageidx:int = 1;
+  facilitydatas:[facilityidata];
+}
+
+table PlayerData
+{
+   vehicleidx:int =0;
+}	
+
+
+table facilityidata
+{
+  facilityidx:int = 0;
+  moneycount:string;  
+  isopen:bool = false; 
+  capacitycount:int = 0;  
+}
+
+table FacilityUpgradeData
+{
+  level:int = 0;
+  faciltiyidx:int = 0; 
+}
+
+table OptionData {
+  language:string;
+  bgm:bool = false;
+  effect:bool = false;
+  slowgraphic:bool = false;
+  vibration:bool = true;
+  subscribeorder:bool = false;
+  autofelling:bool = false;
+}
+
+
+table UpgradeData
+{
+  upgradeidx:int = 0;  
+  upgradetype:int = 0;  
+  stageidx:int = 0;  
+  isbuycheck:bool = false;  
+} 
+
+
+table RecordCount {
+  idx:string;
+  count:int = 0;
+}
+
+root_type UserData;
