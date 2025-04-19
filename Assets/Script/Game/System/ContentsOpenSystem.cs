@@ -24,7 +24,14 @@ public class ContentsOpenSystem : MonoBehaviour
 
         if(td != null)
         {
+            var findfacility = GameRoot.Instance.UserData.CurMode.StageData.FindFacilityData(td.open_facilityidx);
+            
+
             if(stageidx > td.stage_idx)
+            {
+                isopencheck = true;
+            }
+            else if(stageidx == td.stage_idx && findfacility.IsOpen)
             {
                 isopencheck = true;
             }

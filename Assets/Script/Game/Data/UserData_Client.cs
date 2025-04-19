@@ -40,9 +40,11 @@ public partial class UserDataSystem
         RecordCount.Clear();
         ChangeDataMode(DataState.Main);
 
+        mainData.StageData.StageIdx = flatBufferUserData.Stagedata.Value.Stageidx;
         Cash.Value = flatBufferUserData.Cash;
         mainData.Money.Value = BigInteger.Parse(flatBufferUserData.Money);
         mainData.LastLoginTime = new System.DateTime(flatBufferUserData.Lastlogintime);
+        mainData.CurPlayDateTime = new System.DateTime(flatBufferUserData.Curplaydatetime);
 
 
 
@@ -70,7 +72,56 @@ public partial class UserDataSystem
         Vib = flatBufferUserData.Optiondata.Value.Vibration;
         AutoFelling = flatBufferUserData.Optiondata.Value.Autofelling;
         SubscribeOrder = flatBufferUserData.Optiondata.Value.Subscribeorder;
-        
+
+
+        if (flatBufferUserData.Stagedata != null)
+        {
+            mainData.StageData.StageFacilityDataList.Clear();
+
+            mainData.StageData.StageIdx = flatBufferUserData.Stagedata.Value.Stageidx;
+
+            mainData.StageData.NextFacilityOpenOrderProperty.Value = flatBufferUserData.Stagedata.Value.Facilityopenorder;
+
+            for (int i = 0; i < flatBufferUserData.Stagedata.Value.FacilitydatasLength; ++i)
+            {
+                var data = flatBufferUserData.Stagedata.Value.Facilitydatas(i);
+
+                var moneyvalue = System.Numerics.BigInteger.Parse(data.Value.Moneycount);
+
+                var newdata = new FacilityData(data.Value.Facilityidx, moneyvalue, data.Value.Isopen, data.Value.Capacitycount);
+
+                mainData.StageData.StageFacilityDataList.Add(newdata);
+            }
+        }
+
+
+
+        mainData.BoostTime.Value = flatBufferUserData.Boosttime;
+
+
+        mainData.UpgradeGroupData.StageUpgradeCollectionList.Clear();
+
+        for (int i = 0; i < flatBufferUserData.UpgradedatasLength; ++i)
+        {
+            var data = flatBufferUserData.Upgradedatas(i);
+
+            var newdata = new UpgradeData(data.Value.Upgradeidx, data.Value.Upgradetype, data.Value.Stageidx, data.Value.Isbuycheck);
+
+            mainData.UpgradeGroupData.StageUpgradeCollectionList.Add(newdata);
+        }
+
+
+        mainData.FishUpgradeDatas.Clear();
+
+        for (int i = 0; i < flatBufferUserData.FacilityupgradedatasLength; ++i)
+        {
+            var data = flatBufferUserData.Facilityupgradedatas(i);
+
+            var newdata = new StageFishUpgradeData(data.Value.Faciltiyidx, data.Value.Level);
+
+            mainData.FishUpgradeDatas.Add(newdata);
+        }
+
         SyncHUDCurrency();
     }
 

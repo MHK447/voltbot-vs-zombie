@@ -29,6 +29,9 @@ public class GameRoot : Singleton<GameRoot>
 	[SerializeField]
 	private InAppPurchaseManager inAppPurchaseManager;
 	[SerializeField]
+	private Joystick JoyStick;
+
+	public Joystick GetJoyStick { get { return JoyStick; } }
 	public InAppPurchaseManager GetInAppPurchaseManager { get { return inAppPurchaseManager; } }
 
 	public RectTransform GetMainCanvasTR { get { return MainCanvas.transform as RectTransform; } }
@@ -40,10 +43,17 @@ public class GameRoot : Singleton<GameRoot>
 	public PlayTimeSystem PlayTimeSystem { get; private set; } = new PlayTimeSystem();
 	public EffectSystem EffectSystem { get; private set; } = new EffectSystem();
 	public TutorialSystem TutorialSystem { get; private set; } = new TutorialSystem();
+	public FacilitySystem FacilitySystem { get; private set; } = new FacilitySystem();
+	public UpgradeSystem UpgradeSystem { get; private set; } = new UpgradeSystem();
+	public NaviSystem NaviSystem { get; private set; } = new NaviSystem();
+
 	public ShopSystem ShopSystem { get; private set; } = new ShopSystem();
 
 
 	public GameNotificationSystem GameNotification { get; private set; } = new GameNotificationSystem();
+
+	public VehicleSystem VehicleSystem { get; private set; } = new VehicleSystem();
+	public BoostSystem BoostSystem { get; private set; } = new BoostSystem();
 	public ContentsOpenSystem ContentsOpenSystem { get; private set; } = new ContentsOpenSystem();
 
 
@@ -133,7 +143,11 @@ public class GameRoot : Singleton<GameRoot>
 
 			deltaTime -= 1f;
 
+			VehicleSystem.OneSecondUpdate();
+			BoostSystem.UpdateOneSecond();
 			ShopSystem.UpdateOneTimeSecond();
+
+
 		}
 		deltaTime += Time.deltaTime;
 
@@ -251,11 +265,15 @@ public class GameRoot : Singleton<GameRoot>
 
 		InGameSystem.Create();
 		GameNotification.Create();
+		VehicleSystem.Create();
+		BoostSystem.Create();
+		NaviSystem.Create();
 		ShopSystem.Create();
 
 
 		GameRoot.instance.WaitTimeAndCallback(0.5f, () =>
 		{
+			JoyStick.Init();
 			BgmOn();
 		});
 	}
@@ -315,6 +333,10 @@ public class GameRoot : Singleton<GameRoot>
 			GameRoot.instance.UserData.AddRecordCount(Config.RecordCountKeys.Init, 1);
 
 			GameRoot.instance.UserData.SetReward((int)Config.RewardType.Currency, (int)Config.CurrencyID.Money, 100);
+
+			GameRoot.instance.FacilitySystem.CreateStageFacility(GameRoot.Instance.UserData.CurMode.StageData.StageIdx);
+
+			GameRoot.instance.UpgradeSystem.StageSetUpgradeData(1);
 
 			SetNativeLanguage();
 		}
@@ -423,6 +445,48 @@ public class GameRoot : Singleton<GameRoot>
 			{
 				PauseActions.Enqueue(() =>
 				{
+					var offlinereward = GameRoot.instance.UISystem.GetUI<PopupOfflineReward>();
+
+					if (offlinereward != null)
+					{
+						if (!offlinereward.gameObject.activeSelf)
+						{
+							if ((int)diff.TotalSeconds >= maxRewardTime)
+								GameRoot.instance.UISystem.OpenUI<PopupOfflineReward>(popup => popup.Set(maxRewardTime), NextAction);
+							else
+								GameRoot.instance.UISystem.OpenUI<PopupOfflineReward>(popup => popup.Set((int)diff.TotalSeconds), NextAction);
+						}
+						else
+						{
+							offlinereward.OnUIHideAfter = NextAction;
+
+							//기존 열린 팝업의 시간이 맥스가 아니면 오프라인 시간을 더해서 보상을 준다.
+							if (offlinereward.TimeSecond < maxRewardTime)
+							{
+								int rewardTime = 0;
+								var newRewardTime = offlinereward.TimeSecond + (int)diff.TotalSeconds;
+								if (newRewardTime >= maxRewardTime)
+								{
+									rewardTime = maxRewardTime;
+								}
+								else
+								{
+									rewardTime = newRewardTime;
+								}
+
+								offlinereward.Set(rewardTime);
+							}
+						}
+					}
+					else
+					{
+
+						if ((int)diff.TotalSeconds >= maxRewardTime)
+							GameRoot.instance.UISystem.OpenUI<PopupOfflineReward>(popup => popup.Set(maxRewardTime), NextAction); //offline max value 
+						else
+							GameRoot.instance.UISystem.OpenUI<PopupOfflineReward>(popup => popup.Set((int)diff.TotalSeconds), NextAction); //offline not max value
+
+					}
 				});
 
 			}

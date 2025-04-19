@@ -119,7 +119,8 @@ public class PanAndZoom : MonoBehaviour
         IsFocusing = false;
 
         canUseMouse = Application.platform != RuntimePlatform.Android && Application.platform != RuntimePlatform.IPhonePlayer && Input.mousePresent;
-        
+
+        PlayerTarget = Target = GameRoot.Instance.InGameSystem.GetInGame<InGameTycoon>().GetPlayer.transform;
         //zoomOutSize = cam.orthographicSize = Mathf.Min(cam.orthographicSize, (Screen.height * (boundMaxX - boundMinX) / (2 * Screen.width)) - 0.001f);
 
         GameRoot.Instance.WaitTimeAndCallback(1f, () =>

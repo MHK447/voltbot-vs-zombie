@@ -7,22 +7,29 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:288840381928:android:b364e3d65634c93918205d",
+        "mobilesdk_app_id": "1:288840381928:ios:9fbd53f53209881e18205d",
         "android_client_info": {
           "package_name": "com.banpofri.otterfishshop.com"
         }
       },
-      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDefdunMpohAm6GA_8YoNC8REinzaXElII"
+          "current_key": "AIzaSyDwCYDMtxie5J_RMO-sOHDemHtDzGWLb6A"
         }
       ],
       "services": {
+        "analytics_service": {
+          "status": 0
+        },
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "status": 1
         }
-      }
+      },
+      "oauth_client": [
+        {
+          "client_id": "288840381928-frbfs84ju4ak32tfp4d3unentn9m1nsa.apps.googleusercontent.com"
+        }
+      ]
     }
   ],
   "configuration_version": "1"

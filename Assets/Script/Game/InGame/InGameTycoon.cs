@@ -11,6 +11,12 @@ using NavMeshPlus.Components;
 public class InGameTycoon : InGameMode
 {
 
+    [SerializeField]
+    private OtterBase Player;
+
+    public OtterBase GetPlayer { get { return Player; } }
+
+
     [HideInInspector]
     public InGameStage curInGameStage;
 
@@ -28,7 +34,41 @@ public class InGameTycoon : InGameMode
     public override void Load()
     {
         base.Load();
-        
+
+        var stageidx = GameRoot.Instance.UserData.CurMode.StageData.StageIdx;
+
+        var td = Tables.Instance.GetTable<StageInfo>().GetData(stageidx);
+
+        if (td != null)
+        {
+            Addressables.InstantiateAsync($"InGame1_{stageidx}").Completed += (handle) =>
+            {
+                StartCoroutine(UpdateNavMeshProcess());
+                curInGameStage = handle.Result.GetComponent<InGameStage>();
+                if (curInGameStage != null)
+                {
+                    curInGameStage.Init();
+                }
+
+                Player.Init();
+
+                GameRoot.Instance.WaitTimeAndCallback(1f, () =>
+                {
+                    var recordcount = GameRoot.Instance.UserData.GetRecordCount(Config.RecordCountKeys.Navi_Start);
+
+                    if (GameRoot.Instance.UserData.CurMode.StageData.StageIdx == 1 && recordcount == 0)
+                    {
+                        GameRoot.Instance.UISystem.GetUI<HUDTotal>()?.GetUpgradeBtn.gameObject.SetActive(false);
+                        GameRoot.Instance.UISystem.OpenUI<PopupDragTuto>(null, () =>
+                        {
+                            GameRoot.Instance.NaviSystem.FirstStartNavi();
+                            GameRoot.Instance.NaviSystem.StarNexttNavi();
+                        });
+                    }
+                });
+            };
+        }
+
         //CalculateGameSpeed();
 
     }

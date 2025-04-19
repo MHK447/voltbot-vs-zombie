@@ -11,15 +11,23 @@ public class AdManager : MonoBehaviour
     private RewardedAd _rewardedAd;
     private InterstitialAd _interstitialAd;
 
-    private string _adUnitId = "ca-app-pub-4348570103813665/2176085665";
+    // 안드로이드용 광고 ID
+    private string _adUnitIdAndroid_Reward = "ca-app-pub-4348570103813665/2176085665";
+    private string _adUnitIdAndroid_Interstitial = "ca-app-pub-4348570103813665/4816058422";
+    
+    // iOS용 광고 ID
+    private string _adUnitIdIOS_Reward = "ca-app-pub-4348570103813665/7269743639"; // TODO: 실제 iOS 리워드 광고 ID로 변경 필요
+    private string _adUnitIdIOS_Interstitial = "ca-app-pub-4348570103813665/5800749290"; // TODO: 실제 iOS 전면 광고 ID로 변경 필요
+
+    // 현재 플랫폼에 따른 광고 ID
+    private string _rewardedAdUnitId;
+    private string _interstitialAdUnitId;
 
     private bool IsInterAdLoaded = false;
     private bool IsRewardAdLoaded = false;
     private bool isInitialized = false;
     private bool isLoadingRewardedAd = false;
     private bool isLoadingInterstitialAd = false;
-
-    private string InitadUnitId = "ca-app-pub-4348570103813665/4816058422"; // 테스트 전면 광고 단위 ID
 
     // 연속 로드 실패 시 재시도 간격을 점진적으로 늘리기 위한 변수
     private int rewardedAdRetryCount = 0;
@@ -29,14 +37,44 @@ public class AdManager : MonoBehaviour
 
     void Start()
     {
+        // 플랫폼별 광고 ID 설정
+        SetAdUnitIdByPlatform();
+        
         // 더 빠른 초기화를 위해 지연 시간 감소
         // Start에서 호출되면 이미 지연이 발생한 상태이므로 즉시 초기화
         InitializeAds();
     }
 
+    // 플랫폼별 광고 ID 설정
+    private void SetAdUnitIdByPlatform()
+    {
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            _rewardedAdUnitId = _adUnitIdAndroid_Reward;
+            _interstitialAdUnitId = _adUnitIdAndroid_Interstitial;
+            Debug.Log("Android 플랫폼 광고 ID 설정");
+        }
+        else if (Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            _rewardedAdUnitId = _adUnitIdIOS_Reward;
+            _interstitialAdUnitId = _adUnitIdIOS_Interstitial;
+            Debug.Log("iOS 플랫폼 광고 ID 설정");
+        }
+        else
+        {
+            // 에디터 또는 기타 플랫폼에서는 테스트 ID 사용
+            _rewardedAdUnitId = "ca-app-pub-3940256099942544/5224354917"; // 테스트 리워드 광고 ID
+            _interstitialAdUnitId = "ca-app-pub-3940256099942544/1033173712"; // 테스트 전면 광고 ID
+            Debug.Log("테스트 광고 ID 설정 (에디터 또는 기타 플랫폼)");
+        }
+    }
+
     // GameRoot에서 즉시 호출할 수 있는 사전 초기화 메서드
     public void PreInitialize()
     {
+        // 플랫폼별 광고 ID 설정
+        SetAdUnitIdByPlatform();
+        
         // 이미 초기화되었거나 초기화 중인 경우 무시
         if (isInitialized) return;
         
@@ -105,7 +143,7 @@ public class AdManager : MonoBehaviour
             // builder.AddTestDevice("2077ef9a63d2b398840261c8221a0c9b");
             // adRequest = builder.Build();
 
-            InterstitialAd.Load(InitadUnitId, adRequest,
+            InterstitialAd.Load(_interstitialAdUnitId, adRequest,
                 (InterstitialAd ad, LoadAdError error) =>
                 {
                     isLoadingInterstitialAd = false;
@@ -270,7 +308,7 @@ public class AdManager : MonoBehaviour
             // 타임아웃 타이머 설정
             GameRoot.Instance.WaitTimeAndCallback(timeoutDelay, timeoutAction);
 
-            RewardedAd.Load(_adUnitId, adRequest,
+            RewardedAd.Load(_rewardedAdUnitId, adRequest,
                 (RewardedAd ad, LoadAdError error) =>
                 {
                     // 이미 타임아웃된 요청인 경우 무시
@@ -396,6 +434,9 @@ public class AdManager : MonoBehaviour
         // 광고 수익이 발생했을 때
         ad.OnAdPaid += (AdValue adValue) => {
             Debug.Log($"리워드 광고 수익 발생: {adValue.Value} {adValue.CurrencyCode}");
+            
+            // 여기에 iOS와 안드로이드에 따른 분석 이벤트 전송 로직을 추가할 수 있습니다.
+            // 예: Firebase Analytics 이벤트 전송
         };
         
         // 광고 노출이 기록되었을 때
@@ -414,6 +455,12 @@ public class AdManager : MonoBehaviour
     {
         if (!pause) // 앱이 포그라운드로 돌아올 때
         {
+            // iOS에서는 백그라운드에서 포그라운드로 전환될 때 추가 처리가 필요할 수 있습니다.
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+                Debug.Log("iOS 앱이 포그라운드로 돌아왔습니다. 광고 상태 확인 중...");
+            }
+            
             // 광고가 로드되지 않은 상태라면 새로 로드
             if (!IsRewardAdLoaded && !isLoadingRewardedAd)
             {

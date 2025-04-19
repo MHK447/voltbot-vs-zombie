@@ -34,6 +34,12 @@ public class HUDTotal : UIBase
     [SerializeField]
     private Button SettingBtn;
 
+
+    [SerializeField]
+    private HudNoticeComponents HudNoticeComponent;
+
+    public HudNoticeComponents GetHudNoticeComponent { get { return HudNoticeComponent; } }
+
     public Transform GetUpgradeBtnTr { get { return UpgradeBtn.transform; } }
 
     [SerializeField]
@@ -44,9 +50,26 @@ public class HUDTotal : UIBase
     protected override void Awake()
     {
         base.Awake();
-    
+        UpgradeBtn.onClick.AddListener(OnClickUpgrade);
+        NextStageBtn.onClick.AddListener(OnClickNextStage);
+        BoostBtn.onClick.AddListener(OnClickBoost);
+        InterAdBtn.onClick.AddListener(OnClickInterAd);
         SettingBtn.onClick.AddListener(OnClickSetting);
         TopCurrencySync();
+
+        GameRoot.Instance.VehicleSystem.AdVehiceTimeProperty.Subscribe(x =>
+        {
+            AdVehicleTimeText.text = Utility.GetTimeStringFormattingShort(x);
+            if (x <= 0)
+            {
+                GameRoot.Instance.VehicleSystem.AdVehicleActive(false);
+            }
+        }).AddTo(this);
+
+        GameRoot.Instance.UserData.CurMode.PlayerData.VehiclePropertyIdx.Subscribe(x =>
+        {
+            ProjectUtility.SetActiveCheck(VehicleObj, x > 0);
+        }).AddTo(this);
 
         GameRoot.Instance.ShopSystem.IsVipProperty.Subscribe(x =>
         {
@@ -61,6 +84,27 @@ public class HUDTotal : UIBase
         ProjectUtility.SetActiveCheck(FpsText.gameObject, false);
 #endif
 
+        HudNoticeComponent.Init();
+    }
+
+    public void OnClickNextStage()
+    {
+        GameRoot.Instance.UISystem.OpenUI<PopupNextStage>(popup => popup.Init());
+    }
+
+    public void OnClickBoost()
+    {
+
+    }
+
+    public void OnClickInterAd()
+    {
+        GameRoot.Instance.UISystem.OpenUI<PopupAdRemove>(popup => popup.Init());
+    }
+
+    public void OnClickUpgrade()
+    {
+        GameRoot.Instance.UISystem.OpenUI<PopupUpgrade>(popup => popup.Init());
     }
 
     void Update()
