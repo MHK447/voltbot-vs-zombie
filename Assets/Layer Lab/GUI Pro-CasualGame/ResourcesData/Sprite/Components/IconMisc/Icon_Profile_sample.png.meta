@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: c60eed3576fc84989991f7b8b8554c13
+AssetOrigin:
+  serializedVersion: 1
+  productId: 176695
+  packageName: GUI Pro - Casual Game
+  packageVersion: 4.1.0
+  assetPath: Assets/Layer Lab/GUI Pro-CasualGame/ResourcesData/Sprite/Components/IconMisc/Icon_Profile_sample.png
+  uploadId: 749964
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

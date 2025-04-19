@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 9d6dee6dde3aa4a008bbcf4188a11c0f
+AssetOrigin:
+  serializedVersion: 1
+  productId: 176695
+  packageName: GUI Pro - Casual Game
+  packageVersion: 4.1.0
+  assetPath: Assets/Layer Lab/GUI Pro-CasualGame/ResourcesData/Sprite/Components/Icon_RuneIcons/64/RuneIcon_Frame_3.Png
+  uploadId: 749964
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

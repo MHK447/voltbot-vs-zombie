@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: c4a1f6e2cf9594edea0597caeff772d2
+AssetOrigin:
+  serializedVersion: 1
+  productId: 176695
+  packageName: GUI Pro - Casual Game
+  packageVersion: 4.1.0
+  assetPath: Assets/Layer Lab/GUI Pro-CasualGame/ResourcesData/Sprite/Components/Icon_RuneIcons/Original/RuneIcon2_Debuff.Png
+  uploadId: 749964
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

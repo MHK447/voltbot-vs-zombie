@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 0b4127b0295f74902a1254170623a30a
+AssetOrigin:
+  serializedVersion: 1
+  productId: 176695
+  packageName: GUI Pro - Casual Game
+  packageVersion: 4.1.0
+  assetPath: Assets/Layer Lab/GUI Pro-CasualGame/ResourcesData/Sprite/Components/Icon_RuneIcons/Original/RuneIcon0_Ball_Health.Png
+  uploadId: 749964
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

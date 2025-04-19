@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: b56ce7c396ca04c14a596c4553a5f161
+AssetOrigin:
+  serializedVersion: 1
+  productId: 176695
+  packageName: GUI Pro - Casual Game
+  packageVersion: 4.1.0
+  assetPath: Assets/Layer Lab/GUI Pro-CasualGame/ResourcesData/Sprite/Components/Slider/Slider_Icon04_Bg.png
+  uploadId: 749964
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

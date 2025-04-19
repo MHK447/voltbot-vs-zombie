@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 45aa2d96ab1cc42c0a184ab73591b3e9
+AssetOrigin:
+  serializedVersion: 1
+  productId: 176695
+  packageName: GUI Pro - Casual Game
+  packageVersion: 4.1.0
+  assetPath: Assets/Layer Lab/GUI Pro-CasualGame/ResourcesData/Sprite/Components/Icon_RuneIcons/512/RuneIcon3_Critical_Damage.Png
+  uploadId: 749964
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

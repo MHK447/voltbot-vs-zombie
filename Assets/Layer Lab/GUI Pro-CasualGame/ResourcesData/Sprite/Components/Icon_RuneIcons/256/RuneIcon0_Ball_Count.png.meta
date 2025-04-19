@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 27211f5b1a7644a4a9f9af0e437dc5d7
+AssetOrigin:
+  serializedVersion: 1
+  productId: 176695
+  packageName: GUI Pro - Casual Game
+  packageVersion: 4.1.0
+  assetPath: Assets/Layer Lab/GUI Pro-CasualGame/ResourcesData/Sprite/Components/Icon_RuneIcons/256/RuneIcon0_Ball_Count.png
+  uploadId: 749964
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

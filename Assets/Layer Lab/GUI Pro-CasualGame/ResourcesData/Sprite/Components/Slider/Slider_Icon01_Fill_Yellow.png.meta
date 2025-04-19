@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 77237084d67f848cd9c89a28f0b3c421
+AssetOrigin:
+  serializedVersion: 1
+  productId: 176695
+  packageName: GUI Pro - Casual Game
+  packageVersion: 4.1.0
+  assetPath: Assets/Layer Lab/GUI Pro-CasualGame/ResourcesData/Sprite/Components/Slider/Slider_Icon01_Fill_Yellow.png
+  uploadId: 749964
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

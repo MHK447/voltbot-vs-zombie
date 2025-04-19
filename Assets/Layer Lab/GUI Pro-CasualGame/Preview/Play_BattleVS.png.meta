@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: cd251112fc32f4cc1b0be58ff8089ca3
+AssetOrigin:
+  serializedVersion: 1
+  productId: 176695
+  packageName: GUI Pro - Casual Game
+  packageVersion: 4.1.0
+  assetPath: Assets/Layer Lab/GUI Pro-CasualGame/Preview/Play_BattleVS.png
+  uploadId: 749964
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

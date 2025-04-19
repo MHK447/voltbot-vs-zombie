@@ -7,16 +7,10 @@ using UniRx;
 using System.Linq;
 using UnityEngine.AI;
 using NavMeshPlus.Components;
+using Unity.VisualScripting;
 
 public class InGameTycoon : InGameMode
 {
-
-    [SerializeField]
-    private OtterBase Player;
-
-    public OtterBase GetPlayer { get { return Player; } }
-
-
     [HideInInspector]
     public InGameStage curInGameStage;
 
@@ -41,32 +35,7 @@ public class InGameTycoon : InGameMode
 
         if (td != null)
         {
-            Addressables.InstantiateAsync($"InGame1_{stageidx}").Completed += (handle) =>
-            {
-                StartCoroutine(UpdateNavMeshProcess());
-                curInGameStage = handle.Result.GetComponent<InGameStage>();
-                if (curInGameStage != null)
-                {
-                    curInGameStage.Init();
-                }
-
-                Player.Init();
-
-                GameRoot.Instance.WaitTimeAndCallback(1f, () =>
-                {
-                    var recordcount = GameRoot.Instance.UserData.GetRecordCount(Config.RecordCountKeys.Navi_Start);
-
-                    if (GameRoot.Instance.UserData.CurMode.StageData.StageIdx == 1 && recordcount == 0)
-                    {
-                        GameRoot.Instance.UISystem.GetUI<HUDTotal>()?.GetUpgradeBtn.gameObject.SetActive(false);
-                        GameRoot.Instance.UISystem.OpenUI<PopupDragTuto>(null, () =>
-                        {
-                            GameRoot.Instance.NaviSystem.FirstStartNavi();
-                            GameRoot.Instance.NaviSystem.StarNexttNavi();
-                        });
-                    }
-                });
-            };
+            GameRoot.Instance.UISystem.OpenUI<PageLobbyBattle>();
         }
 
         //CalculateGameSpeed();
@@ -83,7 +52,6 @@ public class InGameTycoon : InGameMode
     {
         base.LoadUI();
         GameRoot.Instance.InGameSystem.InitPopups();
-        GameRoot.Instance.UISystem.OpenUI<HUDTotal>();
     }
 
 

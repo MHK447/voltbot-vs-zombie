@@ -97,8 +97,6 @@ public class PanAndZoom : MonoBehaviour
     private Vector3 camVelocity = Vector3.zero;
     private Vector3 posLastFrame = Vector3.zero;
     private bool multiTouch = false;
-    Transform Target;
-    Transform PlayerTarget;
 
     void Start()
     {
@@ -120,9 +118,7 @@ public class PanAndZoom : MonoBehaviour
 
         canUseMouse = Application.platform != RuntimePlatform.Android && Application.platform != RuntimePlatform.IPhonePlayer && Input.mousePresent;
 
-        PlayerTarget = Target = GameRoot.Instance.InGameSystem.GetInGame<InGameTycoon>().GetPlayer.transform;
-        //zoomOutSize = cam.orthographicSize = Mathf.Min(cam.orthographicSize, (Screen.height * (boundMaxX - boundMinX) / (2 * Screen.width)) - 0.001f);
-
+    
         GameRoot.Instance.WaitTimeAndCallback(1f, () =>
         {
             cam.orthographicSize = 12;
@@ -132,13 +128,7 @@ public class PanAndZoom : MonoBehaviour
     Vector3 velocity = Vector3.zero; // 클래스 변수로 선언
     void FixedUpdate()
     {
-        if (Target == null) return;
         if (IsFocusing) return;
-
-        Vector3 targetPosition = Target.transform.position;
-        targetPosition.z = -10f; // z 값 고정
-
-        cam.transform.position = Vector3.SmoothDamp(cam.transform.position, targetPosition, ref velocity, 0.15f);
 
         if (useMouse && canUseMouse)
         {
@@ -164,12 +154,6 @@ public class PanAndZoom : MonoBehaviour
     {
         IsFocusing = true;
         this.transform.DOMove(new Vector3(target.position.x, target.position.y, -10f), 1f);
-    }
-
-    public void FocusOff()
-    {
-        Target = PlayerTarget;
-        IsFocusing = false;
     }
 
     void UpdateWithTouch()

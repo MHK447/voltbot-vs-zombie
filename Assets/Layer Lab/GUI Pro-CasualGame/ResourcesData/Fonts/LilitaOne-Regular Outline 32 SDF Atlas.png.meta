@@ -1,5 +1,13 @@
 fileFormatVersion: 2
 guid: 24afcf316a3a944c3bf86bc27a2f93fb
+AssetOrigin:
+  serializedVersion: 1
+  productId: 176695
+  packageName: GUI Pro - Casual Game
+  packageVersion: 4.1.0
+  assetPath: Assets/Layer Lab/GUI Pro-CasualGame/ResourcesData/Fonts/LilitaOne-Regular
+    Outline 32 SDF Atlas.png
+  uploadId: 749964
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

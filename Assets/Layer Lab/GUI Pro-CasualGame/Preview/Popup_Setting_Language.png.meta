@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: c7e89df70e6504f94b8e27474fc7a7a7
+AssetOrigin:
+  serializedVersion: 1
+  productId: 176695
+  packageName: GUI Pro - Casual Game
+  packageVersion: 4.1.0
+  assetPath: Assets/Layer Lab/GUI Pro-CasualGame/Preview/Popup_Setting_Language.png
+  uploadId: 749964
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

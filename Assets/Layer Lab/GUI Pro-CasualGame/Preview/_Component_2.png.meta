@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 1c93fc4926f8b4110b2d9a3bc5bbb94e
+AssetOrigin:
+  serializedVersion: 1
+  productId: 176695
+  packageName: GUI Pro - Casual Game
+  packageVersion: 4.1.0
+  assetPath: Assets/Layer Lab/GUI Pro-CasualGame/Preview/_Component_2.png
+  uploadId: 749964
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

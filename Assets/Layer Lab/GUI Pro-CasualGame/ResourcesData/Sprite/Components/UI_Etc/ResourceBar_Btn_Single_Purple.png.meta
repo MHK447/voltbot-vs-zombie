@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 4e61e7096fc78431092f4d337536ef68
+AssetOrigin:
+  serializedVersion: 1
+  productId: 176695
+  packageName: GUI Pro - Casual Game
+  packageVersion: 4.1.0
+  assetPath: Assets/Layer Lab/GUI Pro-CasualGame/ResourcesData/Sprite/Components/UI_Etc/ResourceBar_Btn_Single_Purple.png
+  uploadId: 749964
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

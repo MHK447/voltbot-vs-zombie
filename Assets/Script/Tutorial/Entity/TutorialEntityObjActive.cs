@@ -43,8 +43,6 @@ public class TutorialEntityObjActive : TutorialEntity
         {
             case TutorialIdent.NextStageBtn:
                 {
-                    ProjectUtility.SetActiveCheck(GameRoot.Instance.UISystem.GetUI<HUDTotal>()?.GetNextStageBtn.gameObject, true);
-                    ProjectUtility.SetActiveCheck(GameRoot.Instance.UISystem.GetUI<HUDTotal>()?.GetBoostBtn.gameObject, true);
                     break;
                 }
         }

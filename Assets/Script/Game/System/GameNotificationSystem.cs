@@ -157,67 +157,11 @@ public class GameNotificationSystem
 
             case NotificationCategory.StageClear:
                 {
-                    var noti = GetData(category, -1, -1);
-                    if (noti == null) return;
-
-                    bool on = false;
-
-                    var stageidx = GameRoot.Instance.UserData.CurMode.StageData.StageIdx;
-
-                    var isnonebuyupgrade = GameRoot.Instance.UserData.CurMode.UpgradeGroupData.StageUpgradeCollectionList.ToList().Find(x => x.IsBuyCheckProperty.Value == false);
-
-                    var curmaxcount = GameRoot.Instance.FacilitySystem.GetFishUpgradeMaxLevelCount();
-
-                    var tdlist = Tables.Instance.GetTable<FacilityUpgrade>().DataList.ToList().FindAll(x => x.stageidx == stageidx);
-
-                    if (isnonebuyupgrade == null && tdlist.Count == curmaxcount)
-                    {
-
-                        var td = Tables.Instance.GetTable<StageInfo>().GetData(stageidx);
-
-                        if (td != null)
-                        {
-                            on = GameRoot.Instance.UserData.CurMode.Money.Value >= td.next_stage_money;
-                        }
-                    }
-
-                    noti.on.Value = on;
+                
                 }
                 break;
             case NotificationCategory.UpgradeProduct:
                 {
-                    var noti = GetData(category, -1, -1);
-                    if (noti == null) return;
-
-                    bool on = false;
-
-                    var fishupgradedatas = GameRoot.Instance.UserData.CurMode.FishUpgradeDatas.ToList();
-
-
-                    var stageidx = GameRoot.Instance.UserData.CurMode.StageData.StageIdx;
-
-                    foreach (var fishupgrade in fishupgradedatas)
-                    {
-                        var td = Tables.Instance.GetTable<FacilityUpgrade>().GetData(new KeyValuePair<int, int>(stageidx, fishupgrade.FishIdx));
-
-                        if (td == null) continue;
-
-                        if (td != null && td.max_ugprade_count <= fishupgrade.Level) continue;
-
-                        var getfindfacility = GameRoot.Instance.UserData.CurMode.StageData.FindFishFacilityData(td.facilityidx);
-
-                        if (getfindfacility == null || !getfindfacility.IsOpen) continue;
-
-                        var curprice = GameRoot.Instance.FacilitySystem.GetFishUpgradeLevelCost(fishupgrade.FishIdx, fishupgrade.Level);
-
-                        if (GameRoot.Instance.UserData.CurMode.Money.Value >= curprice)
-                        {
-                            on = true;
-                            break;
-                        }
-
-                    }
-                    noti.on.Value = on;
                 }
                 break;
         }

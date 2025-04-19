@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 78b3e96079f8a4c05a3f6d5919d4156a
+AssetOrigin:
+  serializedVersion: 1
+  productId: 176695
+  packageName: GUI Pro - Casual Game
+  packageVersion: 4.1.0
+  assetPath: Assets/Layer Lab/GUI Pro-CasualGame/ResourcesData/Sprite/Components/Slider/Slider_Icon04_Fill_Red.png
+  uploadId: 749964
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

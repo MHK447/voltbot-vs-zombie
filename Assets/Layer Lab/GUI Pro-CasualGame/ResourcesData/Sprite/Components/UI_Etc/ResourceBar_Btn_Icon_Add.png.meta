@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 97ea867b6568b4bcbb2f969d2fad341a
+AssetOrigin:
+  serializedVersion: 1
+  productId: 176695
+  packageName: GUI Pro - Casual Game
+  packageVersion: 4.1.0
+  assetPath: Assets/Layer Lab/GUI Pro-CasualGame/ResourcesData/Sprite/Components/UI_Etc/ResourceBar_Btn_Icon_Add.png
+  uploadId: 749964
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

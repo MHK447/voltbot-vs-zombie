@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: b72d3428ede544543a1a5087a1ded6a4
+AssetOrigin:
+  serializedVersion: 1
+  productId: 176695
+  packageName: GUI Pro - Casual Game
+  packageVersion: 4.1.0
+  assetPath: Assets/Layer Lab/GUI Pro-CasualGame/Preview/Stage_Select_Type2_Detail.png
+  uploadId: 749964
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

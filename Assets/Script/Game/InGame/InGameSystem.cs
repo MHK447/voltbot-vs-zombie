@@ -51,14 +51,6 @@ public class InGameSystem
 
     public void Create()
     {
-        casher_move_speed = Tables.Instance.GetTable<Define>().GetData("casher_move_speed").value / 100f;
-        carry_sleep_time = Tables.Instance.GetTable<Define>().GetData("carry_sleep_time").value;
-        player_start_carry_count = Tables.Instance.GetTable<Define>().GetData("player_start_carry_count").value;
-        carry_casher_count = Tables.Instance.GetTable<Define>().GetData("carry_casher_count").value;
-        max_offline_time = Tables.Instance.GetTable<Define>().GetData("max_offline_time").value;
-        offline_value_time = Tables.Instance.GetTable<Define>().GetData("offline_value_time").value;
-        offline_reward_multiple = Tables.Instance.GetTable<Define>().GetData("offline_reward_multiple").value;
-        default_fishing_time = Tables.Instance.GetTable<Define>().GetData("default_fishing_time").value / 100f;
     }
 
     public T GetInGame<T>() where T : InGameMode
@@ -87,24 +79,12 @@ public class InGameSystem
 
     public void NextGameStage(bool Init = false)
     {
-        // 이전 스테이지 정리 작업 보장
-        if (GameRoot.Instance.UISystem.GetUI<HUDTotal>()?.GetHudNoticeComponent != null)
-        {
-            GameRoot.Instance.UISystem.GetUI<HUDTotal>().GetHudNoticeComponent.NoticeClear();
-        }
-
+     
         // 1. 현재 인게임 명시적 언로드 및 리소스 정리
         if (GameRoot.Instance.InGameSystem.CurInGame != null)
         {
             try
             {
-                // 물고기 등 게임 오브젝트 정리를 명시적으로 실행
-                var currentStage = GameRoot.Instance.InGameSystem.GetInGame<InGameTycoon>()?.curInGameStage;
-                if (currentStage != null && currentStage.GetTrashCanComponent != null)
-                {
-                    currentStage.GetTrashCanComponent.ForceDestroyAllFish();
-                }
-                
                 // 인게임 언로드
                 GameRoot.Instance.InGameSystem.CurInGame.UnLoad();
                 
@@ -130,14 +110,13 @@ public class InGameSystem
             SoundPlayer.Instance.Load();
             
             // 각 시스템 순차적 초기화
-            GameRoot.Instance.FacilitySystem.Create();
+        
             
             // 비동기 작업 완료 보장을 위해 짧은 딜레이 추가
             GameRoot.Instance.WaitTimeAndCallback(0.1f, () => {
                 GameRoot.Instance.InGameSystem.Create();
                 
                 GameRoot.Instance.WaitTimeAndCallback(0.1f, () => {
-                    GameRoot.Instance.FacilitySystem.CreateStageFacility(GameRoot.Instance.UserData.CurMode.StageData.StageIdx);
                     
                     // 나머지 초기화
                     GameRoot.Instance.TutorialSystem.ClearRegisiter();
@@ -183,15 +162,12 @@ public class InGameSystem
 
     public void LoadCallBack()
     {
-        GameRoot.Instance.GetJoyStick.Init();
- 
         var curstageidx = GameRoot.Instance.UserData.CurMode.StageData.StageIdx;
 
         var stagetd = Tables.Instance.GetTable<StageInfo>().GetData(curstageidx);
 
         if(stagetd != null)
         {
-            GameRoot.Instance.UpgradeSystem.StageSetUpgradeData(curstageidx);
             GameRoot.Instance.UserData.CurMode.Money.Value = GameRoot.Instance.UserData.HUDMoney.Value = 0;
             GameRoot.Instance.UserData.SetReward((int)Config.RewardType.Currency, (int)Config.CurrencyID.Money, stagetd.seedmoney_value);
 
@@ -255,29 +231,29 @@ public class InGameSystem
         var maxRewardTime = Tables.Instance.GetTable<Define>().GetData("max_offline_time").value;
     
         
-        if (diff.TotalSeconds > minRewardTime && time != DateTime.MinValue)
-        {
-            int rewardTime = (int)diff.TotalSeconds;
+        // if (diff.TotalSeconds > minRewardTime && time != DateTime.MinValue)
+        // {
+        //     int rewardTime = (int)diff.TotalSeconds;
             
-            if ((int)diff.TotalSeconds >= maxRewardTime)
-            {
-                rewardTime = maxRewardTime;
+        //     if ((int)diff.TotalSeconds >= maxRewardTime)
+        //     {
+        //         rewardTime = maxRewardTime;
 
-                ActionQueue.Enqueue(() =>
-                {
-                    if (!GameRoot.Instance.TutorialSystem.IsActive())
-                        GameRoot.Instance.UISystem.OpenUI<PopupOfflineReward>(popup => popup.Set(maxRewardTime), () => NextAction());
-                });
-            }
-            else
-            {
-                ActionQueue.Enqueue(() =>
-                {
-                    if(!GameRoot.Instance.TutorialSystem.IsActive())
-                    GameRoot.Instance.UISystem.OpenUI<PopupOfflineReward>(popup => popup.Set((int)diff.TotalSeconds), () => NextAction()); //offline not max value
-                });
-            }
-        }
+        //         ActionQueue.Enqueue(() =>
+        //         {
+        //             if (!GameRoot.Instance.TutorialSystem.IsActive())
+        //                 GameRoot.Instance.UISystem.OpenUI<PopupOfflineReward>(popup => popup.Set(maxRewardTime), () => NextAction());
+        //         });
+        //     }
+        //     else
+        //     {
+        //         ActionQueue.Enqueue(() =>
+        //         {
+        //             if(!GameRoot.Instance.TutorialSystem.IsActive())
+        //             GameRoot.Instance.UISystem.OpenUI<PopupOfflineReward>(popup => popup.Set((int)diff.TotalSeconds), () => NextAction()); //offline not max value
+        //         });
+        //     }
+        // }
 
 
         if (!firstInit)

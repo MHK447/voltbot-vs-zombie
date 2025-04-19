@@ -41,12 +41,6 @@ public class NoticeComponent : MonoBehaviour
     public void OnClickNotice()
     {
         GameRoot.Instance.InGameSystem.CurInGame.IngameCamera.FoucsPosition(Target.transform);
-                  
-        GameRoot.Instance.WaitTimeAndCallback(2f, () =>
-        {
-            GameRoot.Instance.InGameSystem.CurInGame.IngameCamera.FocusOff();
-        });
-
     }
 
 }

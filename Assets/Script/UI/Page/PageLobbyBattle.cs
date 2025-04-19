@@ -21,7 +21,7 @@ public class PageLobbyBattle : UIBase
     protected override void Awake()
     {
         base.Awake();
-        StartBtn.onClick.AddListener(OnClickStart);
+        //StartBtn.onClick.AddListener(OnClickStart);
     }
 
 
