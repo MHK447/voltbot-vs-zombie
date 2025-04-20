@@ -5,6 +5,7 @@ using BanpoFri;
 using UnityEngine.UI;
 using System.Linq;
 using TMPro;
+using UnityEngine.AddressableAssets;
 
 [UIPath("UI/Page/PageLobbyBattle")]
 public class PageLobbyBattle : UIBase
@@ -65,9 +66,16 @@ public class PageLobbyBattle : UIBase
 
     public void OnClickStart()
     {
-        StartBtn.interactable = false;
+        Hide();
+
+        GameRoot.Instance.UISystem.OpenUI<PopupIngameBottom>(popup => popup.Init());
         GameRoot.Instance.InGameSystem.DeadCount.Value = 0;
         GameRoot.Instance.InGameSystem.LevelProperty.Value = 0;
+
+        Addressables.InstantiateAsync("StageMap_01").Completed += (obj) =>
+                      {
+                          var inst = obj.Result;
+                      };
 
         GameRoot.Instance.WaitTimeAndCallback(2f, () =>
         {
