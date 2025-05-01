@@ -26,7 +26,7 @@ public class SelectItemComponent : MonoBehaviour
     {
         SelectItemIdx = selectitemidx;
 
-        StoreBuyProductComponent.Init();
+        StoreBuyProductComponent.Set(this);
     }
 
 

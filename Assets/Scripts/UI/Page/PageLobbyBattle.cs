@@ -68,7 +68,7 @@ public class PageLobbyBattle : UIBase
     {
         Hide();
 
-        //GameRoot.Instance.UISystem.OpenUI<PopupIngameBottom>(popup => popup.Init());
+        GameRoot.Instance.UISystem.OpenUI<PopupIngameBottom>(popup => popup.Init());
         GameRoot.Instance.InGameSystem.DeadCount.Value = 0;
         GameRoot.Instance.InGameSystem.LevelProperty.Value = 0;
 
