@@ -7,13 +7,13 @@ namespace BanpoFri.Data
 
 using global::System;
 using global::System.Collections.Generic;
-using global::FlatBuffers;
+using global::Google.FlatBuffers;
 
 public struct OptionData : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
-  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_2_0_0(); }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_23_5_26(); }
   public static OptionData GetRootAsOptionData(ByteBuffer _bb) { return GetRootAsOptionData(_bb, new OptionData()); }
   public static OptionData GetRootAsOptionData(ByteBuffer _bb, OptionData obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
@@ -70,7 +70,78 @@ public struct OptionData : IFlatbufferObject
     int o = builder.EndTable();
     return new Offset<BanpoFri.Data.OptionData>(o);
   }
-};
+  public OptionDataT UnPack() {
+    var _o = new OptionDataT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(OptionDataT _o) {
+    _o.Language = this.Language;
+    _o.Bgm = this.Bgm;
+    _o.Effect = this.Effect;
+    _o.Slowgraphic = this.Slowgraphic;
+    _o.Vibration = this.Vibration;
+    _o.Subscribeorder = this.Subscribeorder;
+    _o.Autofelling = this.Autofelling;
+  }
+  public static Offset<BanpoFri.Data.OptionData> Pack(FlatBufferBuilder builder, OptionDataT _o) {
+    if (_o == null) return default(Offset<BanpoFri.Data.OptionData>);
+    var _language = _o.Language == null ? default(StringOffset) : builder.CreateString(_o.Language);
+    return CreateOptionData(
+      builder,
+      _language,
+      _o.Bgm,
+      _o.Effect,
+      _o.Slowgraphic,
+      _o.Vibration,
+      _o.Subscribeorder,
+      _o.Autofelling);
+  }
+}
 
+public class OptionDataT
+{
+  [Newtonsoft.Json.JsonProperty("language")]
+  public string Language { get; set; }
+  [Newtonsoft.Json.JsonProperty("bgm")]
+  public bool Bgm { get; set; }
+  [Newtonsoft.Json.JsonProperty("effect")]
+  public bool Effect { get; set; }
+  [Newtonsoft.Json.JsonProperty("slowgraphic")]
+  public bool Slowgraphic { get; set; }
+  [Newtonsoft.Json.JsonProperty("vibration")]
+  public bool Vibration { get; set; }
+  [Newtonsoft.Json.JsonProperty("subscribeorder")]
+  public bool Subscribeorder { get; set; }
+  [Newtonsoft.Json.JsonProperty("autofelling")]
+  public bool Autofelling { get; set; }
+
+  public OptionDataT() {
+    this.Language = null;
+    this.Bgm = false;
+    this.Effect = false;
+    this.Slowgraphic = false;
+    this.Vibration = true;
+    this.Subscribeorder = false;
+    this.Autofelling = false;
+  }
+}
+
+
+static public class OptionDataVerify
+{
+  static public bool Verify(Google.FlatBuffers.Verifier verifier, uint tablePos)
+  {
+    return verifier.VerifyTableStart(tablePos)
+      && verifier.VerifyString(tablePos, 4 /*Language*/, false)
+      && verifier.VerifyField(tablePos, 6 /*Bgm*/, 1 /*bool*/, 1, false)
+      && verifier.VerifyField(tablePos, 8 /*Effect*/, 1 /*bool*/, 1, false)
+      && verifier.VerifyField(tablePos, 10 /*Slowgraphic*/, 1 /*bool*/, 1, false)
+      && verifier.VerifyField(tablePos, 12 /*Vibration*/, 1 /*bool*/, 1, false)
+      && verifier.VerifyField(tablePos, 14 /*Subscribeorder*/, 1 /*bool*/, 1, false)
+      && verifier.VerifyField(tablePos, 16 /*Autofelling*/, 1 /*bool*/, 1, false)
+      && verifier.VerifyTableEnd(tablePos);
+  }
+}
 
 }

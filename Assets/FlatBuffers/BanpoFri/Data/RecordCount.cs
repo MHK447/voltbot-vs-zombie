@@ -7,13 +7,13 @@ namespace BanpoFri.Data
 
 using global::System;
 using global::System.Collections.Generic;
-using global::FlatBuffers;
+using global::Google.FlatBuffers;
 
 public struct RecordCount : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
-  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_2_0_0(); }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_23_5_26(); }
   public static RecordCount GetRootAsRecordCount(ByteBuffer _bb) { return GetRootAsRecordCount(_bb, new RecordCount()); }
   public static RecordCount GetRootAsRecordCount(ByteBuffer _bb, RecordCount obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
@@ -45,7 +45,48 @@ public struct RecordCount : IFlatbufferObject
     int o = builder.EndTable();
     return new Offset<BanpoFri.Data.RecordCount>(o);
   }
-};
+  public RecordCountT UnPack() {
+    var _o = new RecordCountT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(RecordCountT _o) {
+    _o.Idx = this.Idx;
+    _o.Count = this.Count;
+  }
+  public static Offset<BanpoFri.Data.RecordCount> Pack(FlatBufferBuilder builder, RecordCountT _o) {
+    if (_o == null) return default(Offset<BanpoFri.Data.RecordCount>);
+    var _idx = _o.Idx == null ? default(StringOffset) : builder.CreateString(_o.Idx);
+    return CreateRecordCount(
+      builder,
+      _idx,
+      _o.Count);
+  }
+}
 
+public class RecordCountT
+{
+  [Newtonsoft.Json.JsonProperty("idx")]
+  public string Idx { get; set; }
+  [Newtonsoft.Json.JsonProperty("count")]
+  public int Count { get; set; }
+
+  public RecordCountT() {
+    this.Idx = null;
+    this.Count = 0;
+  }
+}
+
+
+static public class RecordCountVerify
+{
+  static public bool Verify(Google.FlatBuffers.Verifier verifier, uint tablePos)
+  {
+    return verifier.VerifyTableStart(tablePos)
+      && verifier.VerifyString(tablePos, 4 /*Idx*/, false)
+      && verifier.VerifyField(tablePos, 6 /*Count*/, 4 /*int*/, 4, false)
+      && verifier.VerifyTableEnd(tablePos);
+  }
+}
 
 }

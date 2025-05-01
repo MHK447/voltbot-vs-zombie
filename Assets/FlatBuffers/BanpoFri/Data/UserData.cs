@@ -7,104 +7,239 @@ namespace BanpoFri.Data
 
 using global::System;
 using global::System.Collections.Generic;
-using global::FlatBuffers;
+using global::Google.FlatBuffers;
 
 public struct UserData : IFlatbufferObject
 {
   private Table __p;
   public ByteBuffer ByteBuffer { get { return __p.bb; } }
-  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_2_0_0(); }
+  public static void ValidateVersion() { FlatBufferConstants.FLATBUFFERS_23_5_26(); }
   public static UserData GetRootAsUserData(ByteBuffer _bb) { return GetRootAsUserData(_bb, new UserData()); }
   public static UserData GetRootAsUserData(ByteBuffer _bb, UserData obj) { return (obj.__assign(_bb.GetInt(_bb.Position) + _bb.Position, _bb)); }
+  public static bool VerifyUserData(ByteBuffer _bb) {Google.FlatBuffers.Verifier verifier = new Google.FlatBuffers.Verifier(_bb); return verifier.VerifyBuffer("", false, UserDataVerify.Verify); }
   public void __init(int _i, ByteBuffer _bb) { __p = new Table(_i, _bb); }
   public UserData __assign(int _i, ByteBuffer _bb) { __init(_i, _bb); return this; }
 
-  public string Money { get { int o = __p.__offset(4); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
-#if ENABLE_SPAN_T
-  public Span<byte> GetMoneyBytes() { return __p.__vector_as_span<byte>(4, 1); }
-#else
-  public ArraySegment<byte>? GetMoneyBytes() { return __p.__vector_as_arraysegment(4); }
-#endif
-  public byte[] GetMoneyArray() { return __p.__vector_as_array<byte>(4); }
+  public double Money { get { int o = __p.__offset(4); return o != 0 ? __p.bb.GetDouble(o + __p.bb_pos) : (double)0.0; } }
+  public bool MutateMoney(double money) { int o = __p.__offset(4); if (o != 0) { __p.bb.PutDouble(o + __p.bb_pos, money); return true; } else { return false; } }
   public int Cash { get { int o = __p.__offset(6); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
   public bool MutateCash(int cash) { int o = __p.__offset(6); if (o != 0) { __p.bb.PutInt(o + __p.bb_pos, cash); return true; } else { return false; } }
-  public long Lastlogintime { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool MutateLastlogintime(long lastlogintime) { int o = __p.__offset(8); if (o != 0) { __p.bb.PutLong(o + __p.bb_pos, lastlogintime); return true; } else { return false; } }
-  public long Curplaydatetime { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
-  public bool MutateCurplaydatetime(long curplaydatetime) { int o = __p.__offset(10); if (o != 0) { __p.bb.PutLong(o + __p.bb_pos, curplaydatetime); return true; } else { return false; } }
-  public BanpoFri.Data.StageData? Stagedata { get { int o = __p.__offset(12); return o != 0 ? (BanpoFri.Data.StageData?)(new BanpoFri.Data.StageData()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
-  public BanpoFri.Data.RecordCount? Recordcount(int j) { int o = __p.__offset(14); return o != 0 ? (BanpoFri.Data.RecordCount?)(new BanpoFri.Data.RecordCount()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
-  public int RecordcountLength { get { int o = __p.__offset(14); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public BanpoFri.Data.UpgradeData? Upgradedatas(int j) { int o = __p.__offset(16); return o != 0 ? (BanpoFri.Data.UpgradeData?)(new BanpoFri.Data.UpgradeData()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
-  public int UpgradedatasLength { get { int o = __p.__offset(16); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public BanpoFri.Data.FacilityUpgradeData? Facilityupgradedatas(int j) { int o = __p.__offset(18); return o != 0 ? (BanpoFri.Data.FacilityUpgradeData?)(new BanpoFri.Data.FacilityUpgradeData()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
-  public int FacilityupgradedatasLength { get { int o = __p.__offset(18); return o != 0 ? __p.__vector_len(o) : 0; } }
-  public int Boosttime { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)0; } }
-  public bool MutateBoosttime(int boosttime) { int o = __p.__offset(20); if (o != 0) { __p.bb.PutInt(o + __p.bb_pos, boosttime); return true; } else { return false; } }
-  public string Tutorial { get { int o = __p.__offset(22); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
+  public string Buyinappids { get { int o = __p.__offset(8); return o != 0 ? __p.__string(o + __p.bb_pos) : null; } }
 #if ENABLE_SPAN_T
-  public Span<byte> GetTutorialBytes() { return __p.__vector_as_span<byte>(22, 1); }
+  public Span<byte> GetBuyinappidsBytes() { return __p.__vector_as_span<byte>(8, 1); }
 #else
-  public ArraySegment<byte>? GetTutorialBytes() { return __p.__vector_as_arraysegment(22); }
+  public ArraySegment<byte>? GetBuyinappidsBytes() { return __p.__vector_as_arraysegment(8); }
 #endif
-  public byte[] GetTutorialArray() { return __p.__vector_as_array<byte>(22); }
-  public BanpoFri.Data.OptionData? Optiondata { get { int o = __p.__offset(24); return o != 0 ? (BanpoFri.Data.OptionData?)(new BanpoFri.Data.OptionData()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
+  public byte[] GetBuyinappidsArray() { return __p.__vector_as_array<byte>(8); }
+  public string Tutorial(int j) { int o = __p.__offset(10); return o != 0 ? __p.__string(__p.__vector(o) + j * 4) : null; }
+  public int TutorialLength { get { int o = __p.__offset(10); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long Lastlogintime { get { int o = __p.__offset(12); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool MutateLastlogintime(long lastlogintime) { int o = __p.__offset(12); if (o != 0) { __p.bb.PutLong(o + __p.bb_pos, lastlogintime); return true; } else { return false; } }
+  public BanpoFri.Data.OptionData? Optiondata { get { int o = __p.__offset(14); return o != 0 ? (BanpoFri.Data.OptionData?)(new BanpoFri.Data.OptionData()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
+  public BanpoFri.Data.RecordCount? Recordcount(int j) { int o = __p.__offset(16); return o != 0 ? (BanpoFri.Data.RecordCount?)(new BanpoFri.Data.RecordCount()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
+  public int RecordcountLength { get { int o = __p.__offset(16); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public long Gamestarttime { get { int o = __p.__offset(18); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool MutateGamestarttime(long gamestarttime) { int o = __p.__offset(18); if (o != 0) { __p.bb.PutLong(o + __p.bb_pos, gamestarttime); return true; } else { return false; } }
+  public long Uuid { get { int o = __p.__offset(20); return o != 0 ? __p.bb.GetLong(o + __p.bb_pos) : (long)0; } }
+  public bool MutateUuid(long uuid) { int o = __p.__offset(20); if (o != 0) { __p.bb.PutLong(o + __p.bb_pos, uuid); return true; } else { return false; } }
+  public BanpoFri.Data.RecordCount? Recordvalue(int j) { int o = __p.__offset(22); return o != 0 ? (BanpoFri.Data.RecordCount?)(new BanpoFri.Data.RecordCount()).__assign(__p.__indirect(__p.__vector(o) + j * 4), __p.bb) : null; }
+  public int RecordvalueLength { get { int o = __p.__offset(22); return o != 0 ? __p.__vector_len(o) : 0; } }
+  public BanpoFri.Data.StageData? Stagedata { get { int o = __p.__offset(24); return o != 0 ? (BanpoFri.Data.StageData?)(new BanpoFri.Data.StageData()).__assign(__p.__indirect(o + __p.bb_pos), __p.bb) : null; } }
 
   public static Offset<BanpoFri.Data.UserData> CreateUserData(FlatBufferBuilder builder,
-      StringOffset moneyOffset = default(StringOffset),
+      double money = 0.0,
       int cash = 0,
+      StringOffset buyinappidsOffset = default(StringOffset),
+      VectorOffset tutorialOffset = default(VectorOffset),
       long lastlogintime = 0,
-      long curplaydatetime = 0,
-      Offset<BanpoFri.Data.StageData> stagedataOffset = default(Offset<BanpoFri.Data.StageData>),
+      Offset<BanpoFri.Data.OptionData> optiondataOffset = default(Offset<BanpoFri.Data.OptionData>),
       VectorOffset recordcountOffset = default(VectorOffset),
-      VectorOffset upgradedatasOffset = default(VectorOffset),
-      VectorOffset facilityupgradedatasOffset = default(VectorOffset),
-      int boosttime = 0,
-      StringOffset tutorialOffset = default(StringOffset),
-      Offset<BanpoFri.Data.OptionData> optiondataOffset = default(Offset<BanpoFri.Data.OptionData>)) {
+      long gamestarttime = 0,
+      long uuid = 0,
+      VectorOffset recordvalueOffset = default(VectorOffset),
+      Offset<BanpoFri.Data.StageData> stagedataOffset = default(Offset<BanpoFri.Data.StageData>)) {
     builder.StartTable(11);
-    UserData.AddCurplaydatetime(builder, curplaydatetime);
+    UserData.AddUuid(builder, uuid);
+    UserData.AddGamestarttime(builder, gamestarttime);
     UserData.AddLastlogintime(builder, lastlogintime);
+    UserData.AddMoney(builder, money);
+    UserData.AddStagedata(builder, stagedataOffset);
+    UserData.AddRecordvalue(builder, recordvalueOffset);
+    UserData.AddRecordcount(builder, recordcountOffset);
     UserData.AddOptiondata(builder, optiondataOffset);
     UserData.AddTutorial(builder, tutorialOffset);
-    UserData.AddBoosttime(builder, boosttime);
-    UserData.AddFacilityupgradedatas(builder, facilityupgradedatasOffset);
-    UserData.AddUpgradedatas(builder, upgradedatasOffset);
-    UserData.AddRecordcount(builder, recordcountOffset);
-    UserData.AddStagedata(builder, stagedataOffset);
+    UserData.AddBuyinappids(builder, buyinappidsOffset);
     UserData.AddCash(builder, cash);
-    UserData.AddMoney(builder, moneyOffset);
     return UserData.EndUserData(builder);
   }
 
   public static void StartUserData(FlatBufferBuilder builder) { builder.StartTable(11); }
-  public static void AddMoney(FlatBufferBuilder builder, StringOffset moneyOffset) { builder.AddOffset(0, moneyOffset.Value, 0); }
+  public static void AddMoney(FlatBufferBuilder builder, double money) { builder.AddDouble(0, money, 0.0); }
   public static void AddCash(FlatBufferBuilder builder, int cash) { builder.AddInt(1, cash, 0); }
-  public static void AddLastlogintime(FlatBufferBuilder builder, long lastlogintime) { builder.AddLong(2, lastlogintime, 0); }
-  public static void AddCurplaydatetime(FlatBufferBuilder builder, long curplaydatetime) { builder.AddLong(3, curplaydatetime, 0); }
-  public static void AddStagedata(FlatBufferBuilder builder, Offset<BanpoFri.Data.StageData> stagedataOffset) { builder.AddOffset(4, stagedataOffset.Value, 0); }
-  public static void AddRecordcount(FlatBufferBuilder builder, VectorOffset recordcountOffset) { builder.AddOffset(5, recordcountOffset.Value, 0); }
+  public static void AddBuyinappids(FlatBufferBuilder builder, StringOffset buyinappidsOffset) { builder.AddOffset(2, buyinappidsOffset.Value, 0); }
+  public static void AddTutorial(FlatBufferBuilder builder, VectorOffset tutorialOffset) { builder.AddOffset(3, tutorialOffset.Value, 0); }
+  public static VectorOffset CreateTutorialVector(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
+  public static VectorOffset CreateTutorialVectorBlock(FlatBufferBuilder builder, StringOffset[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateTutorialVectorBlock(FlatBufferBuilder builder, ArraySegment<StringOffset> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateTutorialVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<StringOffset>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartTutorialVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddLastlogintime(FlatBufferBuilder builder, long lastlogintime) { builder.AddLong(4, lastlogintime, 0); }
+  public static void AddOptiondata(FlatBufferBuilder builder, Offset<BanpoFri.Data.OptionData> optiondataOffset) { builder.AddOffset(5, optiondataOffset.Value, 0); }
+  public static void AddRecordcount(FlatBufferBuilder builder, VectorOffset recordcountOffset) { builder.AddOffset(6, recordcountOffset.Value, 0); }
   public static VectorOffset CreateRecordcountVector(FlatBufferBuilder builder, Offset<BanpoFri.Data.RecordCount>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
   public static VectorOffset CreateRecordcountVectorBlock(FlatBufferBuilder builder, Offset<BanpoFri.Data.RecordCount>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateRecordcountVectorBlock(FlatBufferBuilder builder, ArraySegment<Offset<BanpoFri.Data.RecordCount>> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateRecordcountVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<Offset<BanpoFri.Data.RecordCount>>(dataPtr, sizeInBytes); return builder.EndVector(); }
   public static void StartRecordcountVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddUpgradedatas(FlatBufferBuilder builder, VectorOffset upgradedatasOffset) { builder.AddOffset(6, upgradedatasOffset.Value, 0); }
-  public static VectorOffset CreateUpgradedatasVector(FlatBufferBuilder builder, Offset<BanpoFri.Data.UpgradeData>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateUpgradedatasVectorBlock(FlatBufferBuilder builder, Offset<BanpoFri.Data.UpgradeData>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static void StartUpgradedatasVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddFacilityupgradedatas(FlatBufferBuilder builder, VectorOffset facilityupgradedatasOffset) { builder.AddOffset(7, facilityupgradedatasOffset.Value, 0); }
-  public static VectorOffset CreateFacilityupgradedatasVector(FlatBufferBuilder builder, Offset<BanpoFri.Data.FacilityUpgradeData>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
-  public static VectorOffset CreateFacilityupgradedatasVectorBlock(FlatBufferBuilder builder, Offset<BanpoFri.Data.FacilityUpgradeData>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
-  public static void StartFacilityupgradedatasVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
-  public static void AddBoosttime(FlatBufferBuilder builder, int boosttime) { builder.AddInt(8, boosttime, 0); }
-  public static void AddTutorial(FlatBufferBuilder builder, StringOffset tutorialOffset) { builder.AddOffset(9, tutorialOffset.Value, 0); }
-  public static void AddOptiondata(FlatBufferBuilder builder, Offset<BanpoFri.Data.OptionData> optiondataOffset) { builder.AddOffset(10, optiondataOffset.Value, 0); }
+  public static void AddGamestarttime(FlatBufferBuilder builder, long gamestarttime) { builder.AddLong(7, gamestarttime, 0); }
+  public static void AddUuid(FlatBufferBuilder builder, long uuid) { builder.AddLong(8, uuid, 0); }
+  public static void AddRecordvalue(FlatBufferBuilder builder, VectorOffset recordvalueOffset) { builder.AddOffset(9, recordvalueOffset.Value, 0); }
+  public static VectorOffset CreateRecordvalueVector(FlatBufferBuilder builder, Offset<BanpoFri.Data.RecordCount>[] data) { builder.StartVector(4, data.Length, 4); for (int i = data.Length - 1; i >= 0; i--) builder.AddOffset(data[i].Value); return builder.EndVector(); }
+  public static VectorOffset CreateRecordvalueVectorBlock(FlatBufferBuilder builder, Offset<BanpoFri.Data.RecordCount>[] data) { builder.StartVector(4, data.Length, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateRecordvalueVectorBlock(FlatBufferBuilder builder, ArraySegment<Offset<BanpoFri.Data.RecordCount>> data) { builder.StartVector(4, data.Count, 4); builder.Add(data); return builder.EndVector(); }
+  public static VectorOffset CreateRecordvalueVectorBlock(FlatBufferBuilder builder, IntPtr dataPtr, int sizeInBytes) { builder.StartVector(1, sizeInBytes, 1); builder.Add<Offset<BanpoFri.Data.RecordCount>>(dataPtr, sizeInBytes); return builder.EndVector(); }
+  public static void StartRecordvalueVector(FlatBufferBuilder builder, int numElems) { builder.StartVector(4, numElems, 4); }
+  public static void AddStagedata(FlatBufferBuilder builder, Offset<BanpoFri.Data.StageData> stagedataOffset) { builder.AddOffset(10, stagedataOffset.Value, 0); }
   public static Offset<BanpoFri.Data.UserData> EndUserData(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<BanpoFri.Data.UserData>(o);
   }
   public static void FinishUserDataBuffer(FlatBufferBuilder builder, Offset<BanpoFri.Data.UserData> offset) { builder.Finish(offset.Value); }
   public static void FinishSizePrefixedUserDataBuffer(FlatBufferBuilder builder, Offset<BanpoFri.Data.UserData> offset) { builder.FinishSizePrefixed(offset.Value); }
-};
+  public UserDataT UnPack() {
+    var _o = new UserDataT();
+    this.UnPackTo(_o);
+    return _o;
+  }
+  public void UnPackTo(UserDataT _o) {
+    _o.Money = this.Money;
+    _o.Cash = this.Cash;
+    _o.Buyinappids = this.Buyinappids;
+    _o.Tutorial = new List<string>();
+    for (var _j = 0; _j < this.TutorialLength; ++_j) {_o.Tutorial.Add(this.Tutorial(_j));}
+    _o.Lastlogintime = this.Lastlogintime;
+    _o.Optiondata = this.Optiondata.HasValue ? this.Optiondata.Value.UnPack() : null;
+    _o.Recordcount = new List<BanpoFri.Data.RecordCountT>();
+    for (var _j = 0; _j < this.RecordcountLength; ++_j) {_o.Recordcount.Add(this.Recordcount(_j).HasValue ? this.Recordcount(_j).Value.UnPack() : null);}
+    _o.Gamestarttime = this.Gamestarttime;
+    _o.Uuid = this.Uuid;
+    _o.Recordvalue = new List<BanpoFri.Data.RecordCountT>();
+    for (var _j = 0; _j < this.RecordvalueLength; ++_j) {_o.Recordvalue.Add(this.Recordvalue(_j).HasValue ? this.Recordvalue(_j).Value.UnPack() : null);}
+    _o.Stagedata = this.Stagedata.HasValue ? this.Stagedata.Value.UnPack() : null;
+  }
+  public static Offset<BanpoFri.Data.UserData> Pack(FlatBufferBuilder builder, UserDataT _o) {
+    if (_o == null) return default(Offset<BanpoFri.Data.UserData>);
+    var _buyinappids = _o.Buyinappids == null ? default(StringOffset) : builder.CreateString(_o.Buyinappids);
+    var _tutorial = default(VectorOffset);
+    if (_o.Tutorial != null) {
+      var __tutorial = new StringOffset[_o.Tutorial.Count];
+      for (var _j = 0; _j < __tutorial.Length; ++_j) { __tutorial[_j] = builder.CreateString(_o.Tutorial[_j]); }
+      _tutorial = CreateTutorialVector(builder, __tutorial);
+    }
+    var _optiondata = _o.Optiondata == null ? default(Offset<BanpoFri.Data.OptionData>) : BanpoFri.Data.OptionData.Pack(builder, _o.Optiondata);
+    var _recordcount = default(VectorOffset);
+    if (_o.Recordcount != null) {
+      var __recordcount = new Offset<BanpoFri.Data.RecordCount>[_o.Recordcount.Count];
+      for (var _j = 0; _j < __recordcount.Length; ++_j) { __recordcount[_j] = BanpoFri.Data.RecordCount.Pack(builder, _o.Recordcount[_j]); }
+      _recordcount = CreateRecordcountVector(builder, __recordcount);
+    }
+    var _recordvalue = default(VectorOffset);
+    if (_o.Recordvalue != null) {
+      var __recordvalue = new Offset<BanpoFri.Data.RecordCount>[_o.Recordvalue.Count];
+      for (var _j = 0; _j < __recordvalue.Length; ++_j) { __recordvalue[_j] = BanpoFri.Data.RecordCount.Pack(builder, _o.Recordvalue[_j]); }
+      _recordvalue = CreateRecordvalueVector(builder, __recordvalue);
+    }
+    var _stagedata = _o.Stagedata == null ? default(Offset<BanpoFri.Data.StageData>) : BanpoFri.Data.StageData.Pack(builder, _o.Stagedata);
+    return CreateUserData(
+      builder,
+      _o.Money,
+      _o.Cash,
+      _buyinappids,
+      _tutorial,
+      _o.Lastlogintime,
+      _optiondata,
+      _recordcount,
+      _o.Gamestarttime,
+      _o.Uuid,
+      _recordvalue,
+      _stagedata);
+  }
+}
 
+public class UserDataT
+{
+  [Newtonsoft.Json.JsonProperty("money")]
+  public double Money { get; set; }
+  [Newtonsoft.Json.JsonProperty("cash")]
+  public int Cash { get; set; }
+  [Newtonsoft.Json.JsonProperty("buyinappids")]
+  public string Buyinappids { get; set; }
+  [Newtonsoft.Json.JsonProperty("tutorial")]
+  public List<string> Tutorial { get; set; }
+  [Newtonsoft.Json.JsonProperty("lastlogintime")]
+  public long Lastlogintime { get; set; }
+  [Newtonsoft.Json.JsonProperty("optiondata")]
+  public BanpoFri.Data.OptionDataT Optiondata { get; set; }
+  [Newtonsoft.Json.JsonProperty("recordcount")]
+  public List<BanpoFri.Data.RecordCountT> Recordcount { get; set; }
+  [Newtonsoft.Json.JsonProperty("gamestarttime")]
+  public long Gamestarttime { get; set; }
+  [Newtonsoft.Json.JsonProperty("uuid")]
+  public long Uuid { get; set; }
+  [Newtonsoft.Json.JsonProperty("recordvalue")]
+  public List<BanpoFri.Data.RecordCountT> Recordvalue { get; set; }
+  [Newtonsoft.Json.JsonProperty("stagedata")]
+  public BanpoFri.Data.StageDataT Stagedata { get; set; }
+
+  public UserDataT() {
+    this.Money = 0.0;
+    this.Cash = 0;
+    this.Buyinappids = null;
+    this.Tutorial = null;
+    this.Lastlogintime = 0;
+    this.Optiondata = null;
+    this.Recordcount = null;
+    this.Gamestarttime = 0;
+    this.Uuid = 0;
+    this.Recordvalue = null;
+    this.Stagedata = null;
+  }
+
+  public static UserDataT DeserializeFromJson(string jsonText) {
+    return Newtonsoft.Json.JsonConvert.DeserializeObject<UserDataT>(jsonText);
+  }
+  public string SerializeToJson() {
+    return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+  }
+  public static UserDataT DeserializeFromBinary(byte[] fbBuffer) {
+    return UserData.GetRootAsUserData(new ByteBuffer(fbBuffer)).UnPack();
+  }
+  public byte[] SerializeToBinary() {
+    var fbb = new FlatBufferBuilder(0x10000);
+    UserData.FinishUserDataBuffer(fbb, UserData.Pack(fbb, this));
+    return fbb.DataBuffer.ToSizedArray();
+  }
+}
+
+
+static public class UserDataVerify
+{
+  static public bool Verify(Google.FlatBuffers.Verifier verifier, uint tablePos)
+  {
+    return verifier.VerifyTableStart(tablePos)
+      && verifier.VerifyField(tablePos, 4 /*Money*/, 8 /*double*/, 8, false)
+      && verifier.VerifyField(tablePos, 6 /*Cash*/, 4 /*int*/, 4, false)
+      && verifier.VerifyString(tablePos, 8 /*Buyinappids*/, false)
+      && verifier.VerifyVectorOfStrings(tablePos, 10 /*Tutorial*/, false)
+      && verifier.VerifyField(tablePos, 12 /*Lastlogintime*/, 8 /*long*/, 8, false)
+      && verifier.VerifyTable(tablePos, 14 /*Optiondata*/, BanpoFri.Data.OptionDataVerify.Verify, false)
+      && verifier.VerifyVectorOfTables(tablePos, 16 /*Recordcount*/, BanpoFri.Data.RecordCountVerify.Verify, false)
+      && verifier.VerifyField(tablePos, 18 /*Gamestarttime*/, 8 /*long*/, 8, false)
+      && verifier.VerifyField(tablePos, 20 /*Uuid*/, 8 /*long*/, 8, false)
+      && verifier.VerifyVectorOfTables(tablePos, 22 /*Recordvalue*/, BanpoFri.Data.RecordCountVerify.Verify, false)
+      && verifier.VerifyTable(tablePos, 24 /*Stagedata*/, BanpoFri.Data.StageDataVerify.Verify, false)
+      && verifier.VerifyTableEnd(tablePos);
+  }
+}
 
 }
