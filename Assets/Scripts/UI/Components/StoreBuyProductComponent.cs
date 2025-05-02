@@ -33,18 +33,23 @@ public class StoreBuyProductComponent : MonoBehaviour, IBeginDragHandler, IDragH
     private GraphicRaycaster graphicRaycaster;
     private EventSystem eventSystem;
 
-    void Awake()
+    private bool Isbatch = false;
+
+    public bool GetBatch { get { return Isbatch; } }
+
+    public void Set(SelectItemComponent itemcomponent)
     {
+
         if (graphicRaycaster == null)
             graphicRaycaster = GetComponentInParent<GraphicRaycaster>();
 
         if (eventSystem == null)
             eventSystem = GameRoot.Instance.GetComponentInChildren<EventSystem>(true); // true: 비활성화 포함
-    }
 
-    public void Set(SelectItemComponent itemcomponent)
-    {
+
         SelectItemComponent = itemcomponent;
+
+        Isbatch = false;
 
         RecT = ItemImage.transform as RectTransform;
     }
@@ -57,6 +62,8 @@ public class StoreBuyProductComponent : MonoBehaviour, IBeginDragHandler, IDragH
     public void OnBeginDrag(PointerEventData eventData)
     {
         IsDraggingStart = true;
+
+        this.transform.SetAsLastSibling();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -101,6 +108,7 @@ public class StoreBuyProductComponent : MonoBehaviour, IBeginDragHandler, IDragH
         {
             EquipVoltComponent = hitVolt;
             EquipVoltComponent.ProductComponent = this;
+            Isbatch = true;
         }
 
         if (EquipVoltComponent != null && GameRoot.Instance.VoltSystem.CurVoltComponent != null)
