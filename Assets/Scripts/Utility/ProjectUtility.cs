@@ -330,36 +330,6 @@ public class ProjectUtility
 
 
 
-    public static System.Numerics.BigInteger CalcOfflineReward(int _difftime)
-    {
-        var curstageidx = GameRoot.Instance.UserData.CurMode.StageData.Stageidx.Value;
-
-        System.Numerics.BigInteger stagevalue = 0;
-
-        var tdlist = Tables.Instance.GetTable<StageInfo>().DataList.FindAll(x => x.stageidx == curstageidx).ToList();
-        var stagewavetd = Tables.Instance.GetTable<StageWaveInfo>().GetData(curstageidx);
-
-
-
-        int highfishidx = 0;
-
-      
-
-        if (highfishidx > 0)
-        {
-            var td = Tables.Instance.GetTable<FishInfo>().GetData(highfishidx);
-
-            if (td != null)
-            {
-                stagevalue = (td.base_revenue * _difftime) / GameRoot.Instance.InGameSystem.offline_value_time;
-            }
-        }
-
-
-        return stagevalue;
-    }
-
-
 
     public static void PlayGoodsEffect(UnityEngine.Vector3 startPos, int rewardType, int rewardIdx, int rewardGrade, System.Numerics.BigInteger value, bool isCenterStart = true, System.Action OnEnd = null, float delay = 0f, string viewText = "", UIBase curui = null, bool reward = true, bool underOrder = false, UnityEngine.Vector3 endPos = default(UnityEngine.Vector3)
         , bool iscurrencytext = true)

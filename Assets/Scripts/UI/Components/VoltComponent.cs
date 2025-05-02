@@ -20,7 +20,7 @@ public class VoltComponent : MonoBehaviour
 
     public void Init()
     {
-
+        
     }
 
     public void OnProduct(StoreBuyProductComponent productComponent)

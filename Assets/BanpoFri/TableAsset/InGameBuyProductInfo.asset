@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0a94217c9ebe4ac8872b29c0e36975f, type: 3}
+  m_Name: InGameBuyProductInfo
+  m_EditorClassIdentifier: 
+  mFirstKey:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 101
+  - 102
+  - 103
+  - 1001
+  mSecondKey: []
+  mDataList:
+  - _product_idx: 1
+    _price: 10
+    _image: common_buyproduct_1
+  - _product_idx: 2
+    _price: 20
+    _image: common_buyproduct_2
+  - _product_idx: 3
+    _price: 30
+    _image: common_buyproduct_3
+  - _product_idx: 4
+    _price: 40
+    _image: common_buyproduct_4
+  - _product_idx: 101
+    _price: 10
+    _image: common_buyproduct_101
+  - _product_idx: 102
+    _price: 15
+    _image: common_buyproduct_102
+  - _product_idx: 103
+    _price: 20
+    _image: common_buyproduct_103
+  - _product_idx: 1001
+    _price: 30
+    _image: common_buyproduct_1001

@@ -33,6 +33,7 @@ public class FlatBuffersConvertor
         process.StartInfo.RedirectStandardOutput = true;
         process.StartInfo.RedirectStandardError = true;
         process.StartInfo.CreateNoWindow = true;
+        
         process.Start();
         string output = process.StandardOutput.ReadToEnd();
         string error = process.StandardError.ReadToEnd();
@@ -111,7 +112,7 @@ public class FlatBuffersConvertor
             AddFindStringData("UserData_Client" , "void ConnectReadOnlyDatas()" , addFunc , false , "" , "    ");
         }
         if (!AddFindStringData("UserData_Client" , "@로드 함수 호출" , "")){
-            AddFindStringData("UserData_Client" , "ChangeDataMode(DataState.Main);" , "// @로드 함수 호출\n\n        // @변수 자동 데이터 추가\n\n" , false , "" , "        ");
+            AddFindStringData("UserData_Client" , "ChangeDataMode(" , "// @로드 함수 호출\n\n        // @변수 자동 데이터 추가\n\n" , false , "" , "        ");
             AddFindStringData("UserData_Client" , "@로드 함수 호출" , "SetLoadDatas();" , true , "        ");
         }
 
@@ -229,11 +230,10 @@ public class FlatBuffersConvertor
         bool isBaseUpdate = UpdateBaseClassFields(ref existingCode, className, classFields);
         bool isUserDataUpdate = UpdateUserDataClassFields(ref existingCode, className , field);
 
-
-        if (isBaseUpdate || isUserDataUpdate){
+        if (isBaseUpdate || isUserDataUpdate)
+        {
             File.WriteAllText(filePath, existingCode);
         }
-
     }
     
 
@@ -289,16 +289,124 @@ public class FlatBuffersConvertor
         
         // 추가해야 할 필드 확인
         List<FieldInfo> fieldsToAdd = new List<FieldInfo>();
+        // 타입이 변경된 필드 확인을 위한 리스트 추가
+        List<FieldInfo> fieldsToUpdate = new List<FieldInfo>();
+        Dictionary<string, bool> fieldCheckMap = new Dictionary<string, bool>();
+
+        
+        
+        // 중첩된 타입을 저장할 리스트
+        List<string> nestedTypesToCreate = new List<string>();
+        
         foreach (var fieldItem in classFields)
         {
             var fieldInfo = fieldItem.Value;
             string propertyName = ToUpperFirst(fieldInfo.Name);
+            
+            // 필드 이름이 이미 처리되었는지 확인
+            if (fieldCheckMap.ContainsKey(propertyName.ToLower()))
+            {
+                UnityEngine.Debug.LogWarning($"중복 필드 발견: {propertyName} - 무시됨");
+                continue;
+            }
+            
+            fieldCheckMap[propertyName.ToLower()] = true;
+
+            // 커스텀 타입이고 중첩된 타입인 경우 목록에 추가
+            if (fieldInfo.IsCustom)
+            {
+                string customClassName = fieldInfo.Type;
+                // 해당 타입의 cs 파일이 존재하는지 확인
+                string customFilePath = Path.Combine(DATA_CLASS_FOLDER, $"{customClassName}.cs");
+                if (!File.Exists(customFilePath))
+                {
+                    // 파일이 존재하지 않으면 생성 목록에 추가
+                    if (!nestedTypesToCreate.Contains(customClassName))
+                    {
+                        nestedTypesToCreate.Add(customClassName);
+                        UnityEngine.Debug.Log($"중첩된 타입 발견: {customClassName} - 생성 목록에 추가됨");
+                    }
+                }
+                else
+                {
+                    // 파일이 존재하는 경우 필드 업데이트 확인
+                    string tableContent = GetExtractTableInfo(customClassName);
+                    if (!string.IsNullOrEmpty(tableContent))
+                    {
+                        Dictionary<string, FieldInfo> nestedClassFields = ParseFields(tableContent, false);
+                        string nestedExistingCode = File.ReadAllText(customFilePath);
+                        bool isNestedUpdated = UpdateBaseClassFields(ref nestedExistingCode, customClassName, nestedClassFields);
+                        
+                        if (isNestedUpdated)
+                        {
+                            File.WriteAllText(customFilePath, nestedExistingCode);
+                            UnityEngine.Debug.Log($"중첩된 타입 클래스 필드 업데이트됨: {customClassName}.cs");
+                        }
+                    }
+                }
+            }
 
             if (!existingFields.Contains(propertyName.ToLower()))
             {
                 fieldsToAdd.Add(fieldInfo);
             }
+            else
+            {
+                // 필드가 이미 존재하는 경우 타입 변경 여부 확인
+                string strCheckTypePattern = $@"public\s+{GetCSharpType(fieldInfo)}\s+{propertyName}\s*{{";
+
+                if (!Regex.IsMatch(existingCode, strCheckTypePattern))
+                {
+                    fieldsToUpdate.Add(fieldInfo);
+                    UnityEngine.Debug.Log($"변경된 필드 발견: {propertyName} - ReactiveCollection으로 변경됨");
+                }
+            }
         }
+        
+        // 중첩된 타입의 클래스 생성
+        foreach (var nestedType in nestedTypesToCreate)
+        {
+            // 해당 테이블의 정보 가져오기
+            string tableContent = GetExtractTableInfo(nestedType);
+            if (!string.IsNullOrEmpty(tableContent))
+            {
+                // 필드 파싱
+                Dictionary<string, FieldInfo> nestedClassFields = ParseFields(tableContent, false);
+                
+                // 클래스 파일 생성
+                string filePath = Path.Combine(DATA_CLASS_FOLDER, $"{nestedType}.cs");
+                if (!File.Exists(filePath))
+                {
+                    // 새 클래스 파일 생성
+                    CreateNewDataClassFile(filePath, nestedType, nestedClassFields);
+                    UnityEngine.Debug.Log($"중첩된 타입을 위한 새 클래스 파일 생성됨: {nestedType}.cs");
+                    
+                    // 각 중첩된 타입에 대해서도 다시 UpdateBaseClassFields 호출
+                    string newExistingCode = File.ReadAllText(filePath);
+                    UpdateBaseClassFields(ref newExistingCode, nestedType, nestedClassFields);
+                    File.WriteAllText(filePath, newExistingCode);
+                }
+                else
+                {
+                    // 기존 파일 업데이트 - 중첩된 필드들도 적절히 처리
+                    string nestedExistingCode = File.ReadAllText(filePath);
+                    bool isNestedUpdated = UpdateBaseClassFields(ref nestedExistingCode, nestedType, nestedClassFields);
+                    
+                    if (isNestedUpdated)
+                    {
+                        File.WriteAllText(filePath, nestedExistingCode);
+                        UnityEngine.Debug.Log($"중첩된 타입 클래스 업데이트됨: {nestedType}.cs");
+                    }
+                }
+            }
+            else
+            {
+                UnityEngine.Debug.LogError($"중첩된 타입 {nestedType}에 대한 테이블 정보를 찾을 수 없습니다.");
+            }
+
+        }
+        
+        bool isUpdated = false;
         
         if (fieldsToAdd.Count > 0)
         {
@@ -322,10 +430,34 @@ public class FlatBuffersConvertor
 
             existingCode = existingCode.Insert(insertPos, newFields.ToString());
             UnityEngine.Debug.Log($"{className}.cs 파일에 {fieldsToAdd.Count}개의 필드가 추가되었습니다.");
-            return true;
+            isUpdated = true;
         }
         
-        return false;
+        // 타입이 변경된 필드 업데이트
+        if (fieldsToUpdate.Count > 0)
+        {
+            foreach (var fieldInfo in fieldsToUpdate)
+            {
+                string propertyName = ToUpperFirst(fieldInfo.Name);
+                
+                // 기존 필드 정의 패턴 - 다양한 형태를 커버
+                string oldFieldPattern = $@"public\s+(?:[a-zA-Z0-9<>_]+)\s+{propertyName}\s*{{\s*get;\s*set;\s*}}\s*=\s*[^;]+;";
+                
+                // 새 필드 코드 생성
+                StringBuilder newFieldBuilder = new StringBuilder();
+                AddFieldToClassCode(newFieldBuilder, fieldInfo);
+                string newFieldCode = newFieldBuilder.ToString().Trim();
+                
+                // 기존 필드 찾아 교체
+                existingCode = Regex.Replace(existingCode, oldFieldPattern, newFieldCode);
+                
+                UnityEngine.Debug.Log($"{className}.cs 파일에서 필드 {propertyName}의 타입이 업데이트되었습니다.");
+            }
+            
+            isUpdated = true;
+        }
+        
+        return isUpdated;
     }
 
     private static bool UpdateUserDataClassSaveLoad(ref string existingCode, string className, Dictionary<string, FieldInfo> classFields){
@@ -548,7 +680,7 @@ public class FlatBuffersConvertor
                 // 필드 파싱
                 Dictionary<string, FieldInfo> tableFields = ParseFields(tableInfo, false);
                 
-                if (fieldInfo.IsList || fieldInfo.IsDictionary)
+                if (fieldInfo.IsList || fieldInfo.IsDictionary || fieldInfo.IsReactiveCollection)
                 {
                     funcCode.AppendLine($"{indent}Offset<BanpoFri.Data.{fieldInfo.Type}>[] {varPrefix}_Array = null;");
                     funcCode.AppendLine($"{indent}VectorOffset {varPrefix}_Vector = default;");
@@ -915,9 +1047,9 @@ public class FlatBuffersConvertor
                     funcCode.AppendLine($"{indent}{varPrefix}_Offset{comma}");
                 }
             }
-            else if (fieldInfo.IsList || fieldInfo.IsDictionary)
+            else if (fieldInfo.IsList || fieldInfo.IsDictionary || fieldInfo.IsReactiveCollection)
             {
-                // 리스트/딕셔너리 필드
+                // 리스트/딕셔너리/ReactiveCollection 필드
                 funcCode.AppendLine($"{indent}{varPrefix}_Vector{comma}");
             }
             else
@@ -926,9 +1058,13 @@ public class FlatBuffersConvertor
                 if (fieldInfo.Type == "string"){
                     funcCode.AppendLine($"{indent}builder.CreateString({itemName}.{fieldName}){comma}");
                 }
-                else if(fieldInfo.IsReactive)
-                {
-                    funcCode.AppendLine($"{indent}{itemName}.{fieldName}{comma}.Value");
+                else if (fieldInfo.IsDateTime){
+                    // DateTime 타입은 Ticks 값을 long으로 저장
+                    funcCode.AppendLine($"{indent}{itemName}.{fieldName}.Ticks{comma}");
+                }
+                else if (fieldInfo.IsReactive){
+                    // ReactiveProperty 타입은 Value 속성 값을 사용
+                    funcCode.AppendLine($"{indent}{itemName}.{fieldName}.Value{comma}");
                 }
                 else{
                     funcCode.AppendLine($"{indent}{itemName}.{fieldName}{comma}");
@@ -974,10 +1110,11 @@ public class FlatBuffersConvertor
                 string varName = property.Name;
                 bool isList = property.IsList;
                 bool isDictionary = property.IsDictionary;
+                bool isReactiveCollection = property.IsDictionary;
                 string fbFieldName = ConvertToFlatBufferFieldName(varName);
                 
                 
-                if (isList || isDictionary)
+                if (isList || isDictionary || isReactiveCollection)
                 {
                     // 리스트/딕셔너리 로드 코드 생성
                     funcCode.AppendLine();
@@ -1046,6 +1183,7 @@ public class FlatBuffersConvertor
         bool isInitializerBlock = targetVar.Contains("new ");
         
         foreach (var field in classFields)
+
         {
             fieldCount++;
             string fieldName = ToUpperFirst(field.Value.Name);
@@ -1055,19 +1193,38 @@ public class FlatBuffersConvertor
             // 커스텀 타입이 아니고 리스트/딕셔너리가 아닌 기본 필드만 처리
             if (!field.Value.IsCustom && !field.Value.IsList && !field.Value.IsDictionary)
             {
-                string reactivecheck = string.Empty;
-                if(field.Value.IsReactive)
+                // DateTime 타입인 경우 Ticks에서 변환
+                if (field.Value.IsDateTime)
                 {
-                    reactivecheck = ".Value";
+                    if (isInitializerBlock)
+                    {
+                        funcCode.AppendLine($"{indent}{fieldName} = new DateTime({sourceVar}.{fieldName}){comma}{terminator}");
+                    }
+                    else
+                    {
+                        funcCode.AppendLine($"{indent}{targetVar}.{fieldName} = new DateTime({sourceVar}.{fieldName}){terminator}");
+                    }
+                }
+                else if (field.Value.IsReactive)
+                {
+                    // ReactiveProperty 타입은 Value 속성 값을 사용
+                    if (isInitializerBlock)
+                    {
+                        funcCode.AppendLine($"{indent}{fieldName} = new ReactiveProperty<{GetBasicCSharpType(field.Value.Type)}>({sourceVar}.{fieldName}){comma}{terminator}");
+                    }
+                    else
+                    {
+                        funcCode.AppendLine($"{indent}{targetVar}.{fieldName}.Value = {sourceVar}.{fieldName}{comma}{terminator}");
+                    }
                 }
                 // 초기화 블록의 경우 속성명만 쓰고, 아닌 경우 객체.속성명으로 접근
-                if (isInitializerBlock)
+                else if (isInitializerBlock)
                 {
-                    funcCode.AppendLine($"{indent}{fieldName}{reactivecheck} = {sourceVar}.{fieldName}{comma}{terminator}");
+                    funcCode.AppendLine($"{indent}{fieldName} = {sourceVar}.{fieldName}{comma}{terminator}");
                 }
                 else
                 {
-                    funcCode.AppendLine($"{indent}{targetVar}.{fieldName}{reactivecheck} = {sourceVar}.{fieldName}{terminator}");
+                    funcCode.AppendLine($"{indent}{targetVar}.{fieldName} = {sourceVar}.{fieldName}{terminator}");
                 }
             }
         }
@@ -1083,9 +1240,9 @@ public class FlatBuffersConvertor
             // 커스텀 타입인 필드 처리
             if (field.Value.IsCustom)
             {
-                if (field.Value.IsList || field.Value.IsDictionary)
+                if (field.Value.IsList || field.Value.IsDictionary || field.Value.IsReactiveCollection)
                 {
-                    // 배열/딕셔너리 필드 처리
+                    // 배열/딕셔너리/ReactiveCollection 필드 처리
                     funcCode.AppendLine();
                     funcCode.AppendLine($"{indent}// {fieldName} 로드");
                     funcCode.AppendLine($"{indent}{targetVar}.{fieldName}.Clear();");
@@ -1162,6 +1319,13 @@ public class FlatBuffersConvertor
                     
                     funcCode.AppendLine($"{indent}}}");
                 }
+            }
+            // DateTime 타입 필드 처리
+            else if (field.Value.IsDateTime)
+            {
+                funcCode.AppendLine();
+                funcCode.AppendLine($"{indent}// {fieldName} DateTime 로드");
+                funcCode.AppendLine($"{indent}{targetVar}.{fieldName} = new DateTime({sourceVar}.{fieldName});");
             }
             // 기본 타입 리스트 처리
             else if (field.Value.IsList || field.Value.IsDictionary)
@@ -1294,6 +1458,13 @@ public class FlatBuffersConvertor
                 
                 funcCode.AppendLine($"{indent}}}");
             }
+            else if (tableField.Value.IsDateTime)
+            {
+                // DateTime 필드 처리
+                funcCode.AppendLine();
+                funcCode.AppendLine($"{indent}// {fieldName} DateTime 로드");
+                funcCode.AppendLine($"{indent}{targetVar}.{fieldName} = new DateTime({sourceVar}.{fieldName});");
+            }
         }
     }
 
@@ -1319,10 +1490,24 @@ public class FlatBuffersConvertor
         classCode.AppendLine($"public class {className}");
         classCode.AppendLine("{");
         
-        // 필드 추가
+        // 필드 추가 (중복 방지)
+        Dictionary<string, bool> addedFields = new Dictionary<string, bool>();
+        
         foreach (var fieldItem in classFields)
         {
-            AddFieldToClassCode(classCode, fieldItem.Value);
+            var fieldInfo = fieldItem.Value;
+            string propertyName = ToUpperFirst(fieldInfo.Name);
+            
+            // 이미 추가된 필드는 건너뜀
+            if (!addedFields.ContainsKey(propertyName.ToLower()))
+            {
+                AddFieldToClassCode(classCode, fieldInfo);
+                addedFields[propertyName.ToLower()] = true;
+            }
+            else
+            {
+                UnityEngine.Debug.LogWarning($"{className} 클래스 생성 중 중복 필드 발견: {propertyName} - 무시됨");
+            }
         }
         
         classCode.AppendLine("");
@@ -1341,11 +1526,11 @@ public class FlatBuffersConvertor
         
         if (fieldInfo.IsReactive)
         {
-            codeBuilder.AppendLine($"{indent}public {propertyType} {propertyName} {{ get; private set; }} = new ReactiveProperty<{GetBasicCSharpType(fieldInfo.Type)}>({GetDefaultValue(fieldInfo)});");
+            codeBuilder.AppendLine($"{indent}public {propertyType} {propertyName} {{ get; set; }} = new ReactiveProperty<{GetBasicCSharpType(fieldInfo.Type)}>({GetDefaultValue(fieldInfo)});");
         }
         else if (fieldInfo.IsReactiveCollection)
         {
-            codeBuilder.AppendLine($"{indent}public {propertyType} {propertyName} {{ get; private set; }} = new ReactiveCollection<{GetBasicCSharpType(fieldInfo.Type)}>();");
+            codeBuilder.AppendLine($"{indent}public {propertyType} {propertyName} {{ get; set; }} = new ReactiveCollection<{GetBasicCSharpType(fieldInfo.Type)}>();");
         }
         else if (fieldInfo.IsList)
         {
@@ -1358,6 +1543,10 @@ public class FlatBuffersConvertor
         else if (fieldInfo.IsCustom)
         {
             codeBuilder.AppendLine($"{indent}public {fieldInfo.Type} {propertyName} = new {fieldInfo.Type}();");
+        }
+        else if (fieldInfo.IsDateTime)
+        {
+            codeBuilder.AppendLine($"{indent}public DateTime {propertyName} {{ get; set; }} = new DateTime();");
         }
         else
         {
@@ -1522,6 +1711,10 @@ public class FlatBuffersConvertor
                 // ReactiveCollection 타입
                 dataAssignCode = $"{clientFieldName}.Clear();\n        for (int i = 0; i < flatBufferUserData.{fbFieldName}Length; i++) {{\n            var item = flatBufferUserData.{fbFieldName}(i);\n            {clientFieldName}.Add(item);\n        }}";
             }
+            else if (field.IsDateTime)
+            {
+                dataAssignCode = $"{clientFieldName} = new DateTime(flatBufferUserData.{fbFieldName});";
+            }
             else if (field.IsCustom)
             {
                 if (field.IsList)
@@ -1648,6 +1841,10 @@ public class FlatBuffersConvertor
             saveCode = $"BanpoFri.Data.UserData.Add{fbFieldName}(builder, {field.Name}Vec);";
 
         }
+        else if (field.IsDateTime)
+        {
+            saveCode = $"BanpoFri.Data.UserData.Add{fbFieldName}(builder, {clientFieldName}.Ticks);";
+        }
         else
         {
             // 일반 타입
@@ -1701,19 +1898,37 @@ public class FlatBuffersConvertor
     {
         Dictionary<string, FieldInfo> fields = new Dictionary<string, FieldInfo>();
         
-        // "@AutoCreate DataClass" 주석 이후의 내용만 처리
-        if (ignoreCreateDataClass){
-            int createDataClassIndex = userDataContent.IndexOf("@AutoCreate DataClass");
-            if (createDataClassIndex >= 0)
-            {
-                // 주석 이후의 내용만 사용
-                userDataContent = userDataContent.Substring(createDataClassIndex);
+        if (ignoreCreateDataClass) {
+            // @AutoCreate와 @EndCreate 주석을 처리하기 위한 변수들
+            StringBuilder processedContent = new StringBuilder();
+            bool isProcessing = false;
+            
+            // 줄 단위로 처리
+            string[] lines = userDataContent.Split(new[] { '\r', '\n' }, StringSplitOptions.None);
+            
+            foreach (string line in lines) {
+                // @AutoCreate 주석이 있으면 처리 시작
+                if (line.Contains("@AutoCreate")) {
+                    isProcessing = true;
+                }
+                // @EndCreate 주석이 있으면 처리 중단
+                else if (line.Contains("@EndCreate")) {
+                    isProcessing = false;
+                }
+                
+                // 처리 중인 상태일 때만 내용 추가
+                if (isProcessing) {
+                    processedContent.AppendLine(line);
+                }
             }
-            else{
+            
+            // 필터링된 내용이 없으면 빈 결과 반환
+            if (processedContent.Length == 0) {
                 return fields;
             }
+            
+            userDataContent = processedContent.ToString();
         }
-        
         
         // 필드명:타입(배열 여부 포함) = 기본값(선택적); // @ReactiveProperty 또는 다른 주석 옵션
         MatchCollection fieldMatches = Regex.Matches(userDataContent, @"(\w+)\s*:\s*(?:\[)?(\w+)(?:\])?\s*(?:=\s*[^;]+)?\s*;(?:\s*//\s*(@\w+))?", RegexOptions.Singleline);
@@ -1734,6 +1949,9 @@ public class FlatBuffersConvertor
 
             // 기본 타입인지 커스텀 타입인지 확인
             bool isCustomType = !IsBasicType(fieldType);
+
+            // long타입의 DateTime인지 확인
+            bool isDateTime = typeHint.Equals("@DateTime", StringComparison.OrdinalIgnoreCase);
             
             FieldInfo fieldInfo = new FieldInfo
             {
@@ -1743,7 +1961,8 @@ public class FlatBuffersConvertor
                 IsReactiveCollection = isReactiveCollection,
                 IsList = isList,
                 IsDictionary = isDictionary,
-                IsCustom = isCustomType
+                IsCustom = isCustomType,
+                IsDateTime = isDateTime
             };
 
             fields[fieldName] = fieldInfo;
@@ -1849,6 +2068,7 @@ public class FlatBuffersConvertor
         public bool IsList { get; set; }
         public bool IsDictionary { get; set; }
         public bool IsCustom { get; set; }
+        public bool IsDateTime { get; set; }
     }
 
     // FlatBuffer 필드명 형식으로 변환 (snake_case -> CamelCase)
@@ -1903,6 +2123,10 @@ public class FlatBuffersConvertor
         else if (field.IsList)
         {
             return $"List<{GetBasicCSharpType(field.Type)}>";
+        }
+        else if (field.IsDateTime)
+        {
+            return "DateTime";
         }
         return GetBasicCSharpType(field.Type);
     }
@@ -2030,13 +2254,33 @@ public class FlatBuffersConvertor
     private static HashSet<string> ExtractExistingFields(string code)
     {
         HashSet<string> fields = new HashSet<string>();
-        foreach (Match fieldMatch in Regex.Matches(code, @"public\s+(?:IReactiveProperty<[\w<>]+>|List<\w+>|Dictionary<\w+,\s*\w+>|\w+)\s+(\w+)"))
+        // 속성(Property) 형식의 필드 검출 (get; set;)
+        foreach (Match fieldMatch in Regex.Matches(code, @"public\s+(?:IReactiveProperty<[\w<>]+>|IReactiveCollection<[\w<>]+>|List<\w+>|Dictionary<\w+,\s*\w+>|\w+)\s+(\w+)\s*{\s*get;\s*set;\s*}"))
         {
             if (fieldMatch.Groups.Count > 1)
             {
                 fields.Add(fieldMatch.Groups[1].Value.ToLower());
             }
         }
+        
+        // 필드 형식 검출 (명시적 필드)
+        foreach (Match fieldMatch in Regex.Matches(code, @"public\s+(?:IReactiveProperty<[\w<>]+>|IReactiveCollection<[\w<>]+>|List<\w+>|Dictionary<\w+,\s*\w+>|\w+)\s+(\w+)\s*="))
+        {
+            if (fieldMatch.Groups.Count > 1)
+            {
+                fields.Add(fieldMatch.Groups[1].Value.ToLower());
+            }
+        }
+        
+        // 자동 속성이 아닌 일반 필드도 검출
+        foreach (Match fieldMatch in Regex.Matches(code, @"public\s+(?:IReactiveProperty<[\w<>]+>|IReactiveCollection<[\w<>]+>|List<\w+>|Dictionary<\w+,\s*\w+>|\w+)\s+(\w+);"))
+        {
+            if (fieldMatch.Groups.Count > 1)
+            {
+                fields.Add(fieldMatch.Groups[1].Value.ToLower());
+            }
+        }
+        
         return fields;
     }
 
@@ -2097,3 +2341,5 @@ public class FlatBuffersConvertor
     }
 
 }
+
+

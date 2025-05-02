@@ -1,9 +1,8 @@
 namespace BanpoFri.Data;
 
 
-
 table UserData {
-// @AutoCreate DataClass
+// @AutoCreate
   money:double; // @ReactiveProperty
   cash:int = 0;// @ReactiveProperty
   buyinappids:string;
@@ -35,6 +34,8 @@ table RecordCount {
 table StageData
 {
   stageidx:int = 1; // @ReactiveProperty
+  waveidx:int = 1; // @ReactiveProperty
+  enemycount:int = 1; // @ReactiveProperty
 }
 
 root_type UserData;

@@ -14,7 +14,9 @@ public partial class UserDataSystem
         // Stagedata 최종 생성 및 추가
         var stagedata_Offset = BanpoFri.Data.StageData.CreateStageData(
             builder,
-            Stagedata.Stageidx.Value
+            Stagedata.Stageidx.Value,
+            Stagedata.Waveidx.Value,
+            Stagedata.Enemycount.Value
         );
 
 
@@ -34,6 +36,8 @@ public partial class UserDataSystem
         if (fb_Stagedata.HasValue)
         {
             Stagedata.Stageidx.Value = fb_Stagedata.Value.Stageidx;
+            Stagedata.Waveidx.Value = fb_Stagedata.Value.Waveidx;
+            Stagedata.Enemycount.Value = fb_Stagedata.Value.Enemycount;
         }
     }
 
@@ -41,6 +45,11 @@ public partial class UserDataSystem
 
 public class StageData
 {
-    public IReactiveProperty<int> Stageidx { get; private set; } = new ReactiveProperty<int>(1);
+    public IReactiveProperty<int> Enemycount { get; set; } = new ReactiveProperty<int>(0);
+
+    public IReactiveProperty<int> Stageidx { get; set; } = new ReactiveProperty<int>(1);
+
+    public IReactiveProperty<int> Waveidx { get; set; } = new ReactiveProperty<int>(1);
+
 
 }
