@@ -7,15 +7,11 @@ using System.Linq;
 
 public class InGameBattle : MonoBehaviour
 {
-    private List<RobotBase> EnemyRobots = new List<RobotBase>();
 
-    private List<RobotBase> PlayerRobots = new List<RobotBase>();
+    private InGameStageMap StageMap;
 
-    [SerializeField]
-    private List<Transform> EnemySpawnTr = new List<Transform>();
+    public InGameStageMap GetStageMap { get { return StageMap; } }
 
-    [SerializeField]
-    private List<Transform> PlayerSpawnTr = new List<Transform>();
 
 
     public void Init()
@@ -23,124 +19,29 @@ public class InGameBattle : MonoBehaviour
 
     }
 
-    public void StartBattle(int waveidx)
+
+    public void StartBattle()
     {
-        //GameRoot.Instance.UserData.CurMode.StageData
-
-    }
-
-    public void StartWaveBattle(int waveidx)
-    {
-        var stageidx = GameRoot.Instance.UserData.CurMode.StageData.Stageidx.Value;
-
-        var wavetd = Tables.Instance.GetTable<WaveInfo>().GetData(new KeyValuePair<int, int>(stageidx, waveidx));
-
-        if(wavetd != null)
+        if (StageMap != null)
         {
-            
-        }
-    }
-
-    public void InitClear()
-    {
-    }
-
-    public void SpawnEnemy(int unitidx)
-    {
-    }
-
-    public void NextWave()
-    {
-
-    }
-
-
-    public void Update()
-    {
-
-    }
-
-
-
-    public void SetDamageUI(Transform damageuitr, int damage)
-    {
-
-    }
-
-    public void CreatePlayerRobot(int unitidx, bool OnLoad = false)
-    {
-        var td = Tables.Instance.GetTable<RobotInfo>().GetData(unitidx);
-
-        if (td != null)
-        {
-            var randvalue = Random.Range(0, PlayerSpawnTr.Count);
-
-            var finddata = PlayerRobots.Find(x => x.GetUnitIdx == unitidx);
-
-            if (finddata == null || OnLoad)
-            {
-                Addressables.InstantiateAsync(td.prefab, EnemySpawnTr[randvalue], false).Completed += (handle) =>
-                           {
-                               var getrobot = handle.Result.GetComponent<RobotBase>();
-
-                               if (getrobot != null)
-                               {
-                                   getrobot.Set(unitidx);
-                               }
-
-                               ProjectUtility.SetActiveCheck(getrobot.gameObject, !OnLoad);
-
-                               getrobot.transform.position = PlayerSpawnTr[randvalue].position;
-                           };
-            }
-            else
-            {
-                finddata.Set(unitidx);
-
-                finddata.transform.position = PlayerSpawnTr[randvalue].position;
-
-                ProjectUtility.SetActiveCheck(finddata.gameObject, !OnLoad);
-            }
+            Destroy(StageMap.gameObject);
         }
 
-    }
+        var stagetd = Tables.Instance.GetTable<StageInfo>().GetData(GameRoot.Instance.UserData.CurMode.StageData.Stageidx.Value);
 
-
-    public void CreateEnemyRobot(int enemyidx, bool OnLoad = false)
-    {
-        var td = Tables.Instance.GetTable<EnemyInfo>().GetData(enemyidx);
-
-        if (td != null)
+        if (stagetd != null)
         {
-            var randvalue = Random.Range(0, EnemySpawnTr.Count);
+            Addressables.InstantiateAsync(stagetd.prefab).Completed += (handle) =>
+          {
+              StageMap = handle.Result.GetComponent<InGameStageMap>();
 
-            var finddatta = EnemyRobots.Find(x => x.GetUnitIdx == enemyidx);
+              if (StageMap != null)
+              {
+                  ProjectUtility.SetActiveCheck(StageMap.gameObject, true);
 
-            if (finddatta == null || OnLoad)
-            {
-                Addressables.InstantiateAsync(td.prefab, EnemySpawnTr[randvalue], false).Completed += (handle) =>
-                            {
-                                var getrobot = handle.Result.GetComponent<RobotBase>();
-
-                                if (getrobot != null)
-                                {
-                                    getrobot.Set(enemyidx);
-                                }
-
-                                ProjectUtility.SetActiveCheck(getrobot.gameObject, !OnLoad);
-
-                                getrobot.transform.position = EnemySpawnTr[randvalue].position;
-                            };
-            }
-            else
-            {
-                finddatta.Set(enemyidx);
-
-                finddatta.transform.position = EnemySpawnTr[randvalue].position;
-
-                ProjectUtility.SetActiveCheck(finddatta.gameObject, !OnLoad);
-            }
-
+              }
+          };
         }
+
     }
 }

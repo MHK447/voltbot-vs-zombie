@@ -16,52 +16,11 @@ MonoBehaviour:
   - 1
   - 2
   - 3
-  - 4
-  - 5
   mSecondKey: []
   mDataList:
-  - _stageidx: 1
-    _seedmoney_value: 100
-    _stage_name: name_test_1
-    _start_consumer_count: 3
-    _consumerfirst_idx: 1
-    _revenue_buff_profit: 100
-    _nextstage_name: next_stage_name_1
-    _nextstage_image: Ingame_Food_003
-    _next_stage_money: 204e
-  - _stageidx: 2
-    _seedmoney_value: 100
-    _stage_name: name_test_2
-    _start_consumer_count: 3
-    _consumerfirst_idx: 3
-    _revenue_buff_profit: 150
-    _nextstage_name: next_stage_name_2
-    _nextstage_image: Ingame_Food_007
-    _next_stage_money: 3075
-  - _stageidx: 3
-    _seedmoney_value: 100
-    _stage_name: name_test_3
-    _start_consumer_count: 3
-    _consumerfirst_idx: 10
-    _revenue_buff_profit: 200
-    _nextstage_name: next_stage_name_3
-    _nextstage_image: Ingame_Food_012
-    _next_stage_money: 00e1f505
-  - _stageidx: 4
-    _seedmoney_value: 100
-    _stage_name: name_test_4
-    _start_consumer_count: 3
-    _consumerfirst_idx: 14
-    _revenue_buff_profit: 250
-    _nextstage_name: next_stage_name_4
-    _nextstage_image: Ingame_Food_019
-    _next_stage_money: 00ca9a3b
-  - _stageidx: 5
-    _seedmoney_value: 100
-    _stage_name: name_test_5
-    _start_consumer_count: 3
-    _consumerfirst_idx: 21
-    _revenue_buff_profit: 300
-    _nextstage_name: next_stage_name_5
-    _nextstage_image: Ingame_Food_024
-    _next_stage_money: 005ed0b200
+  - _stage_idx: 1
+    _prefab: InGame_Stage_01
+  - _stage_idx: 2
+    _prefab: InGame_Stage_02
+  - _stage_idx: 3
+    _prefab: InGame_Stage_03

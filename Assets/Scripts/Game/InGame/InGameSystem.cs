@@ -180,7 +180,7 @@ public class InGameSystem
 
         if (stagetd != null)
         {
-            GameRoot.Instance.UserData.SetReward((int)Config.RewardType.Currency, (int)Config.CurrencyID.Money, stagetd.seedmoney_value);
+            //GameRoot.Instance.UserData.SetReward((int)Config.RewardType.Currency, (int)Config.CurrencyID.Money, stagetd.seedmoney_value);
 
             SoundPlayer.Instance.PlayBGM("bgm", true);
 

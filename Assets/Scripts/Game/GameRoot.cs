@@ -394,9 +394,8 @@ public class GameRoot : Singleton<GameRoot>
 		}
 		else
 		{
-			if (InGameSystem.GetInGame<InGameTycoon>() == null) return;
-			if (InGameSystem.GetInGame<InGameTycoon>().curInGameStage == null) return;
-			if (InGameSystem.GetInGame<InGameTycoon>().curInGameStage.IsLoadComplete == false) return;
+			if (InGameSystem.GetInGame<InGameBaseStage>() == null) return;
+			if (InGameSystem.GetInGame<InGameBaseStage>().curInGameBattle == null) return;
 
 
 			if (GameRoot.Instance.TutorialSystem.IsActive())
@@ -424,7 +423,7 @@ public class GameRoot : Singleton<GameRoot>
 			var minRewardTime = Tables.Instance.GetTable<Define>().GetData("max_offline_time").value;
 			var maxRewardTime = Tables.Instance.GetTable<Define>().GetData("offline_min_time").value;
 
-			var stage = GameRoot.instance.InGameSystem.GetInGame<InGameTycoon>().curInGameStage;
+		
 
 			// if (diff.TotalSeconds > minRewardTime)
 			// {

@@ -7,18 +7,39 @@ namespace BanpoFri
     public class EnemyInfoData
     {
         [SerializeField]
-		private int _unit_idx;
-		public int unit_idx
+		private int _product_idx;
+		public int product_idx
 		{
-			get { return _unit_idx;}
-			set { _unit_idx = value;}
+			get { return _product_idx;}
+			set { _product_idx = value;}
 		}
 		[SerializeField]
-		private int _movespeed;
-		public int movespeed
+		private int _base_move_speed;
+		public int base_move_speed
 		{
-			get { return _movespeed;}
-			set { _movespeed = value;}
+			get { return _base_move_speed;}
+			set { _base_move_speed = value;}
+		}
+		[SerializeField]
+		private int _base_attack_speed;
+		public int base_attack_speed
+		{
+			get { return _base_attack_speed;}
+			set { _base_attack_speed = value;}
+		}
+		[SerializeField]
+		private int _base_attack_damage;
+		public int base_attack_damage
+		{
+			get { return _base_attack_damage;}
+			set { _base_attack_damage = value;}
+		}
+		[SerializeField]
+		private int _base_hp;
+		public int base_hp
+		{
+			get { return _base_hp;}
+			set { _base_hp = value;}
 		}
 		[SerializeField]
 		private string _prefab;
@@ -26,27 +47,6 @@ namespace BanpoFri
 		{
 			get { return _prefab;}
 			set { _prefab = value;}
-		}
-		[SerializeField]
-		private string _image;
-		public string image
-		{
-			get { return _image;}
-			set { _image = value;}
-		}
-		[SerializeField]
-		private string _name;
-		public string name
-		{
-			get { return _name;}
-			set { _name = value;}
-		}
-		[SerializeField]
-		private int _basehp;
-		public int basehp
-		{
-			get { return _basehp;}
-			set { _basehp = value;}
 		}
 
     }

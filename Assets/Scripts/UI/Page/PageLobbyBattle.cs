@@ -71,11 +71,8 @@ public class PageLobbyBattle : UIBase
         GameRoot.Instance.UISystem.OpenUI<PopupIngameBottom>(popup => popup.Init());
         GameRoot.Instance.InGameSystem.DeadCount.Value = 0;
         GameRoot.Instance.InGameSystem.LevelProperty.Value = 0;
-
-        Addressables.InstantiateAsync("StageMap_01").Completed += (obj) =>
-                      {
-                          var inst = obj.Result;
-                      };
+        
+        GameRoot.Instance.InGameSystem.GetInGame<InGameBaseStage>().curInGameBattle.StartBattle();
 
         GameRoot.Instance.WaitTimeAndCallback(2f, () =>
         {

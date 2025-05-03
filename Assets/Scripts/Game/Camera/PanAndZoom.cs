@@ -117,12 +117,6 @@ public class PanAndZoom : MonoBehaviour
         IsFocusing = false;
 
         canUseMouse = Application.platform != RuntimePlatform.Android && Application.platform != RuntimePlatform.IPhonePlayer && Input.mousePresent;
-
-    
-        GameRoot.Instance.WaitTimeAndCallback(1f, () =>
-        {
-            cam.orthographicSize = 12;
-        });
     }
 
     Vector3 velocity = Vector3.zero; // 클래스 변수로 선언
