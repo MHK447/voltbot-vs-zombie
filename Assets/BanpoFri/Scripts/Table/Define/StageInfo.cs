@@ -20,6 +20,20 @@ namespace BanpoFri
 			get { return _prefab;}
 			set { _prefab = value;}
 		}
+		[SerializeField]
+		private int _enemy_increase_hp;
+		public int enemy_increase_hp
+		{
+			get { return _enemy_increase_hp;}
+			set { _enemy_increase_hp = value;}
+		}
+		[SerializeField]
+		private int _enemy_increase_attack;
+		public int enemy_increase_attack
+		{
+			get { return _enemy_increase_attack;}
+			set { _enemy_increase_attack = value;}
+		}
 
     }
 

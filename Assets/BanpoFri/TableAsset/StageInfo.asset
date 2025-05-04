@@ -20,7 +20,13 @@ MonoBehaviour:
   mDataList:
   - _stage_idx: 1
     _prefab: InGame_Stage_01
+    _enemy_increase_hp: 100
+    _enemy_increase_attack: 100
   - _stage_idx: 2
     _prefab: InGame_Stage_02
+    _enemy_increase_hp: 120
+    _enemy_increase_attack: 120
   - _stage_idx: 3
     _prefab: InGame_Stage_03
+    _enemy_increase_hp: 140
+    _enemy_increase_attack: 140
