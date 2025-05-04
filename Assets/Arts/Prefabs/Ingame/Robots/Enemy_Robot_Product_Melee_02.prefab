@@ -17,6 +17,10 @@ PrefabInstance:
       value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 2320745882558974934, guid: b2f1e6db9df6443fabb6dff7f45f63a3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320745882558974934, guid: b2f1e6db9df6443fabb6dff7f45f63a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -63,14 +67,14 @@ PrefabInstance:
     - target: {fileID: 7813068038691376422, guid: b2f1e6db9df6443fabb6dff7f45f63a3, type: 3}
       propertyPath: RobotSprite
       value: 
-      objectReference: {fileID: 5724766914405787657}
+      objectReference: {fileID: 5002999985067711418}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2f1e6db9df6443fabb6dff7f45f63a3, type: 3}
---- !u!212 &5724766914405787657 stripped
+--- !u!212 &5002999985067711418 stripped
 SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 172497400896336161, guid: b2f1e6db9df6443fabb6dff7f45f63a3, type: 3}
+  m_CorrespondingSourceObject: {fileID: 610406727131890322, guid: b2f1e6db9df6443fabb6dff7f45f63a3, type: 3}
   m_PrefabInstance: {fileID: 5554803479790901544}
   m_PrefabAsset: {fileID: 0}

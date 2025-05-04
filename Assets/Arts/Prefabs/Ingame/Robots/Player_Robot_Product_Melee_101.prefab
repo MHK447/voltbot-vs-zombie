@@ -59,13 +59,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5979317065313513011, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6164775563630111621}
-    - targetCorrespondingSourceObject: {fileID: 5979317065313513011, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5728710324848077724}
   m_SourcePrefab: {fileID: 100100000, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
---- !u!212 &172497400896336161 stripped
+--- !u!212 &610406727131890322 stripped
 SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 1350870279806237770, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1775277570767818745, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
   m_PrefabInstance: {fileID: 1214727408396078443}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &4765187826139554648 stripped
@@ -85,27 +82,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf8bfe29495b4487f89e6a416d67b752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RobotAnim: {fileID: 5728710324848077724}
-  RobotSprite: {fileID: 172497400896336161}
---- !u!95 &5728710324848077724
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4765187826139554648}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2c916a40fca90428dbf0e4b3999aea99, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  RobotSprite: {fileID: 610406727131890322}

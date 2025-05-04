@@ -2,10 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using BanpoFri;
 using UnityEngine;
+using DG.Tweening;
 
 public class MeleeEnemy : RobotBase
 {
     public MeleeUnitData UnitData = null;
+
+    override public void Set(int unitidx)
+    {
+        base.Set(unitidx);
+
+        SetInfo();
+    }
 
     public override void SetInfo()
     {
@@ -30,6 +38,32 @@ public class MeleeEnemy : RobotBase
 
         }
 
+    }
+
+
+    override public void SetState(RobotStateType state)
+    {
+        base.SetState(state);
+
+        PlayStateAnimation(state);
+    }
+    override public void PlayStateAnimation(RobotStateType state)
+    {
+        base.PlayStateAnimation(state);
+
+        switch (state)
+        {
+            case RobotStateType.Attack:
+                {
+                    stateTween = DOTween.Sequence()
+                        .Append(transform.DOShakePosition(0.2f, 0.1f, 10, 90, false))
+                        .Join(transform.DOScale(1.1f, 0.2f))
+                        .Append(transform.DOScale(1f, 0.2f));
+
+                }
+                break;
+
+        }
     }
 
     // Start is called before the first frame update

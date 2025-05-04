@@ -30,19 +30,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3526149397308098237, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9999861
       objectReference: {fileID: 0}
     - target: {fileID: 3526149397308098237, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3526149397308098237, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3526149397308098237, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.005276896
       objectReference: {fileID: 0}
     - target: {fileID: 3526149397308098237, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3526149397308098237, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 0.605
       objectReference: {fileID: 0}
     - target: {fileID: 5979317065313513011, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
       propertyPath: m_Name
@@ -68,9 +68,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 7813068038691376422}
   m_SourcePrefab: {fileID: 100100000, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
---- !u!212 &172497400896336161 stripped
+--- !u!212 &610406727131890322 stripped
 SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 1350870279806237770, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1775277570767818745, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
   m_PrefabInstance: {fileID: 1214727408396078443}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &4765187826139554648 stripped
@@ -90,5 +90,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1b81982a60046c28be08d51ef19e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RobotAnim: {fileID: 0}
-  RobotSprite: {fileID: 172497400896336161}
+  RobotSprite: {fileID: 610406727131890322}
