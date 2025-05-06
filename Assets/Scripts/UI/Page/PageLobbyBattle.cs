@@ -74,6 +74,8 @@ public class PageLobbyBattle : UIBase
         
         GameRoot.Instance.InGameSystem.GetInGame<InGameBaseStage>().curInGameBattle.StartBattle();
 
+        GameRoot.Instance.UserData.CurMode.Money.Value = GameRoot.Instance.InGameSystem.base_start_money;
+
         GameRoot.Instance.WaitTimeAndCallback(2f, () =>
         {
             StartBtn.interactable = true;

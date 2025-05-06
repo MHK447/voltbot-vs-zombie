@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using BanpoFri;
 using TMPro;
 using UnityEngine;
@@ -18,25 +19,38 @@ public class SelectItemContents : MonoBehaviour
     [SerializeField]
     private Button FightButton;
 
+    private int Cost = 0;
+
+    
+
 
     void Awake()
     {
         RerollButton.onClick.AddListener(OnClickReroll);
-        FightButton.onClick.AddListener(OnClickFight); 
+        FightButton.onClick.AddListener(OnClickFight);
     }
 
     public void Init()
     {
-        
-        foreach (var item in ItemComponents)
+        ItemComponents[0].Set(1);
+        ItemComponents[1].Set(101);
+        ItemComponents[2].Set(1);
+    }
+
+
+    public void RandSelectItem()
+    {
+        for (int i = 0; i < ItemComponents.Count; i++)
         {
-            item.Set(1);
+            var rand = Random.Range(0, ItemComponents.Count);
+
+            ItemComponents[i].Set(rand);
         }
     }
 
     public void ActiveSelectOn()
     {
-        
+
     }
 
 
@@ -49,6 +63,6 @@ public class SelectItemContents : MonoBehaviour
     {
         var waveidx = GameRoot.Instance.UserData.CurMode.StageData.Waveidx.Value;
         GameRoot.Instance.StartCoroutine(GameRoot.Instance.InGameSystem.GetInGame<InGameBaseStage>().curInGameBattle.GetStageMap.StartWaveBattle(waveidx));
-        ProjectUtility.SetActiveCheck(this.gameObject , false);
+        ProjectUtility.SetActiveCheck(this.gameObject, false);
     }
 }

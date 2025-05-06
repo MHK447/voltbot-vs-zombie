@@ -38,10 +38,8 @@ public class InGameBattle : MonoBehaviour
               if (StageMap != null)
               {
                   ProjectUtility.SetActiveCheck(StageMap.gameObject, true);
-
               }
           };
         }
-
     }
 }

@@ -14,6 +14,13 @@ namespace BanpoFri
 			set { _product_idx = value;}
 		}
 		[SerializeField]
+		private int _type;
+		public int type
+		{
+			get { return _type;}
+			set { _type = value;}
+		}
+		[SerializeField]
 		private int _price;
 		public int price
 		{
@@ -26,6 +33,13 @@ namespace BanpoFri
 		{
 			get { return _image;}
 			set { _image = value;}
+		}
+		[SerializeField]
+		private int _cooltime;
+		public int cooltime
+		{
+			get { return _cooltime;}
+			set { _cooltime = value;}
 		}
 
     }

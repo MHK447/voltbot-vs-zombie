@@ -7,13 +7,24 @@ using BanpoFri;
 using UniRx;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Purchasing;
 
 public class StoreBuyProductComponent : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     private SelectItemComponent SelectItemComponent;
 
     [SerializeField]
-    private Image ItemImage;
+    private Image ProductOnImg;
+
+    [SerializeField]
+    private Image ProductOffImg;
+
+    [SerializeField]
+    private TextMeshProUGUI OveLevelText;
+
+    [SerializeField]
+    private TextMeshProUGUI CoolTimeText;
+
 
     [SerializeField]
     private Vector2 Offset;
@@ -37,8 +48,53 @@ public class StoreBuyProductComponent : MonoBehaviour, IBeginDragHandler, IDragH
 
     public bool GetBatch { get { return Isbatch; } }
 
-    public void Set(SelectItemComponent itemcomponent)
+    private int SelectItemIdx = 0;
+
+    private int Cost = 0;
+
+    private int ProdcutType = 0;
+
+    public void Set(int idx, SelectItemComponent itemcomponent)
     {
+        SelectItemIdx = idx;
+
+        var td = Tables.Instance.GetTable<InGameBuyProductInfo>().GetData(SelectItemIdx);
+
+        if (td != null)
+        {
+            ProdcutType = td.type;
+            Cost = td.price;
+
+            ProjectUtility.SetActiveCheck(OveLevelText.gameObject , false);
+
+            ProjectUtility.SetActiveCheck(CoolTimeText.gameObject , false);
+
+            switch (ProdcutType)
+            {
+                case (int)Config.ProdcutType.ElectCore:
+                    {
+                        ProductOnImg.sprite = ProductOffImg.sprite = AtlasManager.Instance.GetSprite(Atlas.Atlas_Common, td.image);
+                        ProjectUtility.SetActiveCheck(OveLevelText.gameObject , true);
+                    }
+                    break;
+                case (int)Config.ProdcutType.Robot:
+                    {
+                        ProductOnImg.sprite = ProductOffImg.sprite = AtlasManager.Instance.GetSprite(Atlas.Atlas_Robot, td.image);
+                        ProjectUtility.SetActiveCheck(CoolTimeText.gameObject , true);
+                    }
+                    break;
+                case (int)Config.ProdcutType.SkillBook:
+                    break;
+            }
+
+            ProjectUtility.SetActiveCheck(CoolTimeText.gameObject, false);
+
+            if (td != null)
+            {
+                CoolTimeText.text = $"{td.cooltime / 100f}s";
+            }
+        }
+
 
         if (graphicRaycaster == null)
             graphicRaycaster = GetComponentInParent<GraphicRaycaster>();
@@ -51,7 +107,7 @@ public class StoreBuyProductComponent : MonoBehaviour, IBeginDragHandler, IDragH
 
         Isbatch = false;
 
-        RecT = ItemImage.transform as RectTransform;
+        RecT = ProductOnImg.transform as RectTransform;
     }
 
     public void SetParentVoltComponent(VoltComponent voltComponent)
@@ -78,7 +134,7 @@ public class StoreBuyProductComponent : MonoBehaviour, IBeginDragHandler, IDragH
     public void OnEndDrag(PointerEventData eventData)
     {
         IsDraggingStart = false;
-        ItemImage.raycastTarget = true;
+        ProductOnImg.raycastTarget = ProductOffImg.raycastTarget = true;
 
         if (EquipVoltComponent != null)
         {
@@ -104,11 +160,17 @@ public class StoreBuyProductComponent : MonoBehaviour, IBeginDragHandler, IDragH
             return;
         }
 
-        if (hitVolt != null)
+        if (hitVolt != null && GameRoot.Instance.UserData.CurMode.Money.Value >= Cost)
         {
+            GameRoot.Instance.UserData.SetReward((int)Config.RewardType.Currency, (int)Config.CurrencyID.Money, -Cost);
             EquipVoltComponent = hitVolt;
             EquipVoltComponent.ProductComponent = this;
             Isbatch = true;
+
+            if (ProdcutType == (int)Config.ProdcutType.Robot)
+            {
+                ProjectUtility.SetActiveCheck(CoolTimeText.gameObject, true);
+            }
         }
 
         if (EquipVoltComponent != null && GameRoot.Instance.VoltSystem.CurVoltComponent != null)
@@ -238,7 +300,7 @@ public class StoreBuyProductComponent : MonoBehaviour, IBeginDragHandler, IDragH
             if (RectTransformUtility.ScreenPointToLocalPointInRectangle(this.transform.parent as RectTransform, eventData.position, eventData.pressEventCamera, out localPoint))
             {
                 RecT.anchoredPosition = localPoint - Offset - WeaponOffset;
-                ItemImage.raycastTarget = false;
+                ProductOnImg.raycastTarget = ProductOffImg.raycastTarget = false;
             }
         }
     }

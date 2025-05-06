@@ -11,11 +11,16 @@ public abstract class RobotBase : MonoBehaviour
 
 
     [SerializeField]
-    private SpriteRenderer RobotSprite;
+    protected SpriteRenderer RobotSprite;
+
+    [SerializeField]
+    private protected Transform HpProgressTr;
 
     protected RobotStateType StateType = RobotStateType.Idle;
 
     protected DirectionType Direciton = DirectionType.Left;
+
+    protected InGameEnemyHpProgress InGameHpProgress = null;
 
     public abstract void SetInfo();
 
@@ -30,7 +35,7 @@ public abstract class RobotBase : MonoBehaviour
 
     void Awake()
     {
-        originalScale = transform.localScale;
+        originalScale = RobotSprite.transform.localScale;
     }
 
     public virtual void Set(int unitidx)
@@ -77,12 +82,12 @@ public abstract class RobotBase : MonoBehaviour
     public virtual void PlayStateAnimation(RobotStateType state)
     {
         stateTween?.Kill(); // 기존 트윈 제거
-        transform.localScale = originalScale;
+        RobotSprite.transform.localScale = originalScale;
 
         switch (state)
         {
             case RobotStateType.Idle:
-                stateTween = transform
+                stateTween = RobotSprite.transform
                     .DOScale(originalScale * 1.05f, 1.2f)
                     .SetLoops(-1, LoopType.Yoyo)
                     .SetEase(Ease.InOutSine);
@@ -92,7 +97,7 @@ public abstract class RobotBase : MonoBehaviour
                 Vector3 leftLean = new Vector3(5f, -5f, -10f);  // 왼쪽 기울기 + 몸통 살짝 왼쪽으로 틀기
                 Vector3 rightLean = new Vector3(-5f, 5f, 10f);  // 오른쪽 기울기 + 몸통 살짝 오른쪽으로 틀기
 
-                stateTween = transform
+                stateTween = RobotSprite.transform
                     .DOLocalRotate(rightLean, 0.35f)
                     .SetLoops(-1, LoopType.Yoyo)
                     .From(leftLean)
@@ -101,13 +106,13 @@ public abstract class RobotBase : MonoBehaviour
 
             case RobotStateType.Attack:
                 stateTween = DOTween.Sequence()
-                    .Append(transform.DOShakePosition(0.2f, 0.1f, 10, 90, false))
-                    .Join(transform.DOScale(originalScale * 1.1f, 0.2f))
-                    .Append(transform.DOScale(originalScale, 0.2f));
+                    .Append(RobotSprite.transform.DOShakePosition(0.2f, 0.1f, 10, 90, false))
+                    .Join(RobotSprite.transform.DOScale(originalScale * 1.1f, 0.2f))
+                    .Append(RobotSprite.transform.DOScale(originalScale, 0.2f));
                 break;
 
             case RobotStateType.Dead:
-                stateTween = transform
+                stateTween = RobotSprite.transform
                     .DOScale(Vector3.zero, 1.0f)
                     .SetEase(Ease.InBack);
                 break;

@@ -13,53 +13,8 @@ MonoBehaviour:
   m_Name: Define
   m_EditorClassIdentifier: 
   mFirstKey:
-  - casher_move_speed
-  - carry_sleep_time
-  - player_start_carry_count
-  - carry_casher_count
-  - max_offline_time
-  - offline_value_time
-  - offline_reward_multiple
-  - offline_min_time
-  - ad_ride_time
-  - ride_cash_value
-  - ad_retimer_time
-  - default_player_speed
-  - ad_vehicle_time
-  - ad_vehicle_show_time
-  - default_fishing_time
-  - boost_time
+  - base_start_money
   mSecondKey: []
   mDataList:
-  - _index: casher_move_speed
-    _value: 400
-  - _index: carry_sleep_time
-    _value: 180
-  - _index: player_start_carry_count
-    _value: 5
-  - _index: carry_casher_count
-    _value: 3
-  - _index: max_offline_time
-    _value: 14400
-  - _index: offline_value_time
-    _value: 10
-  - _index: offline_reward_multiple
-    _value: 2
-  - _index: offline_min_time
-    _value: 600
-  - _index: ad_ride_time
-    _value: 300
-  - _index: ride_cash_value
-    _value: 5
-  - _index: ad_retimer_time
-    _value: 500
-  - _index: default_player_speed
-    _value: 5
-  - _index: ad_vehicle_time
-    _value: 60
-  - _index: ad_vehicle_show_time
-    _value: 30
-  - _index: default_fishing_time
-    _value: 200
-  - _index: boost_time
-    _value: 300
+  - _index: base_start_money
+    _value: 20

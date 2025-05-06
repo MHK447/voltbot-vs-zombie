@@ -24,26 +24,42 @@ MonoBehaviour:
   mSecondKey: []
   mDataList:
   - _product_idx: 1
+    _type: 1
     _price: 10
-    _image: common_buyproduct_1
+    _image: Common_LightCircle_1
+    _cooltime: 100
   - _product_idx: 2
+    _type: 1
     _price: 20
-    _image: common_buyproduct_2
+    _image: Common_LightCircle_2
+    _cooltime: 100
   - _product_idx: 3
+    _type: 1
     _price: 30
-    _image: common_buyproduct_3
+    _image: Common_LightCircle_3
+    _cooltime: 50
   - _product_idx: 4
+    _type: 1
     _price: 40
-    _image: common_buyproduct_4
+    _image: Common_LightCircle_4
+    _cooltime: 50
   - _product_idx: 101
+    _type: 2
     _price: 10
-    _image: common_buyproduct_101
+    _image: RobotChar_101
+    _cooltime: 200
   - _product_idx: 102
+    _type: 2
     _price: 15
-    _image: common_buyproduct_102
+    _image: RobotChar_102
+    _cooltime: 100
   - _product_idx: 103
+    _type: 2
     _price: 20
-    _image: common_buyproduct_103
+    _image: RobotChar_103
+    _cooltime: 100
   - _product_idx: 1001
+    _type: 3
     _price: 30
-    _image: common_buyproduct_1001
+    _image: Common1001
+    _cooltime: 100

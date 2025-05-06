@@ -120,7 +120,7 @@ public class SpriteAtlasAssetPostprocessor : AssetPostprocessor
 [InitializeOnLoad]
 public class SpriteAtlasMonitor
 {
-    static string enumFilePath = "Assets/BanpoFri/Scripts/AtlasManager.cs";
+    static string enumFilePath = "Assets/Scripts/Game/AtlasManager.cs";
 
     // 아틀라스가 어드레서블 그룹에 정상적으로 포함되어 있는지 확인
     public static bool IsInAddressableGroup(string assetPath)
@@ -550,7 +550,7 @@ public class SpriteAtlasMonitor
         List<string> skippedAtlases = new List<string>();
         List<string> removedAtlases = new List<string>();
         bool anyChanges = false;
-
+        
         // 파일이 존재하는지 확인
         if (!File.Exists(enumFilePath))
         {

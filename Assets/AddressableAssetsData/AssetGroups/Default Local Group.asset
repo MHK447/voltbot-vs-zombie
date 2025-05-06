@@ -522,11 +522,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f4312fc09a0e6474ea9a98e2566dd60e
-    m_Address: Robot_Product_101
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b2f1e6db9df6443fabb6dff7f45f63a3
     m_Address: Robot_Enemy_Product_1
     m_ReadOnly: 0
@@ -534,6 +529,16 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8fe01469960fb4749bac688c6946a29e
     m_Address: Robot_Enemy_Product_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8e75e496d090da6429cf43859b164e31
+    m_Address: UI/InGame/InGameEnemyHpProgress
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8cec833a0afe24c66a0000de0e68b3f3
+    m_Address: Atlas_Robot
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

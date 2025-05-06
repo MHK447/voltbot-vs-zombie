@@ -38,9 +38,7 @@ public class AtlasManager : Singleton<AtlasManager>
     {
         SpriteAtlasManager.atlasRequested += OnAtlasRequest;
 
-        spriteCache.Add(Atlas.Atlas_UI_Common, new Dictionary<string, Sprite>());
-        spriteCache.Add(Atlas.Atlas_UI_Dynamic, new Dictionary<string, Sprite>());
-        spriteCache.Add(Atlas.Atlas_UI_DynamicShop, new Dictionary<string, Sprite>());
+        spriteCache.Add(Atlas.Atlas_Common, new Dictionary<string, Sprite>());
     }
 
     // 전체 로드
@@ -241,34 +239,17 @@ public class AtlasManager : Singleton<AtlasManager>
 
 public enum Atlas
 {
-    // stage atlas
+// stage atlas
     Stage,
+
+
     // stage atlas
 
-    Atals_UI_Gacha,
-    Atals_UI_PopupImg,
-    Atals_UI_Promote,
-    Atlas_UI_Adventure,
-    Atlas_UI_AdventureShop,
-    Atlas_UI_Common,
-    Atlas_UI_Dynamic,
-    Atlas_UI_DynamicShop,
-    Atlas_UI_Fx_Sprite_Smoke,
-    Atlas_UI_Hallow,
-    Atlas_UI_HelpInfo,
-    Atlas_UI_HUD,
-    Atlas_UI_Icon,
-    Atlas_UI_Icon_Adventure,
-    Atlas_UI_Icon_Character,
-    Atlas_UI_Icon_Class,
-    Atlas_UI_Icon_Facility,
-    Atlas_UI_Loading,
-    Atlas_UI_LuckyBeed,
-    Atlas_UI_MagicPass,
-    Atlas_UI_Manage,
-    Atlas_UI_ManagerUnlock,
-    Atlas_UI_Recruit,
-    Atlas_UI_StageUpgrade,
+    
+
+    Atlas_Common,
+    Atlas_InGame,
+    Atlas_Robot,
     // @ add here
 
 }

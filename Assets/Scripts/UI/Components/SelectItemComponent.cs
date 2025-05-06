@@ -12,9 +12,6 @@ using TMPro;
 public class SelectItemComponent : MonoBehaviour
 {
     [SerializeField]
-    private Image ItemImage;
-
-    [SerializeField]
     private TextMeshProUGUI PriceText;
 
     private int SelectItemIdx = 0;
@@ -32,11 +29,26 @@ public class SelectItemComponent : MonoBehaviour
 
     public List<StoreBuyProductComponent> BuyProductComponentList = new List<StoreBuyProductComponent>();
 
+    private CompositeDisposable disposables = new CompositeDisposable();
+
     public void Set(int selectitemidx)
     {
+        disposables.Clear();
+
         SelectItemIdx = selectitemidx;
 
-        GetCachedObject().GetComponent<StoreBuyProductComponent>().Set(this);
+        var td = Tables.Instance.GetTable<InGameBuyProductInfo>().GetData(SelectItemIdx);
+
+        if (td != null)
+        {
+            PriceText.text = td.price.ToString();
+            GetCachedObject().GetComponent<StoreBuyProductComponent>().Set(SelectItemIdx, this);
+
+            GameRoot.Instance.UserData.CurMode.Money.Subscribe(x =>
+            {
+                PriceText.color = x >= td.price ? Color.white : Color.red;
+            }).AddTo(disposables);
+        }
     }
 
 
@@ -56,5 +68,14 @@ public class SelectItemComponent : MonoBehaviour
         return inst;
     }
 
+    void OnDestroy()
+    {
+        disposables.Clear();
+    }
+
+    void OnDisable()
+    {
+        disposables.Clear();
+    }
 
 }

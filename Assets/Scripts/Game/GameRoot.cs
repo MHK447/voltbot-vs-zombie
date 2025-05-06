@@ -256,6 +256,7 @@ public class GameRoot : Singleton<GameRoot>
 
 		InGameSystem.Create();
 		GameNotification.Create();
+		
 
 
 		GameRoot.instance.WaitTimeAndCallback(0.5f, () =>
@@ -417,13 +418,6 @@ public class GameRoot : Singleton<GameRoot>
 				var action = PauseActions.Dequeue();
 				action.Invoke();
 			};
-
-			var diff = TimeSystem.GetCurTime().Subtract(time);
-
-			var minRewardTime = Tables.Instance.GetTable<Define>().GetData("max_offline_time").value;
-			var maxRewardTime = Tables.Instance.GetTable<Define>().GetData("offline_min_time").value;
-
-		
 
 			// if (diff.TotalSeconds > minRewardTime)
 			// {

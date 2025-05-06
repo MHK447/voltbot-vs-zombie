@@ -57,9 +57,12 @@ public class InGameSystem
 
     public float default_fishing_time = 0;
 
+    public int base_start_money = 0;
+
 
     public void Create()
     {
+        base_start_money = Tables.Instance.GetTable<Define>().GetData("base_start_money").value;
     }
 
     public T GetInGame<T>() where T : InGameMode
@@ -236,11 +239,6 @@ public class InGameSystem
 
 
 
-        var time = GameRoot.Instance.UserData.CurMode.LastLoginTime;
-
-        var diff = TimeSystem.GetCurTime().Subtract(time);
-        var minRewardTime = Tables.Instance.GetTable<Define>().GetData("offline_min_time").value;
-        var maxRewardTime = Tables.Instance.GetTable<Define>().GetData("max_offline_time").value;
 
 
         // if (diff.TotalSeconds > minRewardTime && time != DateTime.MinValue)

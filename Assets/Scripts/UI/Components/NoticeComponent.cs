@@ -36,7 +36,7 @@ public class NoticeComponent : MonoBehaviour
         Target = target;
 
     
-        NoticeImg.sprite = AtlasManager.Instance.GetSprite(Atlas.Atals_UI_PopupImg,$"Icon_Noti_{type.ToString()}");
+        NoticeImg.sprite = AtlasManager.Instance.GetSprite(Atlas.Atlas_Common,$"Icon_Noti_{type.ToString()}");
 
     }
 

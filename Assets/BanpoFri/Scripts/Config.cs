@@ -45,8 +45,20 @@ public class Config : BanpoFri.SingletonScriptableObject<Config>, BanpoFri.ILoad
         CRITICALPERCENT,
         CRITICALDAMAGE,
     }
+    public enum FloatingUIDepth
+    {
+        HpProgress,
+    }
 
-     public enum RecordKeys
+    public enum ProdcutType
+    {
+        None = 0,
+        ElectCore = 1, 
+        Robot = 2,
+        SkillBook = 3
+    }
+
+    public enum RecordKeys
     {
         StagePlayTime,
         EventStagePlayTime,
@@ -165,7 +177,7 @@ public class Config : BanpoFri.SingletonScriptableObject<Config>, BanpoFri.ILoad
         return Color.white;
     }
 
-    
+
     public Color GetUnitGradeColor(int grade)
     {
         switch (grade)
