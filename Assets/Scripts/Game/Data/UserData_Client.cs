@@ -63,7 +63,7 @@ public partial class UserDataSystem
 
     public GameType LastMode = GameType.Main;
 
-    public IReactiveProperty<BigInteger> HUDMoney = new ReactiveProperty<BigInteger>(0);
+    public IReactiveProperty<double> HUDMoney = new ReactiveProperty<double>(0);
     public IReactiveProperty<int> HUDGarnet = new ReactiveProperty<int>(0);
     public IReactiveProperty<int> HUDCash = new ReactiveProperty<int>(0);
     public IReactiveProperty<int> HUDAdsTicket = new ReactiveProperty<int>(0);
@@ -84,13 +84,14 @@ public partial class UserDataSystem
     public string Buyinappids { get; set; } = "";
 
 
-    void SetLoadDatas(){
+    void SetLoadDatas()
+    {
         /* 아래 @주석 위치를 찾아서 함수가 자동 추가됩니다 ConnectReadOnlyDatas 함수에서 SetLoadDatas를 호출해주세요 */
         // @자동 로드 데이터 함수들
         LoadData_StageData();
         LoadData_RecordCount();
         LoadData_OptionData();
-    }    
+    }
     void ConnectReadOnlyDatas()
     {
         GameNotifications.Clear();
@@ -98,9 +99,9 @@ public partial class UserDataSystem
 
 
 
-    
 
-   
+
+
         FirstStartTime = new System.DateTime(flatBufferUserData.Gamestarttime);
 
         BuyInappIds.Clear();
@@ -134,7 +135,7 @@ public partial class UserDataSystem
             RecordValue.Add(data.Value.Idx, data.Value.Count);
         }
 
-    
+
 
         mainData.LastLoginTime = new System.DateTime(flatBufferUserData.Lastlogintime);
 
@@ -144,7 +145,7 @@ public partial class UserDataSystem
         SetLoadDatas();
 
         // @변수 자동 데이터 추가
-       
+
 
 
         ChangeDataMode(LastMode == GameType.Event ? DataState.Event : DataState.Main);
@@ -299,6 +300,7 @@ public partial class UserDataSystem
         {
             HUDGarnet.Value = Garnet.Value;
             HUDCash.Value = Cash.Value;
+            HUDMoney.Value = Money.Value;
         }
     }
 
@@ -310,17 +312,22 @@ public partial class UserDataSystem
                 {
                     switch (rewardIdx)
                     {
-                    
+
                         case (int)Config.CurrencyID.Cash:
                             {
                                 Cash.Value += (int)rewardCnt;
+                            }
+                            break;
+                        case (int)Config.CurrencyID.Money:
+                            {
+                                Money.Value += (int)rewardCnt;
                             }
                             break;
                     }
                     GameRoot.Instance.UserData.Save();
                 }
                 break;
-        
+
         }
 
         if (hudRefresh)

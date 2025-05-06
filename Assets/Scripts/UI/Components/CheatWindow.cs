@@ -26,8 +26,8 @@ public class CheatWindow : MonoBehaviour
             return;
         }
         inputField.text = "";
-        GameRoot.Instance.UserData.CurMode.Money.Value += convert;
-        GameRoot.Instance.UserData.HUDMoney.Value += convert;
+        GameRoot.Instance.UserData.Money.Value += (double)convert;
+        GameRoot.Instance.UserData.HUDMoney.Value += (double)convert;
     }
 
 

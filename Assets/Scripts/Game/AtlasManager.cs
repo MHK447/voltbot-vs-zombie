@@ -32,8 +32,6 @@ public class AtlasManager : Singleton<AtlasManager>
         return atlas.GetSprite(key);
     }
 
-
-    // 따로 캐싱할 아틀라스 설정
     public void Init()
     {
         SpriteAtlasManager.atlasRequested += OnAtlasRequest;
@@ -224,11 +222,17 @@ public class AtlasManager : Singleton<AtlasManager>
         spriteCache.Clear();
     }
 
+    public void ReLoad(bool isLow)
+    {
+        ReleaseAll();
+        LoadAllAtlas();
+    }
+
     public bool IsLoadComplete()
     {
         return loadCount <= 0;
     }
-    
+
     // 전체 로드에서 제외될 아틀라스
     List<Atlas> ignoreAtlas = new List<Atlas>()
     {
@@ -239,16 +243,18 @@ public class AtlasManager : Singleton<AtlasManager>
 
 public enum Atlas
 {
-// stage atlas
+    // stage atlas
     Stage,
+
+
 
 
     // stage atlas
 
-    
-
     Atlas_Common,
     Atlas_InGame,
+
+
     Atlas_Robot,
     // @ add here
 

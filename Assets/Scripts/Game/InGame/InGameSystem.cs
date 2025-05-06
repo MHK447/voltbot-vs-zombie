@@ -46,17 +46,7 @@ public class InGameSystem
     CompositeDisposable disposables = new CompositeDisposable();
 
 
-    public float casher_move_speed = 0f;
-    public float carry_sleep_time = 0f;
-    public int player_start_carry_count = 0;
-    public int carry_casher_count = 0;
-    public int max_offline_time = 0;
-    public int offline_value_time = 0;
-
-    public int offline_reward_multiple = 0;
-
-    public float default_fishing_time = 0;
-
+    public IReactiveProperty<bool> IsWaveStartBattle = new ReactiveProperty<bool>(false);
     public int base_start_money = 0;
 
 
@@ -134,7 +124,7 @@ public class InGameSystem
 
                     // 나머지 초기화
                     GameRoot.Instance.TutorialSystem.ClearRegisiter();
-                    GameRoot.Instance.UserData.CurMode.Money.Value = 0;
+                    GameRoot.Instance.UserData.Money.Value = 0;
                     GameRoot.Instance.UserData.Save();
 
                     if (!Init)

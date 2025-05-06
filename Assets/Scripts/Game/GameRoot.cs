@@ -207,7 +207,7 @@ public class GameRoot : Singleton<GameRoot>
 		}
 
 #if BANPOFRI_LOG
-			DebugConsoleObj.SetActive(true);
+		DebugConsoleObj.SetActive(true);
 #else
 		DebugConsoleObj.SetActive(false);
 #endif
@@ -237,10 +237,10 @@ public class GameRoot : Singleton<GameRoot>
 
 	private IEnumerator LoadGameData()
 	{
-
+		yield return SoundPlayer.Create();
+		AtlasManager.Instance.Init();
 		yield return Config.Create();
 		yield return Tables.Create();
-		yield return SoundPlayer.Create();
 
 		// 로딩 팝업 어드레서블 로드
 		loadcount = 0;
@@ -250,13 +250,16 @@ public class GameRoot : Singleton<GameRoot>
 		UserData.Load();
 		InGameSystem.ChangeMode(CurInGameType);
 
+
+		InitRequestAtlas();
+
 		LoadComplete = true;
 
 		InitSystem();
 
 		InGameSystem.Create();
 		GameNotification.Create();
-		
+
 
 
 		GameRoot.instance.WaitTimeAndCallback(0.5f, () =>
@@ -332,6 +335,39 @@ public class GameRoot : Singleton<GameRoot>
 		}
 
 	}
+
+	private bool requestAtlas = false;
+
+	void InitRequestAtlas()
+	{
+		// 아틀라스 저사양모드 체크
+		if (!requestAtlas)
+		{
+			//if (!PlayerPrefs.HasKey(Config.SnackLastVersion))
+			//{
+			//    var low = TreepllaNative.IsLow();
+			//    ProjectUtility.SlowGraphic(low);
+			//}
+			//else
+			//{
+			Application.targetFrameRate = 60;
+			//  UserData.SlowGraphic ?
+			// #if UNITY_ANDROID
+			//     30
+			// #else
+			//     60
+			// #endif
+			//                                 : 60;
+			//}
+			// if (UserData.SlowGraphic)
+			// {
+			// 	Screen.SetResolution(OriginScreenWidth / 2, OriginScreenHeight / 2, true);
+			// }
+			AtlasManager.Instance.ReLoad(UserData.SlowGraphic);
+			requestAtlas = true;
+		}
+	}
+
 
 	private void SetNativeLanguage()
 	{

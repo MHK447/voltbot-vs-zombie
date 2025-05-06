@@ -78,7 +78,7 @@ public class GameNotificationSystem
             notifications.Add(e, managerNotiList);
         }
 
-        GameRoot.Instance.UserData.CurMode.Money.Subscribe(x =>
+        GameRoot.Instance.UserData.Money.Subscribe(x =>
         {
             UpdateNotification(NotificationCategory.UpgradePopup);
             UpdateNotification(NotificationCategory.StageClear);
@@ -141,7 +141,7 @@ public class GameNotificationSystem
 
                         if (td != null)
                         {
-                            if (GameRoot.Instance.UserData.CurMode.Money.Value >= td.cost && !upgrade.IsBuyCheckProperty.Value)
+                            if (GameRoot.Instance.UserData.Money.Value >= td.cost && !upgrade.IsBuyCheckProperty.Value)
                             {
                                 on = true;
                                 break;

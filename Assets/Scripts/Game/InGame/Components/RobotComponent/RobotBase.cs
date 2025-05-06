@@ -94,8 +94,8 @@ public abstract class RobotBase : MonoBehaviour
                 break;
 
             case RobotStateType.Move:
-                Vector3 leftLean = new Vector3(5f, -5f, -10f);  // 왼쪽 기울기 + 몸통 살짝 왼쪽으로 틀기
-                Vector3 rightLean = new Vector3(-5f, 5f, 10f);  // 오른쪽 기울기 + 몸통 살짝 오른쪽으로 틀기
+                Vector3 leftLean = new Vector3(3f, -3f, -8f);  // 왼쪽 기울기 + 몸통 살짝 왼쪽으로 틀기
+                Vector3 rightLean = new Vector3(-3f, 3f,8f);  // 오른쪽 기울기 + 몸통 살짝 오른쪽으로 틀기
 
                 stateTween = RobotSprite.transform
                     .DOLocalRotate(rightLean, 0.35f)

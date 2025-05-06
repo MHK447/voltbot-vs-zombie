@@ -10,19 +10,47 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 544928503175886923, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.03
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 544928503175886923, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.4
+      value: 0.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007114573311004097, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 3033124290184417722, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
+      propertyPath: m_Size.x
+      value: 2.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 3033124290184417722, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
+      propertyPath: m_Size.y
+      value: 2.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 3033124290184417722, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b1e1b429274344069af0516492cbcef1, type: 3}
+    - target: {fileID: 3033124290184417722, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3033124290184417722, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3526149397308098237, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3526149397308098237, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.25
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3526149397308098237, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3526149397308098237, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -68,8 +96,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Robot_Product_Melee_Base
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1775277570767818745, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

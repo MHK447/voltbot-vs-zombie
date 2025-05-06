@@ -19,9 +19,13 @@ public class SelectItemContents : MonoBehaviour
     [SerializeField]
     private Button FightButton;
 
+    [SerializeField]
+    private GameObject ItemGroupObj;
+
+
     private int Cost = 0;
 
-    
+
 
 
     void Awake()
@@ -50,19 +54,21 @@ public class SelectItemContents : MonoBehaviour
 
     public void ActiveSelectOn()
     {
-
+        ProjectUtility.SetActiveCheck(ItemGroupObj.gameObject , true);
     }
 
 
     public void OnClickReroll()
     {
-        
+
     }
 
     public void OnClickFight()
     {
+        GameRoot.Instance.InGameSystem.IsWaveStartBattle.Value = true;
         var waveidx = GameRoot.Instance.UserData.CurMode.StageData.Waveidx.Value;
         GameRoot.Instance.StartCoroutine(GameRoot.Instance.InGameSystem.GetInGame<InGameBaseStage>().curInGameBattle.GetStageMap.StartWaveBattle(waveidx));
-        ProjectUtility.SetActiveCheck(this.gameObject, false);
+        ProjectUtility.SetActiveCheck(ItemGroupObj.gameObject , false);
+        
     }
 }

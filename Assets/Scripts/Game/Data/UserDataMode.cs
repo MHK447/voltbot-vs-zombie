@@ -6,7 +6,6 @@ using UniRx;
 
 public interface IUserDataMode
 {
-	IReactiveProperty<BigInteger> Money { get; set; }
 	DateTime LastLoginTime { get; set; }
 	DateTime CurPlayDateTime { get; set; }
 	public StageData StageData { get; set; }

@@ -44,7 +44,7 @@ public class SelectItemComponent : MonoBehaviour
             PriceText.text = td.price.ToString();
             GetCachedObject().GetComponent<StoreBuyProductComponent>().Set(SelectItemIdx, this);
 
-            GameRoot.Instance.UserData.CurMode.Money.Subscribe(x =>
+            GameRoot.Instance.UserData.Money.Subscribe(x =>
             {
                 PriceText.color = x >= td.price ? Color.white : Color.red;
             }).AddTo(disposables);

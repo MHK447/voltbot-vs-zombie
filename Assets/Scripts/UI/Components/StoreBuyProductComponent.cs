@@ -8,6 +8,8 @@ using UniRx;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Purchasing;
+using System.Net.NetworkInformation;
+using System;
 
 public class StoreBuyProductComponent : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -48,11 +50,25 @@ public class StoreBuyProductComponent : MonoBehaviour, IBeginDragHandler, IDragH
 
     public bool GetBatch { get { return Isbatch; } }
 
+
     private int SelectItemIdx = 0;
 
     private int Cost = 0;
 
     private int ProdcutType = 0;
+
+
+
+    //equipdata 
+
+    private float CoolTime = 0f;
+
+    private float NextCreateProductTime = 0f;
+
+    private CompositeDisposable disposables = new CompositeDisposable();
+
+
+
 
     public void Set(int idx, SelectItemComponent itemcomponent)
     {
@@ -65,22 +81,25 @@ public class StoreBuyProductComponent : MonoBehaviour, IBeginDragHandler, IDragH
             ProdcutType = td.type;
             Cost = td.price;
 
-            ProjectUtility.SetActiveCheck(OveLevelText.gameObject , false);
+            ProjectUtility.SetActiveCheck(OveLevelText.gameObject, false);
 
-            ProjectUtility.SetActiveCheck(CoolTimeText.gameObject , false);
+            ProjectUtility.SetActiveCheck(CoolTimeText.gameObject, false);
+
+            ProjectUtility.SetActiveCheck(ProductOffImg.gameObject, false);
 
             switch (ProdcutType)
             {
                 case (int)Config.ProdcutType.ElectCore:
                     {
+                        OveLevelText.text = td.product_idx.ToString();
                         ProductOnImg.sprite = ProductOffImg.sprite = AtlasManager.Instance.GetSprite(Atlas.Atlas_Common, td.image);
-                        ProjectUtility.SetActiveCheck(OveLevelText.gameObject , true);
+                        ProjectUtility.SetActiveCheck(OveLevelText.gameObject, true);
                     }
                     break;
                 case (int)Config.ProdcutType.Robot:
                     {
                         ProductOnImg.sprite = ProductOffImg.sprite = AtlasManager.Instance.GetSprite(Atlas.Atlas_Robot, td.image);
-                        ProjectUtility.SetActiveCheck(CoolTimeText.gameObject , true);
+                        ProjectUtility.SetActiveCheck(CoolTimeText.gameObject, true);
                     }
                     break;
                 case (int)Config.ProdcutType.SkillBook:
@@ -91,7 +110,8 @@ public class StoreBuyProductComponent : MonoBehaviour, IBeginDragHandler, IDragH
 
             if (td != null)
             {
-                CoolTimeText.text = $"{td.cooltime / 100f}s";
+                CoolTime = td.cooltime / 100f;
+                CoolTimeText.text = $"{CoolTime.ToString()}s";
             }
         }
 
@@ -107,7 +127,11 @@ public class StoreBuyProductComponent : MonoBehaviour, IBeginDragHandler, IDragH
 
         Isbatch = false;
 
-        RecT = ProductOnImg.transform as RectTransform;
+        RecT = this.transform as RectTransform;
+
+        disposables.Clear();
+
+        GameRoot.Instance.InGameSystem.IsWaveStartBattle.SkipLatestValueOnSubscribe().Subscribe(WaveStatus).AddTo(disposables);
     }
 
     public void SetParentVoltComponent(VoltComponent voltComponent)
@@ -117,6 +141,8 @@ public class StoreBuyProductComponent : MonoBehaviour, IBeginDragHandler, IDragH
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if(GameRoot.Instance.InGameSystem.IsWaveStartBattle.Value) return;
+
         IsDraggingStart = true;
 
         this.transform.SetAsLastSibling();
@@ -160,17 +186,19 @@ public class StoreBuyProductComponent : MonoBehaviour, IBeginDragHandler, IDragH
             return;
         }
 
-        if (hitVolt != null && GameRoot.Instance.UserData.CurMode.Money.Value >= Cost)
+        if (hitVolt != null && GameRoot.Instance.UserData.Money.Value >= Cost && !Isbatch)
         {
             GameRoot.Instance.UserData.SetReward((int)Config.RewardType.Currency, (int)Config.CurrencyID.Money, -Cost);
             EquipVoltComponent = hitVolt;
             EquipVoltComponent.ProductComponent = this;
             Isbatch = true;
 
-            if (ProdcutType == (int)Config.ProdcutType.Robot)
-            {
-                ProjectUtility.SetActiveCheck(CoolTimeText.gameObject, true);
-            }
+            ProjectUtility.SetActiveCheck(CoolTimeText.gameObject, true);
+        }
+        else if (hitVolt != null && Isbatch)
+        {
+            EquipVoltComponent = hitVolt;
+            EquipVoltComponent.ProductComponent = this;
         }
 
         if (EquipVoltComponent != null && GameRoot.Instance.VoltSystem.CurVoltComponent != null)
@@ -266,9 +294,6 @@ public class StoreBuyProductComponent : MonoBehaviour, IBeginDragHandler, IDragH
         return null;
     }
 
-
-
-
     // ParentVoltComponent에서 호출할 메소드
     public void HandleTouchDown(PointerEventData eventData)
     {
@@ -276,6 +301,19 @@ public class StoreBuyProductComponent : MonoBehaviour, IBeginDragHandler, IDragH
         // 터치 다운 시 아이템 위치를 터치 위치로 이동
         MoveToMousePosition(eventData);
     }
+
+    public void WaveStatus(bool iswavestart)
+    {
+        ProjectUtility.SetActiveCheck(this.gameObject, Isbatch);
+
+        if (iswavestart)
+        {
+            ProductOffImg.fillAmount = 1f;
+        }
+
+        ProjectUtility.SetActiveCheck(ProductOffImg.gameObject, iswavestart && ProdcutType == (int)Config.ProdcutType.Robot);
+    }
+
 
 
     public void HandleTouchDrag(PointerEventData eventData)
@@ -304,4 +342,68 @@ public class StoreBuyProductComponent : MonoBehaviour, IBeginDragHandler, IDragH
             }
         }
     }
+
+
+    void Update()
+    {
+        // 전투 중이면 실행하지 않음
+        if (!GameRoot.Instance.InGameSystem.IsWaveStartBattle.Value) return;
+
+        if (ProdcutType != (int)Config.ProdcutType.Robot) return;
+
+        // 현재 남은 쿨타임 계산
+        float remainingTime = (float)(NextCreateProductTime - Time.time);
+        float totalCoolTime = (float)CoolTime; // 전체 쿨타임 (초 단위)
+
+        // UI 표시 (1.0 -> 0.0으로 감소)
+        float fillAmount = Mathf.Clamp01(remainingTime / totalCoolTime);
+        ProductOffImg.fillAmount = fillAmount;
+
+        // 쿨타임이 끝났으면 새 프로덕트 생성
+        if (Time.time >= NextCreateProductTime)
+        {
+            CreateProduct();
+            NextCreateProductTime = Time.time + totalCoolTime; // 다음 생성 시간 설정
+        }
+    }
+
+
+
+    public void CreateProduct()
+    {
+        // 현재 게임 오브젝트 또는 특정 자식 오브젝트 (애니메이션을 적용할 대상)
+        Transform targetTransform = this.transform; // 또는 원하는 자식 오브젝트 Transform
+
+        // 원래 스케일 저장
+        Vector3 originalScale = targetTransform.localScale;
+
+        // 애니메이션 시퀀스 생성
+        Sequence scaleSequence = DOTween.Sequence();
+
+        // 1. 빠르게 커지는 애니메이션 (0.15초 동안 1.3배로 커짐)
+        scaleSequence.Append(targetTransform.DOScale(originalScale * 1.3f, 0.15f).SetEase(Ease.OutQuad));
+
+        // 2. 다시 원래 크기로 돌아오는 애니메이션 (0.2초 동안)
+        scaleSequence.Append(targetTransform.DOScale(originalScale, 0.2f).SetEase(Ease.InOutQuad));
+
+        // 애니메이션 시작
+        scaleSequence.Play();
+
+        // 여기에 프로덕트 생성 관련 기존 로직 추가
+        // ...
+    }
+
+    void OnDestroy()
+    {
+        disposables.Clear();
+    }
+
+
+    void OnDisable()
+    {
+        disposables.Clear();
+    }
+
+
+
 }

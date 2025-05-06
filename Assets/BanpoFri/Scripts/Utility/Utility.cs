@@ -60,7 +60,7 @@ namespace BanpoFri
 
 
 
-        public static string CalculateMoneyToString(System.Numerics.BigInteger _Long)
+        public static string CalculateMoneyToString(double _Long)
         {
             var targetString = _Long.ToString();
             var targetLen = targetString.Length - 1;
