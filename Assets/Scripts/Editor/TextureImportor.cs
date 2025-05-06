@@ -16,20 +16,24 @@ public class TextureImportor : AssetPostprocessor
             importer.textureType = TextureImporterType.Sprite;
             importer.spriteImportMode = SpriteImportMode.Single;
 
-            // TextureImporterSettings를 수정
-            TextureImporterSettings settings = new TextureImporterSettings();
-            importer.ReadTextureSettings(settings);
+            // Windows / Mac / Linux 플랫폼의 오버라이드 해제
+            RemovePlatformOverride(importer, "Standalone"); // Standalone이 Win/Mac/Linux 공통 
+            RemovePlatformOverride(importer, "Android");
+            RemovePlatformOverride(importer, "iPhone");
 
-            settings.alphaSource = TextureImporterAlphaSource.FromInput; // 알파 채널 포함 설정
-            settings.sRGBTexture = true; // sRGB Texture 설정
+            // 필요시 Android, iPhone은 오버라이드 유지 가능
+            // SetPlatformTextureSettings(importer, "Android", TextureImporterFormat.ASTC_8x8);
+            // SetPlatformTextureSettings(importer, "iPhone", TextureImporterFormat.ASTC_8x8);
+        }
+    }
 
-            importer.SetTextureSettings(settings);
-
-            // Android 플랫폼 설정
-            SetPlatformTextureSettings(importer, "Android", TextureImporterFormat.ASTC_8x8);
-
-            // iOS 플랫폼 설정
-            SetPlatformTextureSettings(importer, "iPhone", TextureImporterFormat.ASTC_8x8);
+    void RemovePlatformOverride(TextureImporter importer, string platformName)
+    {
+        TextureImporterPlatformSettings platformSettings = importer.GetPlatformTextureSettings(platformName);
+        if (platformSettings.overridden)
+        {
+            platformSettings.overridden = false;
+            importer.SetPlatformTextureSettings(platformSettings);
         }
     }
 
@@ -39,9 +43,9 @@ public class TextureImportor : AssetPostprocessor
         {
             overridden = true,
             name = platformName,
-            maxTextureSize = 2048, // 최대 텍스처 크기
-            format = format,       // 포맷 설정 (ASTC 8x8)
-            compressionQuality = 50 // 압축 품질 (0 ~ 100)
+            maxTextureSize = 2048,
+            format = format,
+            compressionQuality = 50
         };
 
         importer.SetPlatformTextureSettings(platformSettings);
