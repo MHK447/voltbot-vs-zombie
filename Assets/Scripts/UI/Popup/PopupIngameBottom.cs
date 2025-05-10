@@ -29,6 +29,6 @@ public class PopupIngameBottom : UIBase
 
     public void ActiveSelectOn()
     {
-        SelectItemContents.ActiveSelectOn();
+        //SelectItemContents.ActiveSelectOn();
     }
 }

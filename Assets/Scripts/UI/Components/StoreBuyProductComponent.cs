@@ -391,6 +391,8 @@ public class StoreBuyProductComponent : MonoBehaviour, IBeginDragHandler, IDragH
 
         // 여기에 프로덕트 생성 관련 기존 로직 추가
         // ...
+
+        GameRoot.Instance.InGameSystem.GetInGame<InGameBaseStage>().curInGameBattle.GetStageMap.CreatePlayerRobot(SelectItemIdx);
     }
 
     void OnDestroy()

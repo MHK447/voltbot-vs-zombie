@@ -4,34 +4,11 @@ using BanpoFri;
 using UnityEngine;
 using DG.Tweening;
 
-public class MeleeEnemy : RobotBase
+public class MeleeEnemy : MeleeUnitBase
 {
-    public MeleeUnitData UnitData = null;
-
-
     override public void Set(int unitidx)
     {
-        base.Set(unitidx); 
-
-        SetInfo();
-
-        if (InGameHpProgress != null)
-        {
-            ProjectUtility.SetActiveCheck(InGameHpProgress.gameObject, true);
-            InGameHpProgress.SetHpText(UnitData.CurHpProperty.Value, UnitData.MaxHpProperty.Value);
-            InGameHpProgress.Init(HpProgressTr);
-        }
-        else
-        {
-            GameRoot.Instance.UISystem.LoadFloatingUI<InGameEnemyHpProgress>(hpprogress =>
-            {
-                InGameHpProgress = hpprogress;
-                hpprogress.Init(HpProgressTr);
-                hpprogress.SetHpText(UnitData.CurHpProperty.Value, UnitData.MaxHpProperty.Value);
-                ProjectUtility.SetActiveCheck(hpprogress.gameObject, true);
-            });
-
-        }
+        base.Set(unitidx);
     }
 
     public override void SetInfo()
@@ -63,26 +40,10 @@ public class MeleeEnemy : RobotBase
     override public void SetState(RobotStateType state)
     {
         base.SetState(state);
-
-        PlayStateAnimation(state);
     }
     override public void PlayStateAnimation(RobotStateType state)
     {
         base.PlayStateAnimation(state);
-
-        switch (state)
-        {
-            case RobotStateType.Attack:
-                {
-                    stateTween = DOTween.Sequence()
-                        .Append(RobotSprite.transform.DOShakePosition(0.2f, 0.1f, 10, 90, false))
-                        .Join(RobotSprite.transform.DOScale(1.1f, 0.2f))
-                        .Append(RobotSprite.transform.DOScale(1f, 0.2f));
-
-                }
-                break;
-
-        }
     }
 
     // Start is called before the first frame update
@@ -92,12 +53,109 @@ public class MeleeEnemy : RobotBase
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
         if (UnitData == null) return;
 
-        Vector3 pos = transform.position;
-        pos.x -= UnitData.MoveSpeed * Time.deltaTime;
-        transform.position = pos;
+        if (Battle == null) return;
+
+        if(Target != null && Target.IsDeath)
+        {
+            Target = null;
+        }
+
+
+        switch (StateType)
+        {
+            case RobotStateType.Move:
+                {
+                    if (Target == null)
+                    {
+                        Vector3 pos = transform.position;
+                        pos.x -= UnitData.MoveSpeed * Time.deltaTime;
+                        transform.position = pos;
+                    }
+                    else
+                    {
+                        // 타겟이 공격 범위 밖에 있으면 이동
+                        if (StateType != RobotStateType.Move)
+                        {
+                            SetState(RobotStateType.Move);
+                        }
+
+                        // 타겟 방향 계산
+                        Vector3 direction = (Target.transform.position - transform.position).normalized;
+
+                        // 로봇을 타겟 방향으로 이동
+                        Vector3 newPosition = transform.position + direction * UnitData.MoveSpeed * Time.deltaTime;
+
+                        // 로봇 위치 업데이트
+                        transform.position = newPosition;
+                    }
+                }
+                break;
+        }
+
+        if (Target == null)
+        {
+            Target = Battle.GetStageMap.GetTarget(transform.position, InGameStageMap.UnitType.Player);
+        }
+        else
+        {
+
+
+            float distance = Vector3.Distance(this.transform.position, Target.transform.position);
+
+            if (distance <= AttackRange)
+            {
+                if (StateType != RobotStateType.Attack)
+                {
+                    SetState(RobotStateType.Attack);
+                }
+            }
+            else
+            {
+                if (StateType != RobotStateType.Move)
+                {
+                    SetState(RobotStateType.Move);
+                }
+            }
+        }
+
     }
+
+    public override void Damage(double damage)
+    {
+        base.Damage(damage);
+
+        UnitData.CurHpProperty.Value -= damage;
+
+        DamageColorEffect();
+
+        InGameHpProgress?.SetHpText(UnitData.CurHpProperty.Value, UnitData.MaxHpProperty.Value);
+
+        if (UnitData.CurHpProperty.Value <= 0)
+        {
+            Dead();
+        }
+
+    }
+
+
+    public void Attack()
+    {
+        if (Target != null)
+        {
+            Target.Damage(UnitData.AttackDamage);
+
+            if (Target.IsDeath)
+            {
+                Target = null;
+
+                SetState(RobotStateType.Move);
+            }
+
+        }
+    }
+
 }

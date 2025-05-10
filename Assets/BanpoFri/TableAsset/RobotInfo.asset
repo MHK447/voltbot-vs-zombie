@@ -21,21 +21,24 @@ MonoBehaviour:
   - _product_idx: 101
     _base_move_speed: 200
     _base_attack_speed: 100
-    _base_attack_damage: 10
-    _base_hp: 10
+    _base_attack_damage: 5
+    _base_hp: 100
+    _product_time: 50
     _prefab: Robot_Product_101
     _image: RobotChar_101
   - _product_idx: 102
     _base_move_speed: 200
     _base_attack_speed: 100
-    _base_attack_damage: 10
-    _base_hp: 10
+    _base_attack_damage: 5
+    _base_hp: 100
+    _product_time: 100
     _prefab: Robot_Product_102
     _image: RobotChar_102
   - _product_idx: 103
     _base_move_speed: 200
     _base_attack_speed: 100
-    _base_attack_damage: 10
-    _base_hp: 10
+    _base_attack_damage: 5
+    _base_hp: 100
+    _product_time: 50
     _prefab: Robot_Product_103
     _image: RobotChar_103

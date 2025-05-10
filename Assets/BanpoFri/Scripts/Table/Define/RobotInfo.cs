@@ -42,6 +42,13 @@ namespace BanpoFri
 			set { _base_hp = value;}
 		}
 		[SerializeField]
+		private int _product_time;
+		public int product_time
+		{
+			get { return _product_time;}
+			set { _product_time = value;}
+		}
+		[SerializeField]
 		private string _prefab;
 		public string prefab
 		{

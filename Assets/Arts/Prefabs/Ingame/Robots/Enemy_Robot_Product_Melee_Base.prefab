@@ -54,11 +54,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3526149397308098237, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 3526149397308098237, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 3526149397308098237, guid: 97e284a37b14f45f88cd0ed84f3b55b9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -131,5 +131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1b81982a60046c28be08d51ef19e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackRange: 1
   RobotSprite: {fileID: 4236838712956951761}
   HpProgressTr: {fileID: 1681089174329472288}

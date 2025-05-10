@@ -7,6 +7,12 @@ using UnityEngine.AddressableAssets;
 
 public class InGameStageMap : MonoBehaviour
 {
+    public enum UnitType
+    {
+        Enemy = 1,
+        Player = 2,
+    }
+
     private List<RobotBase> EnemyRobots = new List<RobotBase>();
 
     private List<RobotBase> PlayerRobots = new List<RobotBase>();
@@ -88,11 +94,11 @@ public class InGameStageMap : MonoBehaviour
         {
             var randvalue = Random.Range(0, PlayerSpawnTr.Count);
 
-            var finddata = PlayerRobots.Find(x => x.GetUnitIdx == unitidx);
+            var finddata = PlayerRobots.Find(x => x.GetUnitIdx == unitidx && x.gameObject.activeSelf == false);
 
             if (finddata == null || OnLoad)
             {
-                Addressables.InstantiateAsync(td.prefab, EnemySpawnTr[randvalue], false).Completed += (handle) =>
+                Addressables.InstantiateAsync(td.prefab, PlayerSpawnTr[randvalue], false).Completed += (handle) =>
                            {
                                var getrobot = handle.Result.GetComponent<RobotBase>();
 
@@ -104,6 +110,8 @@ public class InGameStageMap : MonoBehaviour
                                ProjectUtility.SetActiveCheck(getrobot.gameObject, !OnLoad);
 
                                getrobot.transform.position = PlayerSpawnTr[randvalue].position;
+
+                               PlayerRobots.Add(getrobot);
                            };
             }
             else
@@ -127,7 +135,7 @@ public class InGameStageMap : MonoBehaviour
         {
             var randvalue = Random.Range(0, EnemySpawnTr.Count);
 
-            var finddatta = EnemyRobots.Find(x => x.GetUnitIdx == enemyidx);
+            var finddatta = EnemyRobots.Find(x => x.GetUnitIdx == enemyidx && x.gameObject.activeSelf == false);
 
             if (finddatta == null || OnLoad)
             {
@@ -143,6 +151,8 @@ public class InGameStageMap : MonoBehaviour
                                 ProjectUtility.SetActiveCheck(getrobot.gameObject, !OnLoad);
 
                                 getrobot.transform.position = EnemySpawnTr[randvalue].position;
+
+                                EnemyRobots.Add(getrobot);
                             };
             }
             else
@@ -155,6 +165,64 @@ public class InGameStageMap : MonoBehaviour
             }
 
         }
+    }
+
+
+
+    public virtual RobotBase GetTarget(UnityEngine.Vector3 pos, UnitType type, float unitradious = 999999999)
+    {
+        float distance = float.MaxValue;
+
+        RobotBase target = null;
+
+        switch (type)
+        {
+            case UnitType.Enemy:
+                {
+                    foreach (var enemyunit in EnemyRobots)
+                    {
+                        if (enemyunit.IsDeath) continue;
+
+                        if (enemyunit.gameObject.activeSelf == false) continue;
+
+                        var enemydistance = Vector3.Distance(pos, enemyunit.transform.position);
+
+                        if (enemydistance > unitradious) continue;
+
+                        if (distance > enemydistance)
+                        {
+                            distance = enemydistance;
+                            target = enemyunit;
+                        }
+                    }
+                }
+                break;
+            case UnitType.Player:
+                {
+                    float maxDistance = 0;
+
+                    foreach (var playerrobot in PlayerRobots)
+                    {
+                        if (playerrobot.IsDeath) continue;
+
+                        if (playerrobot.gameObject.activeSelf == false) continue;
+
+                        float dsistanc1 = Vector3.Distance(pos, playerrobot.transform.position);
+
+                        if (dsistanc1 > unitradious) continue;
+
+                        if (dsistanc1 > maxDistance)
+                        {
+                            maxDistance = dsistanc1;
+                            target = playerrobot;
+                        }
+                    }
+                }
+                break;
+        }
+
+
+        return target;
     }
 
 }

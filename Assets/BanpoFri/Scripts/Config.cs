@@ -156,6 +156,10 @@ public class Config : BanpoFri.SingletonScriptableObject<Config>, BanpoFri.ILoad
     public Material DisableSpriteMat;
     public Material EnableSpriteMat;
     public Material ImgAddtiveMat;
+    
+    public Material DamageEffectMaterial;
+
+    public Material DefaultSpriteMaterial;
 
 
 
