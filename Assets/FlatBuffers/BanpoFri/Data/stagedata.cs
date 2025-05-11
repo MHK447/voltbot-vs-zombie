@@ -25,22 +25,27 @@ public struct StageData : IFlatbufferObject
   public bool MutateWaveidx(int waveidx) { int o = __p.__offset(6); if (o != 0) { __p.bb.PutInt(o + __p.bb_pos, waveidx); return true; } else { return false; } }
   public int Enemycount { get { int o = __p.__offset(8); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)1; } }
   public bool MutateEnemycount(int enemycount) { int o = __p.__offset(8); if (o != 0) { __p.bb.PutInt(o + __p.bb_pos, enemycount); return true; } else { return false; } }
+  public int Hpcount { get { int o = __p.__offset(10); return o != 0 ? __p.bb.GetInt(o + __p.bb_pos) : (int)1; } }
+  public bool MutateHpcount(int hpcount) { int o = __p.__offset(10); if (o != 0) { __p.bb.PutInt(o + __p.bb_pos, hpcount); return true; } else { return false; } }
 
   public static Offset<BanpoFri.Data.StageData> CreateStageData(FlatBufferBuilder builder,
       int stageidx = 1,
       int waveidx = 1,
-      int enemycount = 1) {
-    builder.StartTable(3);
+      int enemycount = 1,
+      int hpcount = 1) {
+    builder.StartTable(4);
+    StageData.AddHpcount(builder, hpcount);
     StageData.AddEnemycount(builder, enemycount);
     StageData.AddWaveidx(builder, waveidx);
     StageData.AddStageidx(builder, stageidx);
     return StageData.EndStageData(builder);
   }
 
-  public static void StartStageData(FlatBufferBuilder builder) { builder.StartTable(3); }
+  public static void StartStageData(FlatBufferBuilder builder) { builder.StartTable(4); }
   public static void AddStageidx(FlatBufferBuilder builder, int stageidx) { builder.AddInt(0, stageidx, 1); }
   public static void AddWaveidx(FlatBufferBuilder builder, int waveidx) { builder.AddInt(1, waveidx, 1); }
   public static void AddEnemycount(FlatBufferBuilder builder, int enemycount) { builder.AddInt(2, enemycount, 1); }
+  public static void AddHpcount(FlatBufferBuilder builder, int hpcount) { builder.AddInt(3, hpcount, 1); }
   public static Offset<BanpoFri.Data.StageData> EndStageData(FlatBufferBuilder builder) {
     int o = builder.EndTable();
     return new Offset<BanpoFri.Data.StageData>(o);
@@ -54,6 +59,7 @@ public struct StageData : IFlatbufferObject
     _o.Stageidx = this.Stageidx;
     _o.Waveidx = this.Waveidx;
     _o.Enemycount = this.Enemycount;
+    _o.Hpcount = this.Hpcount;
   }
   public static Offset<BanpoFri.Data.StageData> Pack(FlatBufferBuilder builder, StageDataT _o) {
     if (_o == null) return default(Offset<BanpoFri.Data.StageData>);
@@ -61,7 +67,8 @@ public struct StageData : IFlatbufferObject
       builder,
       _o.Stageidx,
       _o.Waveidx,
-      _o.Enemycount);
+      _o.Enemycount,
+      _o.Hpcount);
   }
 }
 
@@ -73,11 +80,14 @@ public class StageDataT
   public int Waveidx { get; set; }
   [Newtonsoft.Json.JsonProperty("enemycount")]
   public int Enemycount { get; set; }
+  [Newtonsoft.Json.JsonProperty("hpcount")]
+  public int Hpcount { get; set; }
 
   public StageDataT() {
     this.Stageidx = 1;
     this.Waveidx = 1;
     this.Enemycount = 1;
+    this.Hpcount = 1;
   }
 }
 
@@ -90,6 +100,7 @@ static public class StageDataVerify
       && verifier.VerifyField(tablePos, 4 /*Stageidx*/, 4 /*int*/, 4, false)
       && verifier.VerifyField(tablePos, 6 /*Waveidx*/, 4 /*int*/, 4, false)
       && verifier.VerifyField(tablePos, 8 /*Enemycount*/, 4 /*int*/, 4, false)
+      && verifier.VerifyField(tablePos, 10 /*Hpcount*/, 4 /*int*/, 4, false)
       && verifier.VerifyTableEnd(tablePos);
   }
 }

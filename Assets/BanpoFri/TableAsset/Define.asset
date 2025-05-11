@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mFirstKey:
   - base_start_money
+  - base_start_hp
   mSecondKey: []
   mDataList:
   - _index: base_start_money
     _value: 20
+  - _index: base_start_hp
+    _value: 10

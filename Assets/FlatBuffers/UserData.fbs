@@ -14,6 +14,7 @@ table UserData {
   uuid:long = 0;
   recordvalue:[RecordCount];
   stagedata:StageData;
+  playerdata:PlayerData;
 }
 
 table OptionData {
@@ -36,6 +37,11 @@ table StageData
   stageidx:int = 1; // @ReactiveProperty
   waveidx:int = 1; // @ReactiveProperty
   enemycount:int = 1; // @ReactiveProperty
+}
+
+table PlayerData
+{
+  hpcount:int = 1; // @ReactiveProperty
 }
 
 root_type UserData;

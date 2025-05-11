@@ -88,6 +88,7 @@ public partial class UserDataSystem
     {
         /* 아래 @주석 위치를 찾아서 함수가 자동 추가됩니다 ConnectReadOnlyDatas 함수에서 SetLoadDatas를 호출해주세요 */
         // @자동 로드 데이터 함수들
+        LoadData_PlayerData();
         LoadData_StageData();
         LoadData_RecordCount();
         LoadData_OptionData();
@@ -267,6 +268,33 @@ public partial class UserDataSystem
         var strKey = ProjectUtility.GetRecordCountText(idx, objs);
         if (RecordCount.ContainsKey(strKey))
             RecordCount[strKey] = resetvalue;
+    }
+
+    public void StartBattle()
+    {
+        Playerdata.Hpcount.Value = GameRoot.Instance.InGameSystem.base_start_hp;
+        GameRoot.Instance.UserData.Stagedata.Waveidx.Value = 1;
+
+        SetWaveCount(1);
+
+    }
+
+    public void SetWaveCount(int waveidx)
+    {
+        var stageidx = GameRoot.Instance.UserData.CurMode.StageData.Stageidx.Value;
+
+        GameRoot.Instance.UserData.Stagedata.Enemycount.Value = 0;
+
+
+        var td = Tables.Instance.GetTable<WaveInfo>().GetData(new KeyValuePair<int, int>(stageidx, waveidx));
+
+        if (td != null)
+        {
+            foreach (var count in td.count)
+            {
+                GameRoot.Instance.UserData.Stagedata.Enemycount.Value += count;
+            }
+        }
     }
 
 

@@ -4,6 +4,7 @@ using UniRx;
 using UnityEngine;
 using DG.Tweening;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 
 public abstract class RobotBase : MonoBehaviour
 {
@@ -41,13 +42,16 @@ public abstract class RobotBase : MonoBehaviour
     protected RobotBase Target = null;
     protected Tween stateTween; // 현재 상태 트윈
 
-    protected Vector3 originalScale;
+    protected Vector3 RobotImgScaleVec;
+    protected Vector3 OriginalImgScaleVec;
 
     protected System.Action AttackAction = null;
 
     void Awake()
     {
-        originalScale = RobotSprite.transform.localScale;
+        RobotImgScaleVec = RobotSprite.transform.localScale;
+
+        OriginalImgScaleVec = this.transform.localScale;
     }
 
     public virtual void Set(int unitidx)
@@ -78,7 +82,7 @@ public abstract class RobotBase : MonoBehaviour
 
     public virtual void Dead()
     {
-        if(InGameHpProgress != null)
+        if (InGameHpProgress != null)
         {
             ProjectUtility.SetActiveCheck(InGameHpProgress.gameObject, false);
         }
@@ -120,18 +124,19 @@ public abstract class RobotBase : MonoBehaviour
     public virtual void PlayStateAnimation(RobotStateType state)
     {
         stateTween?.Kill(); // 기존 트윈 제거
-        RobotSprite.transform.localScale = originalScale;
+        RobotSprite.transform.localScale = RobotImgScaleVec;
 
         switch (state)
         {
             case RobotStateType.Idle:
                 stateTween = RobotSprite.transform
-                    .DOScale(originalScale * 1.05f, 1.2f)
+                    .DOScale(RobotImgScaleVec * 1.05f, 1.2f)
                     .SetLoops(-1, LoopType.Yoyo)
                     .SetEase(Ease.InOutSine);
                 break;
 
             case RobotStateType.Move:
+                this.transform.localScale = RobotImgScaleVec;
                 Vector3 leftLean = new Vector3(3f, -3f, -8f);  // 왼쪽 기울기 + 몸통 살짝 왼쪽으로 틀기
                 Vector3 rightLean = new Vector3(-3f, 3f, 8f);  // 오른쪽 기울기 + 몸통 살짝 오른쪽으로 틀기
 
@@ -187,6 +192,20 @@ public abstract class RobotBase : MonoBehaviour
 
 
 
+    public virtual void Update()
+    {
+        this.transform.localScale = OriginalImgScaleVec;
+
+        if (Target != null)
+        {
+            float targetX = Target.transform.position.x;
+            float myX = this.transform.position.x;
+
+            Direciton = targetX < myX ? DirectionType.Left : DirectionType.Right;
+
+            this.transform.localScale = Direciton == DirectionType.Left ? new Vector3(1f, 1f, 1f) : new Vector3(-1f, 1f, 1f);
+        }
+    }
 
 
     public class MeleeUnitData

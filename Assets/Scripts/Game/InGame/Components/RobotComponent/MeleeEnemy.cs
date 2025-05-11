@@ -9,6 +9,11 @@ public class MeleeEnemy : MeleeUnitBase
     override public void Set(int unitidx)
     {
         base.Set(unitidx);
+
+        GameRoot.Instance.WaitTimeAndCallback(0.5f, () =>
+        {
+            Target = Battle.GetStageMap.GetTarget(transform.position, InGameStageMap.UnitType.Player);
+        });
     }
 
     public override void SetInfo()
@@ -59,7 +64,7 @@ public class MeleeEnemy : MeleeUnitBase
 
         if (Battle == null) return;
 
-        if(Target != null && Target.IsDeath)
+        if (Target != null && Target.IsDeath)
         {
             Target = null;
         }
@@ -102,8 +107,6 @@ public class MeleeEnemy : MeleeUnitBase
         }
         else
         {
-
-
             float distance = Vector3.Distance(this.transform.position, Target.transform.position);
 
             if (distance <= AttackRange)
@@ -137,8 +140,15 @@ public class MeleeEnemy : MeleeUnitBase
         if (UnitData.CurHpProperty.Value <= 0)
         {
             Dead();
-        }
 
+            GameRoot.Instance.UserData.Stagedata.Enemycount.Value -= 1;
+
+
+            if (GameRoot.Instance.UserData.Stagedata.Enemycount.Value <= 0)
+            {
+                Battle.GetStageMap.NextWave();
+            }
+        }
     }
 
 
@@ -154,7 +164,6 @@ public class MeleeEnemy : MeleeUnitBase
 
                 SetState(RobotStateType.Move);
             }
-
         }
     }
 

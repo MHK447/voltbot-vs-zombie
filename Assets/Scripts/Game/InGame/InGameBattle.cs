@@ -27,6 +27,8 @@ public class InGameBattle : MonoBehaviour
             Destroy(StageMap.gameObject);
         }
 
+        GameRoot.Instance.UserData.StartBattle();
+
         var stagetd = Tables.Instance.GetTable<StageInfo>().GetData(GameRoot.Instance.UserData.CurMode.StageData.Stageidx.Value);
 
         if (stagetd != null)

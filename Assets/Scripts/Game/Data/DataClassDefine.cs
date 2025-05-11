@@ -99,14 +99,6 @@ public class NoticeData
 
 }
 
-public class PlayerData
-{
-	public IReactiveProperty<int> VehiclePropertyIdx = new ReactiveProperty<int>();
-	
-
-
-}
-
 
 
 

@@ -16,7 +16,8 @@ public partial class UserDataSystem
             builder,
             Stagedata.Stageidx.Value,
             Stagedata.Waveidx.Value,
-            Stagedata.Enemycount.Value
+            Stagedata.Enemycount.Value,
+            Stagedata.Hpcount.Value
         );
 
 
@@ -38,6 +39,7 @@ public partial class UserDataSystem
             Stagedata.Stageidx.Value = fb_Stagedata.Value.Stageidx;
             Stagedata.Waveidx.Value = fb_Stagedata.Value.Waveidx;
             Stagedata.Enemycount.Value = fb_Stagedata.Value.Enemycount;
+            Stagedata.Hpcount.Value = fb_Stagedata.Value.Hpcount;
         }
     }
 
@@ -45,11 +47,14 @@ public partial class UserDataSystem
 
 public class StageData
 {
+    public IReactiveProperty<int> Hpcount { get; set; } = new ReactiveProperty<int>(0);
+
     public IReactiveProperty<int> Enemycount { get; set; } = new ReactiveProperty<int>(0);
 
     public IReactiveProperty<int> Stageidx { get; set; } = new ReactiveProperty<int>(1);
 
     public IReactiveProperty<int> Waveidx { get; set; } = new ReactiveProperty<int>(1);
+
 
 
 }

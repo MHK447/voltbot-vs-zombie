@@ -49,10 +49,13 @@ public class InGameSystem
     public IReactiveProperty<bool> IsWaveStartBattle = new ReactiveProperty<bool>(false);
     public int base_start_money = 0;
 
+    public int base_start_hp = 0;
+
 
     public void Create()
     {
         base_start_money = Tables.Instance.GetTable<Define>().GetData("base_start_money").value;
+        base_start_hp = Tables.Instance.GetTable<Define>().GetData("base_start_hp").value;
     }
 
     public T GetInGame<T>() where T : InGameMode

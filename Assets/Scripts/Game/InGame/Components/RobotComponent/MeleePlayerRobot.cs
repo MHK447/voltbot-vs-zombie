@@ -66,6 +66,14 @@ public class MeleePlayerRobot : MeleeUnitBase
                     }
                 }
                 break;
+            case RobotStateType.Attack:
+                {
+                    if(Target == null)
+                    {
+                        SetState(RobotStateType.Move);
+                    }
+                }
+                break;
         }
 
         if (Target == null)

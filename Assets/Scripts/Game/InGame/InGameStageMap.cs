@@ -53,10 +53,6 @@ public class InGameStageMap : MonoBehaviour
 
 
             IsSpawnEnd = true;
-
-            GameRoot.Instance.UserData.CurMode.StageData.Waveidx.Value++;
-
-            GameRoot.Instance.UISystem.GetUI<PopupIngameBottom>()?.ActiveSelectOn();
         }
     }
 
@@ -70,6 +66,16 @@ public class InGameStageMap : MonoBehaviour
 
     public void NextWave()
     {
+        GameRoot.Instance.UserData.Stagedata.Waveidx.Value += 1;
+
+        foreach(var playerrobot in PlayerRobots)
+        {
+            playerrobot.Dead();
+        }
+
+
+        GameRoot.Instance.UISystem.GetUI<PopupIngameBottom>()?.ActiveSelectOn();
+
 
     }
 
@@ -172,6 +178,7 @@ public class InGameStageMap : MonoBehaviour
     public virtual RobotBase GetTarget(UnityEngine.Vector3 pos, UnitType type, float unitradious = 999999999)
     {
         float distance = float.MaxValue;
+        float maxDistance = 0;
 
         RobotBase target = null;
 
@@ -179,41 +186,41 @@ public class InGameStageMap : MonoBehaviour
         {
             case UnitType.Enemy:
                 {
-                    foreach (var enemyunit in EnemyRobots)
+                    float minXDistance = float.MaxValue;
+
+                    foreach (var enemyrobot in EnemyRobots)
                     {
-                        if (enemyunit.IsDeath) continue;
+                        if (enemyrobot.IsDeath) continue;
+                        if (!enemyrobot.gameObject.activeSelf) continue;
 
-                        if (enemyunit.gameObject.activeSelf == false) continue;
+                        float xDistance = Mathf.Abs(enemyrobot.transform.position.x - pos.x);
 
-                        var enemydistance = Vector3.Distance(pos, enemyunit.transform.position);
+                        if (xDistance > unitradious) continue;
 
-                        if (enemydistance > unitradious) continue;
-
-                        if (distance > enemydistance)
+                        if (xDistance < minXDistance)
                         {
-                            distance = enemydistance;
-                            target = enemyunit;
+                            minXDistance = xDistance;
+                            target = enemyrobot;
                         }
                     }
                 }
                 break;
-            case UnitType.Player:
+             case UnitType.Player:
                 {
-                    float maxDistance = 0;
+                    float minXDistance = float.MaxValue;
 
                     foreach (var playerrobot in PlayerRobots)
                     {
                         if (playerrobot.IsDeath) continue;
+                        if (!playerrobot.gameObject.activeSelf) continue;
 
-                        if (playerrobot.gameObject.activeSelf == false) continue;
+                        float xDistance = Mathf.Abs(playerrobot.transform.position.x - pos.x);
 
-                        float dsistanc1 = Vector3.Distance(pos, playerrobot.transform.position);
+                        if (xDistance > unitradious) continue;
 
-                        if (dsistanc1 > unitradious) continue;
-
-                        if (dsistanc1 > maxDistance)
+                        if (xDistance < minXDistance)
                         {
-                            maxDistance = dsistanc1;
+                            minXDistance = xDistance;
                             target = playerrobot;
                         }
                     }

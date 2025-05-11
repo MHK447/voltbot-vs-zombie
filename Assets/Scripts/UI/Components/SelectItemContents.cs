@@ -22,6 +22,9 @@ public class SelectItemContents : MonoBehaviour
     [SerializeField]
     private GameObject ItemGroupObj;
 
+    [SerializeField]
+    private GameObject HudObj;
+
 
     private int Cost = 0;
 
@@ -39,6 +42,7 @@ public class SelectItemContents : MonoBehaviour
         ItemComponents[0].Set(1);
         ItemComponents[1].Set(101);
         ItemComponents[2].Set(1);
+        ProjectUtility.SetActiveCheck(HudObj.gameObject, false);
     }
 
 
@@ -54,8 +58,18 @@ public class SelectItemContents : MonoBehaviour
 
     public void ActiveSelectOn()
     {
-        ProjectUtility.SetActiveCheck(ItemGroupObj.gameObject , true);
+        GameRoot.Instance.InGameSystem.IsWaveStartBattle.Value = false;
+        ProjectUtility.SetActiveCheck(ItemGroupObj.gameObject, true);
+        ProjectUtility.SetActiveCheck(HudObj.gameObject, false);
     }
+
+    public void ActiveSelectoff()
+    {
+        GameRoot.Instance.InGameSystem.IsWaveStartBattle.Value = true;
+        ProjectUtility.SetActiveCheck(ItemGroupObj.gameObject, false);
+        ProjectUtility.SetActiveCheck(HudObj.gameObject, true);
+    }
+
 
 
     public void OnClickReroll()
@@ -67,8 +81,10 @@ public class SelectItemContents : MonoBehaviour
     {
         GameRoot.Instance.InGameSystem.IsWaveStartBattle.Value = true;
         var waveidx = GameRoot.Instance.UserData.CurMode.StageData.Waveidx.Value;
+        GameRoot.Instance.UserData.SetWaveCount(waveidx);
         GameRoot.Instance.StartCoroutine(GameRoot.Instance.InGameSystem.GetInGame<InGameBaseStage>().curInGameBattle.GetStageMap.StartWaveBattle(waveidx));
-        ProjectUtility.SetActiveCheck(ItemGroupObj.gameObject , false);
-        
+        ProjectUtility.SetActiveCheck(ItemGroupObj.gameObject, false);
+        ProjectUtility.SetActiveCheck(HudObj.gameObject, true);
+
     }
 }
