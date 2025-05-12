@@ -24,6 +24,7 @@ public class SelectItemComponent : MonoBehaviour
     private Transform CachedRoot;
 
 
+
     private List<GameObject> CachedComponents = new List<GameObject>();
 
 
@@ -42,7 +43,14 @@ public class SelectItemComponent : MonoBehaviour
         if (td != null)
         {
             PriceText.text = td.price.ToString();
-            GetCachedObject().GetComponent<StoreBuyProductComponent>().Set(SelectItemIdx, this);
+            var getobj = GetCachedObject().GetComponent<StoreBuyProductComponent>();
+
+            if (getobj != null)
+            {
+                getobj.Set(SelectItemIdx, this);
+                ProjectUtility.SetActiveCheck(getobj.gameObject, true);
+            }
+
 
             GameRoot.Instance.UserData.Money.Subscribe(x =>
             {

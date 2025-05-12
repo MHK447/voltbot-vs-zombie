@@ -38,6 +38,7 @@ public class PopupIngameBottom : UIBase
     public void ActiveSelectOn()
     {
         SelectItemContents.ActiveSelectOn();
+        SelectItemContents.RandSelectItem();
     }
 
     public void ActiveSelectOff()
